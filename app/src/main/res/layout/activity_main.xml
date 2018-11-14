@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1e73be"
+    tools:context=".MainActivity"
+
+
+    tools:layout_editor_absoluteY="25dp">
+
+    <Button
+        android:id="@+id/btnWhatsOn"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/connor_presbyterian"
+        android:text="@string/what_s_on"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnSermons"
+        app:layout_constraintEnd_toStartOf="@+id/btnSermons"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="448dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSermons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSermons"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/church3"
+        android:text="@string/sermons"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnWhatsOn"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/btnCalendar"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/calendar"
+        android:text="@string/calendar"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnSermons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnFindUs"
+        app:layout_constraintTop_toBottomOf="@+id/btnContactiUs"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <Button
+        android:id="@+id/btnAboutUs"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/church1"
+        android:text="@string/about_us"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnContactiUs"
+        app:layout_constraintEnd_toStartOf="@+id/btnContactiUs"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnContactiUs"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/email_logo"
+        android:text="@string/contact_us"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAboutUs"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/btnFindUs"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/church2"
+        android:text="@string/find_us"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnWhatsOn"
+        app:layout_constraintEnd_toStartOf="@+id/btnCalendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAboutUs"
+        app:layout_constraintVertical_bias="0.984" />
+
+</android.support.constraint.ConstraintLayout>

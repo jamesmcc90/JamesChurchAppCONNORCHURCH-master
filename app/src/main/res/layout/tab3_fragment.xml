@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1e73be"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="212dp"
+        android:text="Presbyterian Women (PW) is an organisation for women within the Presbyterian Church in Ireland (PCI).  There have been women’s organisations within PCI for over 130 years. PW incorporates the former Presbyterian Women’s Association and the former Young Women’s Groups with a total membership of around 14,000 within 500 groups. PW Groups are envisaged as women’s fellowships in which women are encouraged to become Christians and to become Christ-like. In addition to supporting mission at home and overseas, each group is to seek ways of actively reaching women in its own area for Christ.  Motto: Living for Jesus  Logo: The circle around the cross represents women whose lives are centred on the Lord Jesus Christ.  Mission Statement and Aims: Presbyterian Women encourages women to become disciples of Christ.  Presbyterian Women aims to highlight the need for:  1. Love and unity 2. Obedience to God 3. Christian living and spiritual maturity 4. Service using gifts, time and money 5. Local and global mission"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Presbyterian Women"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
