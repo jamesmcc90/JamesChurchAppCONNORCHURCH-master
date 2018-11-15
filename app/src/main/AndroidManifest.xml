@@ -149,6 +149,13 @@
 
         </activity>
 
+        <activity
+            android:name=".AudioStreamActivity"
+            android:label="The Bible"
+            android:screenOrientation="portrait">
+
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCziB9yRhWTrwW3DXolCfCUqmo-tZexYL0" />

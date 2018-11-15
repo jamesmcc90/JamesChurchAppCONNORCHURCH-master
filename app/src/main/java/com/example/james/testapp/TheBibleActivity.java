@@ -24,11 +24,10 @@ import butterknife.OnClick;
 
 public class TheBibleActivity extends AppCompatActivity {
 
-    @BindView(R.id.pdf_image)
-    ImageView imageViewPdf;
-    @BindView(R.id.button_pre_doc)
-    FloatingActionButton prePageButton;
+    @BindView(R.id.pdf_image) ImageView imageViewPdf;
+    @BindView(R.id.button_pre_doc) FloatingActionButton prePageButton;
     @BindView(R.id.button_next_doc) FloatingActionButton nextPageButton;
+    @BindView(R.id.button_first_doc) FloatingActionButton contentsPageButton;
 
 
     private static final String FILENAME = "NIV-Bible.pdf";
@@ -146,7 +145,7 @@ public class TheBibleActivity extends AppCompatActivity {
     }
 
     /**
-     * Updates the state of 2 control buttons in response to the current page index.
+     * Updates the state of 3 control buttons in response to the current page index.
      */
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void updateUi() {
@@ -154,6 +153,7 @@ public class TheBibleActivity extends AppCompatActivity {
         int pageCount = pdfRenderer.getPageCount();
         prePageButton.setEnabled(0 != index);
         nextPageButton.setEnabled(index + 1 < pageCount);
+        contentsPageButton.setEnabled(true);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
