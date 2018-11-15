@@ -81,8 +81,7 @@ public class AnnouncementsActivity extends AppCompatActivity {
         NetworkInfo nInfo = cManager.getActiveNetworkInfo();
 
         if(nInfo != null && nInfo.isConnected()) {
-            internetConnnection = findViewById(R.id.internetInfo);
-            internetConnnection.setVisibility(View.INVISIBLE);
+
             webView = new WebView(this);
             webView = new WebView(this);
             webView.getSettings().setJavaScriptEnabled(true);

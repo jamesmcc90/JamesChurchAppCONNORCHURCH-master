@@ -83,6 +83,12 @@ public class TheBibleActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @OnClick(R.id.button_first_doc)
+    public void onContentsPageClick(){
+        showPage(1);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void openRenderer(Context context) throws IOException {
         // In this sample, we read a PDF from the assets directory.
         File file = new File(context.getCacheDir(), FILENAME);
