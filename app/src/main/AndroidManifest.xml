@@ -155,6 +155,12 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity
+            android:name=".ExternalLinksActivity"
+            android:label="External Links"
+            android:screenOrientation="portrait">
+
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

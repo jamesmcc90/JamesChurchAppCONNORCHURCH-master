@@ -66,6 +66,7 @@ int currentItem = 0;
         categories.add("Church Chat (experimental)");
         categories.add("The Bible (experimental)");
         categories.add("Audio Streaming for Sermons/Talks - experimental");
+        categories.add("Other Links");
 
             // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
@@ -128,6 +129,13 @@ int currentItem = 0;
                 {
                     Intent i = new Intent();
                     i.setClass(MainActivity.this, AudioStreamActivity.class);
+                    finish();
+                    startActivity(i);
+                }
+                if(position == 8)
+                {
+                    Intent i = new Intent();
+                    i.setClass(MainActivity.this, ExternalLinksActivity.class);
                     finish();
                     startActivity(i);
                 }

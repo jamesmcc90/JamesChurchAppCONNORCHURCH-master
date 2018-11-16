@@ -1,26 +1,121 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical"
     android:background="#93cca0"
-    >
+    tools:layout_editor_absoluteY="25dp">
 
     <Button
         android:id="@+id/btn_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:text="Play Audio From URL" />
+        android:layout_marginTop="132dp"
+        android:layout_marginBottom="387dp"
+        android:text="Play Audio From URL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivStop" />
 
     <Button
         android:id="@+id/btnPause"
         android:layout_width="119dp"
         android:layout_height="wrap_content"
-        android:text="Pause" />
+        android:layout_marginStart="52dp"
+        android:onClick="doPause"
+        android:text="Pause"
+        app:layout_constraintStart_toStartOf="@+id/btn_play"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
 
-</LinearLayout>
+
+    <ListView
+        android:id="@+id/sermonSelect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
+
+    <ImageView
+        android:id="@+id/Sermon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="281dp"
+        android:src="@drawable/ic_music"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSpeaker"
+        app:layout_constraintEnd_toStartOf="@+id/ivPlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSpeaker" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginEnd="204dp"
+        android:layout_toEndOf="@+id/Sermon"
+        android:text="Sermon name"
+        android:textColor="#7019c1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivPlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sermonSelect" />
+
+    <TextView
+        android:id="@+id/txtSpeaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtName"
+        android:layout_marginTop="-3dp"
+        android:layout_toEndOf="@+id/Sermon"
+        android:layout_toRightOf="@+id/Sermon"
+        android:text="Speaker"
+        android:textColor="#0cd22a"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/sermonSelect"
+        app:layout_constraintTop_toTopOf="@+id/sermonSelect" />
+
+    <ImageView
+        android:id="@+id/ivPlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+
+        android:layout_marginEnd="30dp"
+        android:layout_toLeftOf="@id/ivStop"
+        android:src="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="@+id/ivStop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivStop"
+        app:layout_constraintStart_toEndOf="@+id/txtName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivStop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+
+        android:layout_marginBottom="107dp"
+        android:src="@drawable/ic_stop"
+        app:layout_constraintBottom_toTopOf="@+id/btn_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivPlay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

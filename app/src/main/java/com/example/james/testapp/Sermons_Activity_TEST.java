@@ -94,10 +94,14 @@ public class Sermons_Activity_TEST extends AppCompatActivity {
             // Resets the MediaPlayer to its uninitialized state.
             this.mediaPlayer.reset();
         }
-        this.mediaPlayer.start();
+
+        mediaPlayer.start();
+        mediaPlayer.seekTo(currentPosition);
+
         // Create a thread to update position of SeekBar.
         UpdateSeekBarThread updateSeekBarThread= new UpdateSeekBarThread();
         threadHandler.postDelayed(updateSeekBarThread,50);
+
 
 
     }
