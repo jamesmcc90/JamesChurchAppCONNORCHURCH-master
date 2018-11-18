@@ -230,27 +230,32 @@ public class MainActivity extends AppCompatActivity implements
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_verse) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, VerseActivity.class);
             finish();
             startActivity(i);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_announcements) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, AnnouncementsActivity.class);
             finish();
             startActivity(i);
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_sermons) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, AudioStreamActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_chat_login) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, ChatLoginActivity.class);
             finish();
             startActivity(i);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_the_bible) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, TheBibleActivity.class);
             finish();
             startActivity(i);
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_external_links) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, ExternalLinksActivity.class);
             finish();

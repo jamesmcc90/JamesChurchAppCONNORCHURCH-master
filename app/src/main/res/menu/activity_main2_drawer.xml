@@ -5,23 +5,27 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_verse"
             android:icon="@drawable/ic_menu_camera"
             android:title="Verse of the Day" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_announcements"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Announcements" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_sermons"
+            android:icon="@drawable/camera"
+            android:title="Sermons (URL)" />
+        <item
+            android:id="@+id/nav_chat_login"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Chat Login" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_the_bible"
             android:icon="@drawable/ic_menu_manage"
             android:title="The Bible" />
         <item
-            android:id="@+id/nav_send"
+            android:id="@+id/nav_external_links"
             android:icon="@drawable/ic_menu_send"
             android:title="External Links"/>
     </group>
