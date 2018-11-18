@@ -39,6 +39,7 @@ public class ExternalLinksActivity extends AppCompatActivity {
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         if( keyCode == KeyEvent.KEYCODE_BACK)
                         {
+                            view.clearCache(true);
                             view.setVisibility(View.INVISIBLE);
                             return true;
                         }
@@ -71,7 +72,7 @@ public class ExternalLinksActivity extends AppCompatActivity {
                     @Override
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         if( keyCode == KeyEvent.KEYCODE_BACK)
-                        {
+                        {   view.clearCache(true);
                             view.setVisibility(View.INVISIBLE);
                             return true;
                         }
@@ -104,7 +105,7 @@ public class ExternalLinksActivity extends AppCompatActivity {
                     @Override
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         if( keyCode == KeyEvent.KEYCODE_BACK)
-                        {
+                        {   view.clearCache(true);
                             view.setVisibility(View.INVISIBLE);
                             return true;
                         }

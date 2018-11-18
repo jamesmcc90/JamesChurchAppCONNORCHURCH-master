@@ -5,7 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,16 +21,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.List;
 
 
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
 
     private TextView mTextMessage;
-int currentItem = 0;
+    int currentItem = 0;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,6 +61,19 @@ int currentItem = 0;
         setContentView(R.layout.activity_main);
         Spinner spinner = findViewById(R.id.spinner);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();
         categories.add("Select...");
@@ -68,7 +86,8 @@ int currentItem = 0;
         categories.add("Audio Streaming for Sermons/Talks - experimental");
         categories.add("Other Links");
 
-            // Creating adapter for spinner
+
+        // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
         // Drop down layout style - list view with radio button
@@ -84,63 +103,25 @@ int currentItem = 0;
                                        int position, long arg3) {
 
 
-                if(position == 1) {
+                if (position == 1) {
                     Intent i = new Intent();
                     i.setClass(MainActivity.this, AboutAppActivity.class);
                     finish();
                     startActivity(i);
                 }
-                if(position == 2)
-                {
+                if (position == 2) {
                     Intent i = new Intent();
                     i.setClass(MainActivity.this, VersionActivity.class);
                     finish();
                     startActivity(i);
                 }
-                if(position == 3)
-                {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, VerseActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-                if(position == 4)
-                {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, AnnouncementsActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-                if(position == 5)
-                {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, ChatLoginActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-                if(position == 6)
-                {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, TheBibleActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-                if(position == 7)
-                {
+
+                if (position == 7) {
                     Intent i = new Intent();
                     i.setClass(MainActivity.this, AudioStreamActivity.class);
                     finish();
                     startActivity(i);
                 }
-                if(position == 8)
-                {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, ExternalLinksActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-
-
             }
 
             @Override
@@ -152,12 +133,12 @@ int currentItem = 0;
         });
 
 
-Button About = findViewById(R.id.btnAboutUs);
-Button Contact = findViewById(R.id.btnContactiUs);
-Button Find = findViewById(R.id.btnFindUs);
-Button Calendar = findViewById(R.id.btnCalendar);
-Button Sermons = findViewById(R.id.btnSermons);
-Button WhatsOn = findViewById(R.id.btnWhatsOn);
+        Button About = findViewById(R.id.btnAboutUs);
+        Button Contact = findViewById(R.id.btnContactiUs);
+        Button Find = findViewById(R.id.btnFindUs);
+        Button Calendar = findViewById(R.id.btnCalendar);
+        Button Sermons = findViewById(R.id.btnSermons);
+        Button WhatsOn = findViewById(R.id.btnWhatsOn);
 
         About.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
@@ -220,12 +201,69 @@ Button WhatsOn = findViewById(R.id.btnWhatsOn);
         });
 
 
-
     }
 
-    public void onBackPressed()
-    {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, VerseActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_gallery) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, AnnouncementsActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_slideshow) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, ChatLoginActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_manage) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, TheBibleActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_send) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, ExternalLinksActivity.class);
+            finish();
+            startActivity(i);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    public void onBackPressed() {
         moveTaskToBack(true);
     }
-
 }
+

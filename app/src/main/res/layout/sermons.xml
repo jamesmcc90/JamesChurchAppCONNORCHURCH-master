@@ -58,11 +58,11 @@
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
         android:onClick="doStart"
-        app:layout_constraintEnd_toStartOf="@+id/btnPause"
+        app:layout_constraintEnd_toStartOf="@+id/btnStop"
         app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
     <Button
-        android:id="@+id/btnPause"
+        android:id="@+id/btnStop"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -80,7 +80,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginRight="35dp"
         android:onClick="doFastForward"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnPause"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnStop"
         app:layout_constraintEnd_toEndOf="@+id/seekBar" />
 
     <SeekBar
@@ -134,7 +134,7 @@
         android:layout_marginBottom="169dp"
         android:background="#1e73be"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnPause"
+        app:layout_constraintEnd_toEndOf="@+id/btnStop"
         app:layout_constraintStart_toStartOf="@+id/btnRewind"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
         app:srcCompat="@drawable/audio_list" />

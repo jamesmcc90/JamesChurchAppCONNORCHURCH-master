@@ -59,108 +59,73 @@
         <activity
             android:name=".ContactActivity"
             android:label="Contact Us"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FindUsActivity"
             android:label="Find Us"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CalendarActivity"
             android:label="What&apos;s On"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutAppActivity"
             android:label="About"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VersionActivity"
             android:label="Version"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Sermons_Activity_TEST"
             android:label="Sermons Test"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SermonsActivity"
             android:label="Sermons Test"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutUsActivity"
             android:label="About Us"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutConnorActivity"
             android:label="About Us"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VerseActivity"
             android:label="Verse of the Day"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".WhatsOnActivity"
-            android:label="What's On">
-
-        </activity>
+            android:label="What&apos;s On" />
         <activity
             android:name=".AnnouncementsActivity"
-            android:label="Announcements">
-
-        </activity>
-
+            android:label="Announcements" />
         <activity
             android:name=".ChatLoginActivity"
             android:label="Login"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainChatActivity"
             android:label="Chat"
-            android:screenOrientation="portrait">
-
-        </activity>
-
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TheBibleActivity"
             android:label="The Bible"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AudioStreamActivity"
             android:label="The Bible"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExternalLinksActivity"
             android:label="External Links"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivityNAVIGATION"
+            android:label="Nav test"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -169,18 +134,19 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".main.LoginActivity">
-
-        </activity>
-        <activity android:name=".main.MainActivity"
-            android:label="@string/select_channel_type"/>
+        <activity android:name=".main.LoginActivity" />
+        <activity
+        android:name=".SettingsActivity"
+        android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/select_channel_type" />
         <activity
             android:name=".main.SettingsActivity"
             android:label="@string/settings" />
         <activity
             android:name=".main.BlockedMembersListActivity"
             android:label="@string/blocked_members_list" />
-
         <activity android:name=".utils.PhotoViewerActivity" />
         <activity
             android:name=".utils.MediaPlayerActivity"
@@ -204,9 +170,11 @@
         <activity
             android:name=".openchannel.ParticipantListActivity"
             android:label="@string/participant_list" />
-        <activity android:name=".openchannel.OpenChannelActivity"
+        <activity
+            android:name=".openchannel.OpenChannelActivity"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".groupchannel.GroupChannelActivity"
+        <activity
+            android:name=".groupchannel.GroupChannelActivity"
             android:windowSoftInputMode="stateHidden" />
 
         <service android:name=".fcm.MyFirebaseMessagingService">
@@ -219,6 +187,11 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme" />
 
     </application>
 

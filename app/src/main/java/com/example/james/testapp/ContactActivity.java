@@ -117,12 +117,12 @@ public class ContactActivity extends AppCompatActivity {
         send =  findViewById(R.id.btnSendMessage);
         final EditText subject = findViewById(R.id.txtSubject);
         final EditText name = findViewById(R.id.txtName);
-        final EditText message = findViewById(R.id.txtSend);
+        final EditText message = findViewById(R.id.txtMessage);
         final EditText senderEmail = findViewById(R.id.txtEmail);
 
 
         send.setOnClickListener(new View.OnClickListener() {
-
+            TextView messageSend = findViewById(R.id.txtMessageSend);
             public void onClick(View v) {
 
 
@@ -146,13 +146,12 @@ public class ContactActivity extends AppCompatActivity {
                                     senderEmail.getText().toString(),
                                     "james.mcc90@gmail.com");
 
-                            TextView messageSend = (TextView) findViewById(R.id.txtMessageSend);
                             messageSend.setText("Thank you for your message!");
 
                         } catch (Exception e) {
+                            messageSend.setText("Please fill in all fields!");
 
                         }
-
                     }
 
                 }).start();

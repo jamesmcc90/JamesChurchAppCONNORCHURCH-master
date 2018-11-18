@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class SermonsActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -62,7 +61,7 @@ public class SermonsActivity extends AppCompatActivity {
         Button previous = findViewById(R.id.btnPrevious);
         Button rewind = findViewById(R.id.btnRewind);
         Button play = findViewById(R.id.btnPlay);
-        Button pause = findViewById(R.id.btnPause);
+        Button pause = findViewById(R.id.btnStop);
         Button next = findViewById(R.id.btnNext);
 
 
