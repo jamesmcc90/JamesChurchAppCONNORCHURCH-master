@@ -38,53 +38,6 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_us);
-        final Spinner spinner = findViewById(R.id.spinner);
-
-        // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Select...");
-        categories.add("About");
-        categories.add("Version");
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View arg1,int position, long arg3) {
-
-
-                if(position == 1) {
-                    Intent i = new Intent();
-                    i.setClass(FindUsActivity.this, AboutAppActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-                if(position == 2)
-                {
-                    Intent i = new Intent();
-                    i.setClass(FindUsActivity.this, VersionActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-
-
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
@@ -145,11 +98,8 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
             }
             return false;
 
-
         }
     };
-
-
 
 
     @Override
