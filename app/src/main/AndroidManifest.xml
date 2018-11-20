@@ -28,6 +28,7 @@
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
 
     <application
         android:name=".main.BaseApplication"
@@ -136,14 +137,15 @@
 
         <activity android:name=".main.LoginActivity" />
         <activity
-        android:name=".SettingsActivity"
-        android:label="@string/title_activity_settings"></activity>
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".main.MainActivity"
             android:label="@string/select_channel_type" />
         <activity
             android:name=".main.SettingsActivity"
-            android:label="@string/settings" />
+            android:label="@string/title_activity_settings"
+            />
         <activity
             android:name=".main.BlockedMembersListActivity"
             android:label="@string/blocked_members_list" />
@@ -187,11 +189,16 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
+        <service android:name=".fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
+        <activity android:name=".VerseNotificationActivity" />
 
     </application>
 

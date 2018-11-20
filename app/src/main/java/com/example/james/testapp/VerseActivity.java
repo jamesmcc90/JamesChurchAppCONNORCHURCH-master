@@ -33,6 +33,8 @@ public class VerseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse);
 
+        // TODO Error-catch when no Internet connection available (crashes when not connected to Internet)
+
         ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
         NetworkInfo nInfo = cManager.getActiveNetworkInfo();
         WebView webView = findViewById(R.id.webViewVerse);
@@ -41,7 +43,11 @@ public class VerseActivity extends AppCompatActivity {
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setWebViewClient(new WebViewClient());
 
-            String customHTML = "<html><head><h1>Verse of the Day</h1></head><style>body{background-color:#1e73be; color:white}</style><script src=\"https://www.biblegateway.com/votd/votd.write.callback.js\"></script>\n" +
+            String customHTML = "<html><head><h1>Verse of the Day</h1></head>" +
+                    "<style>" +
+                    "body{background-color:#1e73be; color:white} a {color:#1fcc94;}" +
+                    "</style>" +
+                    "<script src=\"https://www.biblegateway.com/votd/votd.write.callback.js\"></script>\n" + " " +
                     "<script src=\"https://www.biblegateway.com/votd/get/?format=json&version=NIV&callback=BG.votdWriteCallback\"></script>\n" +
                     "<!-- alternative for no javascript -->\n" +
                     "<noscript>\n" +

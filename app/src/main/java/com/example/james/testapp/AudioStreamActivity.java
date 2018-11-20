@@ -41,6 +41,8 @@ public class AudioStreamActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mButtonPlay.setEnabled(true);
 
+                // TODO Error-catch when no Internet connection available (crashes when not connected to Internet)
+
                 String audioUrl = "http://www.james-mcconnell.co.uk/Sermons/30-09-18pm.mp3";
 
                 mPlayer = new MediaPlayer();

@@ -27,6 +27,8 @@ public class AnnouncementsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse);
 
+        // TODO Error-catch when no Internet connection available (crashes when not connected to Internet)
+
         ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
         NetworkInfo nInfo = cManager.getActiveNetworkInfo();
 

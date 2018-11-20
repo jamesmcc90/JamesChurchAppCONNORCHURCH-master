@@ -146,7 +146,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_main_navigation">MainActivityNAVIGATION</string>
-    <string name="title_activity_settings">Settings</string>
+
 
     <!-- Strings related to Settings -->
 
@@ -218,15 +218,12 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
 
-
-
-
-
+    <string name="title_activity_settings">Settings</string>
     <string name="pref_title_notifications">Notifications</string>
     <string name="pref_header_about">About</string>
-    <string name="summary_about">This is an app for Connor Presbyterian Church. It has been developed by James McConnell.</string>
+    <string name="summary_about">This app has been developed by James McConnell.</string>
     <string name="app_version">1.0.0</string>
-    <string name="summary_support">Let me know of any app queries or issues!</string>
+    <string name="summary_support">Feel free to message me with any queries, issues, or suggestions relating to the app.</string>
     <string name="title_send_feedback">Send Feedback</string>
     <string name="title_faq">FAQ</string>
     <string name="summary_faq">View frequently asked questions</string>
@@ -238,7 +235,7 @@
     <string name="title_version">Version</string>
     <string name="choose_email_client">Choose email client</string>
     <string name="title_gallery_storage">Default Storage</string>
-    <string name="title_new_notification_sound">New message notification</string>
+    <string name="title_new_notification_sound">Verse of the Day notification</string>
     <string name="title_vibrate">Vibrate</string>
     <string name="summary_vibrate">Vibrate on new notification</string>
     <string name="key_upload_over_wifi">key_upload_over_wifi</string>
@@ -248,11 +245,6 @@
     <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
     <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
-
-
-
-
-
 
 
 </resources>
