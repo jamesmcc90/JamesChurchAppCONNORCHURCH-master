@@ -76,7 +76,7 @@ public class ContactActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                // TODO Auto-generated method stub
+                // TODO Error-catch when no Internet connection available (crashes when not connected to Internet)
 
                 new Thread(new Runnable() {
 

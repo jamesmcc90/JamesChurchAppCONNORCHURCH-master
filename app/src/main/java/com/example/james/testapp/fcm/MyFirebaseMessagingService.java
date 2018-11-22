@@ -99,9 +99,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public static void sendNotification(Context context, String messageBody, String channelUrl) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        final String CHANNEL_ID = "CHANNEL_ID";
+        final String CHANNEL_ID = "59bvcywVJHeYtHAw";
         if (Build.VERSION.SDK_INT >= 26) {  // Build.VERSION_CODES.O
-            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "CHANNEL_NAME", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "observable-ConnorChurchChat", NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(mChannel);
         }
 

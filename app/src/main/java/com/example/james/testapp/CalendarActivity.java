@@ -33,25 +33,25 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
 
-        ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-        NetworkInfo nInfo = cManager.getActiveNetworkInfo();
 
-        if(nInfo != null && nInfo.isConnected()) {
-            internetConnnection = findViewById(R.id.internetInfo);
-            internetConnnection.setVisibility(View.INVISIBLE);
+        try {
+            ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+            NetworkInfo nInfo = cManager.getActiveNetworkInfo();
+            WebView webView = findViewById(R.id.webViewVerse);
 
-            webView = findViewById(R.id.webView);
-            webView.setWebViewClient(new WebViewClient());
-            webView.loadUrl("https://calendar.google.com/calendar/htmlembed?title=Connor+Presbyterian+Church&showPrint=0&showCalendars=0&showTz=0&height=500&wkst=1&bgcolor=%23FFFFFF&src=info@connorpresbyterianchurch.org&color=%23853104&ctz=Europe/London&mode=MONTH");
+            if (nInfo != null && nInfo.isConnected()) {
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.setWebViewClient(new WebViewClient());
+                webView.loadUrl("https://calendar.google.com/calendar/htmlembed?title=Connor+Presbyterian+Church&showPrint=0&showCalendars=0&showTz=0&height=500&wkst=1&bgcolor=%23FFFFFF&src=info@connorpresbyterianchurch.org&color=%23853104&ctz=Europe/London&mode=MONTH");
+            } else if (nInfo == null) {
 
-        }else if(nInfo == null){
-            internetConnnection = findViewById(R.id.internetInfo);
-            internetConnnection.setVisibility(View.VISIBLE);
+                internetConnnection.setVisibility(View.VISIBLE);
 
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(CalendarActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
-
-
-
     }
 
     @Override
@@ -60,6 +60,4 @@ public class CalendarActivity extends AppCompatActivity {
         startActivity(first);
 
     }
-
-
 }

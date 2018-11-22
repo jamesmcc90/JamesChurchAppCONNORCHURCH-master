@@ -11,14 +11,13 @@
     <WebView
         android:id="@+id/webView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="496dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/internetInfo" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
@@ -27,21 +26,9 @@
         android:layout_marginTop="32dp"
         android:text="@string/look_through_the_calendar_to_find_an_event"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/internetInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/internetInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="@string/no_internet_connection_available"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/webView"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 </android.support.constraint.ConstraintLayout>

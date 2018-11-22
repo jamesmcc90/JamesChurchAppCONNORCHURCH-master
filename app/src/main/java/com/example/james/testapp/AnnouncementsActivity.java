@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,37 +28,42 @@ public class AnnouncementsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse);
 
-        ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
-        NetworkInfo nInfo = cManager.getActiveNetworkInfo();
+        // TODO Error-catch when no Internet connection available (crashes when not connected to Internet)
+        try {
+            ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+            NetworkInfo nInfo = cManager.getActiveNetworkInfo();
 
-        if(nInfo != null && nInfo.isConnected()) {
+            if (nInfo != null && nInfo.isConnected()) {
 
-            webView = new WebView(this);
-            webView = new WebView(this);
-            webView.getSettings().setJavaScriptEnabled(true);
-            webView.setWebViewClient(new WebViewClient());
+                webView = new WebView(this);
+                webView = new WebView(this);
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.setWebViewClient(new WebViewClient());
 
-            webView.loadUrl("https://drive.google.com/file/d/1H4Glf0EzgOIMc4P_OJoTG_5mIywYGaOS/view?usp=sharing");
+                webView.loadUrl("https://drive.google.com/file/d/1H4Glf0EzgOIMc4P_OJoTG_5mIywYGaOS/view?usp=sharing");
 
-            setContentView(webView);
+                setContentView(webView);
 
-        }else if(nInfo == null){
-            internetConnnection = findViewById(R.id.internetInfo);
-            internetConnnection.setVisibility(View.VISIBLE);
+            } else if (nInfo == null) {
 
+                internetConnnection.setVisibility(View.VISIBLE);
+
+            }
+        } catch (Exception e) {
+            Toast.makeText(AnnouncementsActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
 
 
     }
 
-
     @Override
-    public void onBackPressed(){
-        Intent first = new Intent(AnnouncementsActivity.this,MainActivity.class);
+    public void onBackPressed() {
+        Intent first = new Intent(AnnouncementsActivity.this, MainActivity.class);
         startActivity(first);
 
     }
-
-
-
 }
+
+
+
+
