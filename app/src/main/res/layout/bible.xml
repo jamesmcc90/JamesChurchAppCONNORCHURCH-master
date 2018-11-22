@@ -1,58 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/button_first_doc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="170dp"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="15dp"
-        app:backgroundTint="@color/colorPrimaryDark"
-        app:srcCompat="@drawable/content_bible" />
-
-    <ImageView
-    android:id="@+id/pdf_image"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_above="@+id/button_pre_doc"
-    android:background="@android:color/white"
-    android:contentDescription="@null"
-    android:scaleType="fitCenter" />
+    android:visibility="visible"
+    tools:layout_editor_absoluteY="25dp">
 
-<android.support.design.widget.FloatingActionButton
-    android:id="@+id/button_pre_doc"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_margin="16dp"
-    app:backgroundTint="@color/colorPrimaryDark"
-    app:fabSize="auto"
-    app:srcCompat="@android:drawable/ic_media_previous" />
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="131dp"
+        android:text="@string/youversion"
+        app:layout_constraintBottom_toTopOf="@+id/txtBibleLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/button_next_doc"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/btnYouVersion"
+        android:layout_width="115dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="17dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintStart_toStartOf="@+id/textView23"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/youversion" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_pre_doc"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:backgroundTint="@color/colorPrimaryDark"
-        app:fabSize="auto"
-        app:srcCompat="@android:drawable/ic_media_next" />
-</RelativeLayout>
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="364dp"
+        android:text="Alternatively, you can view it on"
+        android:textColorLink="@color/btn_send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtBibleLink"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="359dp"
+        android:text="@string/linktobibledotcom"
+        android:textColorLink="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+</android.support.constraint.ConstraintLayout>

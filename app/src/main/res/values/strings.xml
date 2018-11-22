@@ -245,7 +245,11 @@
     <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
     <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
+    <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below.</string>
 
+    <string name="linktobibledotcom">
+    <a href="https://www.bible.com/bible/111/JHN.1.NIV">Bible.com.</a>
+    </string>
 
 </resources>
 

@@ -195,7 +195,7 @@
             </intent-filter>
         </service>
         <activity
-            android:name=".Main2Activity"
+            android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
         <activity android:name=".VerseNotificationActivity" />
