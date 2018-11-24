@@ -94,13 +94,12 @@ public class AudioStreamActivity extends AppCompatActivity {
         try {
             ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
             NetworkInfo nInfo = cManager.getActiveNetworkInfo();
-
+            WebView webView = findViewById(R.id.webView);
 
             if (nInfo != null && nInfo.isConnected()) {
-                WebView webView = findViewById(R.id.webView);
+
                 webView.getSettings().setJavaScriptEnabled(true);
                 webView.setWebViewClient(new WebViewClient());
-
 
                 String customHTML =
                         "<html>" +
