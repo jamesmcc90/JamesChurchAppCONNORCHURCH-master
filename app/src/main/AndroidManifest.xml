@@ -118,7 +118,7 @@
         <activity
             android:name=".AudioStreamActivity"
             android:label="The Bible"
-            android:screenOrientation="portrait" />
+            />
         <activity
             android:name=".ExternalLinksActivity"
             android:label="External Links"

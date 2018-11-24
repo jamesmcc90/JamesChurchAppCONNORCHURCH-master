@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements
             public void onClick(View arg0) {
 
                 // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, Sermons_Activity_TEST.class);
+                Intent myIntent = new Intent(MainActivity.this, AudioStreamActivity.class);
                 startActivity(myIntent);
                 finish();
             }
@@ -240,11 +240,6 @@ public class MainActivity extends AppCompatActivity implements
             i.setClass(MainActivity.this, AnnouncementsActivity.class);
             finish();
             startActivity(i);
-        } else if (id == R.id.nav_sermons) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, AudioStreamActivity.class);
-            finish();
-            startActivity(i);
         } else if (id == R.id.nav_chat_login) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, ChatLoginActivity.class);
@@ -262,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements
             startActivity(i);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

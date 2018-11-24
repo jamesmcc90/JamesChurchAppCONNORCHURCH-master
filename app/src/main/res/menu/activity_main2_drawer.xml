@@ -13,10 +13,6 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Announcements" />
         <item
-            android:id="@+id/nav_sermons"
-            android:icon="@drawable/camera"
-            android:title="Sermons (URL)" />
-        <item
             android:id="@+id/nav_chat_login"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Chat Login" />

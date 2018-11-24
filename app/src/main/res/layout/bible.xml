@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="364dp"
-        android:text="Alternatively, you can view it on"
+        android:text="@string/BibleLink"
         android:textColorLink="@color/btn_send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
