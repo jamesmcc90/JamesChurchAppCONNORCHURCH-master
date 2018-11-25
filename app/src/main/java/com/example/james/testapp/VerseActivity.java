@@ -7,6 +7,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -32,7 +35,8 @@ public class VerseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         try {
             ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
@@ -43,7 +47,7 @@ public class VerseActivity extends AppCompatActivity {
                 webView.getSettings().setJavaScriptEnabled(true);
                 webView.setWebViewClient(new WebViewClient());
 
-                String customHTML = "<html><head><h1>Verse of the Day</h1></head>" +
+                String customHTML = "<html>" +
                         "<style>" +
                         "body{background-color:#1e73be; color:white} a {color:#1fcc94;}" +
                         "</style>" +
@@ -65,12 +69,31 @@ public class VerseActivity extends AppCompatActivity {
             Toast.makeText(VerseActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
+        return true;
+    }
 
-            @Override
-            public void onBackPressed () {
-                Intent first = new Intent(VerseActivity.this, MainActivity.class);
-                startActivity(first);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
-            }
+        if (id == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(VerseActivity.this, SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed () {
+         Intent first = new Intent(VerseActivity.this, MainActivity.class);
+         startActivity(first);
+
+         }
 
     }

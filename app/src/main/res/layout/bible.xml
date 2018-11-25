@@ -7,11 +7,22 @@
     android:visibility="visible"
     tools:layout_editor_absoluteY="25dp">
 
+    <include
+        android:id="@+id/include2"
+        layout="@layout/app_bar_main_activity_navigation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView23"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="6dp"
+        android:layout_marginTop="66dp"
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="131dp"
         android:text="@string/youversion"
@@ -24,7 +35,7 @@
         android:id="@+id/btnYouVersion"
         android:layout_width="115dp"
         android:layout_height="0dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="108dp"
         android:layout_marginBottom="17dp"
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toTopOf="@+id/textView24"
@@ -34,29 +45,28 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="196dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="364dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="297dp"
         android:text="@string/BibleLink"
         android:textColorLink="@color/btn_send"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtBibleLink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnYouVersion" />
 
     <TextView
         android:id="@+id/txtBibleLink"
         android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="359dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="293dp"
         android:text="@string/linktobibledotcom"
         android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView24"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 

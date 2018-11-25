@@ -67,7 +67,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CalendarActivity"
-            android:label="What&apos;s On"
+            android:label="Calendar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AboutAppActivity"
@@ -117,7 +117,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".AudioStreamActivity"
-            android:label="The Bible" />
+            android:label="Sermons"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExternalLinksActivity"
             android:label="External Links"

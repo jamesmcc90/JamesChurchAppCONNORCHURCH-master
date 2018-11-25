@@ -95,11 +95,7 @@ public class AboutConnorActivity extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.activity_about_us, container, false);
 
-
             return rootView;
-
-
-
 
         }
 
