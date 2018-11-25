@@ -12,7 +12,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceRequest;
@@ -40,7 +43,8 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         setContentView(R.layout.find_us);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         mapFragment.getMapAsync(this);
 
         ImageView Facebook = findViewById(R.id.btnFacebook);
@@ -79,6 +83,39 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         });
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_google_maps, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.maptypeNORMAL:
+                if (mMap != null) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                return true;
+            }
+            case R.id.maptypeSATELLITE:
+                if (mMap != null) {
+                    mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    return true;
+                }
+            case R.id.maptypeHYBRID:
+                if (mMap != null) {
+                    mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    return true;
+                }
+
+        }
+        return true;
+    }
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

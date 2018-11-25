@@ -117,8 +117,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".AudioStreamActivity"
-            android:label="The Bible"
-            />
+            android:label="The Bible" />
         <activity
             android:name=".ExternalLinksActivity"
             android:label="External Links"
@@ -127,6 +126,7 @@
             android:name=".MainActivityNAVIGATION"
             android:label="Nav test"
             android:screenOrientation="portrait" />
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -144,8 +144,7 @@
             android:label="@string/select_channel_type" />
         <activity
             android:name=".main.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            />
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".main.BlockedMembersListActivity"
             android:label="@string/blocked_members_list" />
@@ -194,6 +193,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_main2"

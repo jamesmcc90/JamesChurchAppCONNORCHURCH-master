@@ -24,6 +24,7 @@
             android:id="@+id/nav_external_links"
             android:icon="@drawable/round_link_24"
             android:title="External Links"/>
+
     </group>
 
 </menu>
