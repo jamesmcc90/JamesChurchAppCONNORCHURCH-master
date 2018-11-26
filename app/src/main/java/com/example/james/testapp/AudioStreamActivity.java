@@ -121,9 +121,8 @@ public class AudioStreamActivity extends AppCompatActivity {
                                 "<iframe framespacing=\"0\" frameborder=\"no\" src=\"https://www.biblegateway.com/votd/get/?format=html&version=NIV\">View Verse of the Day</iframe> \n" +
                                 "</noscript></html>"
                         ;
-
-                webView.loadData(customHTML, "text/html", "UTF-8");
-
+                webView.loadDataWithBaseURL(null, customHTML,"text/html", "UTF-8", null);
+                webView.getSettings().setDomStorageEnabled(true);
             }else if (nInfo == null) {
 
                 internetConnnection.setVisibility(View.VISIBLE);

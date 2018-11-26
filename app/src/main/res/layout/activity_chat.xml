@@ -9,25 +9,6 @@
     android:focusableInTouchMode="true"
     tools:context="com.example.james.testapp.MainChatActivity">
 
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/toolbar_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Toolbar">
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:text="Log out"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </android.support.constraint.ConstraintLayout>
-
-
     <ListView
         android:id="@+id/messages_view"
         android:layout_width="match_parent"

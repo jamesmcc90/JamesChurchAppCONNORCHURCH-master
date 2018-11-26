@@ -71,15 +71,6 @@ public class MainChatActivity extends AppCompatActivity implements RoomListener 
             }
         });
 
-
-      Button Logout = findViewById(R.id.btnLogout);
-
-        Logout.setOnClickListener(new OnClickListener() {
-           public void onClick(View arg0) {
-              logOutButton();
-        }
-
-    });
     }
 
 
