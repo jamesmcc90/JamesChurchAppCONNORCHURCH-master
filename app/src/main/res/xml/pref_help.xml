@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/pref_header_help">
 
+        <Preference
+            android:selectable="false"
+            android:summary="@string/help_details"
+
+            />
     </PreferenceCategory>
 </PreferenceScreen>

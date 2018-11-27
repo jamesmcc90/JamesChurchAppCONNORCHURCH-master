@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/title_activity_settings"
 
     >
@@ -12,17 +13,20 @@
             android:summary="@string/summary_about" />
 
         <Preference
+            android:icon="@drawable/outline_info_black_48dp"
             android:selectable="false"
             android:summary="@string/app_version"
             android:title="@string/title_version" />
 
         <Preference
+            android:icon="@drawable/outline_help_outline_black_48dp"
             android:selectable="true"
             android:key="@string/key_help"
             android:title="@string/pref_header_help"
            />
 
         <Preference
+            android:icon="@drawable/outline_feedback_black_48dp"
             android:key="@string/key_send_feedback"
             android:summary="@string/summary_support"
             android:title="@string/title_send_feedback" />
