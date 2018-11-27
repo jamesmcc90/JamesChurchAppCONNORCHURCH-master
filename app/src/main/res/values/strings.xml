@@ -222,6 +222,8 @@
     <string name="pref_title_notifications">Notifications</string>
     <string name="pref_header_about">About</string>
     <string name="pref_header_help">Help</string>
+    <string name="pref_header_network">Network Connectivity</string>
+    <string name="pref_header_network_summary">Choose when to download data for online features.</string>
     <string name="summary_about">This app has been developed by James McConnell.</string>
     <string name="app_version">1.0.0</string>
     <string name="summary_support">Feel free to message me with any queries, issues, or suggestions relating to the app.</string>
@@ -248,6 +250,8 @@
     <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
     <string name="key_help">key_help</string>
+    <string name="key_data">key_data</string>
+    <string name="key_version">key_version</string>
     <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below.</string>
 
     <string name="linktobibledotcom">
