@@ -29,6 +29,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".main.BaseApplication"
@@ -124,10 +125,13 @@
             android:label="External Links"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivityNAVIGATION"
-            android:label="Nav test"
+            android:name=".HelpActivity"
+            android:label="Help"
             android:screenOrientation="portrait" />
-
+        <activity
+        android:name=".MainActivityNAVIGATION"
+        android:label="Nav test"
+        android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -200,7 +204,6 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
         <activity android:name=".VerseNotificationActivity" />
-
     </application>
 
 </manifest>

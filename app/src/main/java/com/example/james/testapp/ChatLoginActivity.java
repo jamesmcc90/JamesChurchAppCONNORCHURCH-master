@@ -28,17 +28,18 @@ public class ChatLoginActivity extends AppCompatActivity {
                 username.requestFocus();
 
                 if (username.getText().toString().equals("")) {
-                    error.setText("Incorrect username");
+                    error.setText("Incorrect username!");
                 }
                 if (password.getText().toString().equals("")){
-                    error.setText("Incorrect password");
+                    error.setText("Incorrect password!");
                 }
                 if (!username.getText().toString().equals("James")){
-                    error.setText("User not registered!");
+                    error.setText("Incorrect username!");
                 }
                 if (!password.getText().toString().equals("password")){
-                    error.setText("Incorrect password");
+                    error.setText("Incorrect password!");
                 }
+
                 else if(username.getText().toString().equals("James") & password.getText().toString().equals("password")){
                 Intent myIntent = new Intent(ChatLoginActivity.this, MainChatActivity.class);
                 startActivity(myIntent);

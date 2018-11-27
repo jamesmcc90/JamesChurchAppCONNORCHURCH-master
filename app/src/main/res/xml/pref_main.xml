@@ -5,20 +5,6 @@
 
     >
 
-    <PreferenceCategory android:title="@string/pref_title_notifications">
-
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="@string/notifications_new_message"
-            android:title="@string/title_new_notification_sound" />
-
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="@string/key_vibrate"
-            android:summary="@string/summary_vibrate"
-            android:title="@string/title_vibrate" />
-    </PreferenceCategory>
-
     <PreferenceCategory android:title="@string/pref_header_about">
 
         <Preference
@@ -26,17 +12,25 @@
             android:summary="@string/summary_about" />
 
         <Preference
+            android:selectable="false"
             android:summary="@string/app_version"
             android:title="@string/title_version" />
 
+        <Preference
+            android:selectable="true"
+            android:key="@string/key_help"
+            android:title="@string/pref_header_help"
+           />
 
         <Preference
             android:key="@string/key_send_feedback"
             android:summary="@string/summary_support"
             android:title="@string/title_send_feedback" />
 
-        <!-- preference opens url in browser -->
 
-    </PreferenceCategory>
+    </PreferenceCategory>>
+
+
+        <!-- preference opens url in browser -->
 
 </PreferenceScreen>

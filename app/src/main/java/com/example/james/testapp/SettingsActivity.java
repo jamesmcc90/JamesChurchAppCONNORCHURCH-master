@@ -1,6 +1,7 @@
 package com.example.james.testapp;
 
 import android.annotation.TargetApi;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,8 +19,12 @@ import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
+
+import com.google.rpc.Help;
+import com.sun.mail.imap.protocol.INTERNALDATE;
 
 import java.util.List;
 
@@ -34,6 +39,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
         // load settings fragment
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MainPreferenceFragment()).commit();
+
     }
 
     public static class MainPreferenceFragment extends PreferenceFragment {
@@ -42,14 +48,25 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_main);
 
-            // notification preference change listener
-            //bindPreferenceSummaryToValue(findPreference(getString(R.string.key_notifications_new_message_ringtone)));
-
             // feedback preference click listener
             Preference myPref = findPreference(getString(R.string.key_send_feedback));
             myPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     sendFeedback(getActivity());
+                    return true;
+                }
+            });
+
+            // feedback preference click listener
+            Preference myHelp = findPreference(getString(R.string.key_help));
+            myHelp.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                public boolean onPreferenceClick(Preference preference) {
+                    final Intent intent = new Intent(Intent.ACTION_MAIN, null);
+                    intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                    final ComponentName cn = new ComponentName("com.example.james.testapp", "com.example.james.testapp.HelpActivity" );
+                    intent.setComponent(cn);
+                    intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                     return true;
                 }
             });
@@ -108,11 +125,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         }
     };
 
-    /**
-     * Email client intent to send support mail
-     * Appends the necessary device information to email body
-     * useful when providing support
-     */
     public static void sendFeedback(Context context) {
         String body = null;
         try {
@@ -128,4 +140,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         intent.putExtra(Intent.EXTRA_SUBJECT, "Connor Church app query");
         intent.putExtra(Intent.EXTRA_TEXT, body);
         context.startActivity(Intent.createChooser(intent, context.getString(R.string.choose_email_client)));
-    }}
+    }
+
+}
