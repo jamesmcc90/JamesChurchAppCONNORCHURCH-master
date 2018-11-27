@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.se.omapi.Session;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ContactActivity extends AppCompatActivity {
@@ -59,17 +61,18 @@ public class ContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_us);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        send =  findViewById(R.id.btnSendMessage);
+
+        send = findViewById(R.id.btnSendMessage);
         final EditText subject = findViewById(R.id.txtSubject);
         final EditText name = findViewById(R.id.txtName);
         final EditText message = findViewById(R.id.txtMessage);
         final EditText senderEmail = findViewById(R.id.txtEmail);
 
-      Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         send.setOnClickListener(new View.OnClickListener() {
+            ImageView error = findViewById(R.id.imgExclamation);
             TextView messageSend = findViewById(R.id.txtMessageSend);
             public void onClick(View v) {
 
@@ -80,31 +83,40 @@ public class ContactActivity extends AppCompatActivity {
 
                     public void run() {
 
-                        try {
 
                             GMailSender sender = new GMailSender(
 
                                     "james.mcc90@gmail.com",
                                     "64lislunnan");
 
+                            try {
                             sender.sendMail(
                                     name.getText().toString(),
                                     subject.getText().toString(),
                                     message.getText().toString(),
                                     senderEmail.getText().toString(),
                                     "james.mcc90@gmail.com");
-
-                            messageSend.setText("Thank you for your message!");
-
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    error.setVisibility(View.INVISIBLE);
+                                    messageSend.setTextColor(getResources().getColor(R.color.colorWhite));
+                                    messageSend.setText("Thank you for your message!");
+                                }
+                            });
                         } catch (Exception e) {
-                            messageSend.setText("Please fill in all fields!");
-
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    error.setVisibility(View.VISIBLE);
+                                    messageSend.setTextColor(getResources().getColor(R.color.lblError_messageEmail));
+                                    messageSend.setText("Please fill in all fields!");
+                                }
+                            });
                         }
+
                     }
-
                 }).start();
-
-
             }
 
         });

@@ -21,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/txtSubject2"
         android:layout_width="109dp"
@@ -121,24 +122,29 @@
 
     <TextView
         android:id="@+id/txtMessageSend"
-        android:layout_width="244dp"
+        android:layout_width="189dp"
         android:layout_height="28dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:lines="10"
-        android:textColor="@color/btn_create"
+        android:textColor="@color/lblError_messageEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="0dp"
-        android:layout_height="78dp"
+        android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="379dp"
         android:text="Please get in contact with us if you have any questions.  Our minister can be contacted on 028 2589 8364.  You can fill out the contact form below or if you would prefer send us a email to info@connorpresbyterianchurch.org"
         android:textColor="@color/btn_create"
+        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,13 +154,26 @@
         android:id="@+id/btnSendMessage"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="SEND"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtMessageSend"
-        app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgExclamation"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="14dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtMessageSend"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toEndOf="@+id/btnSendMessage"
+        app:layout_constraintTop_toBottomOf="@+id/txtMessage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/sharp_error_outline_red_48dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -4,6 +4,7 @@
     <color name="colorPrimary">#774df2</color>
     <color name="colorPrimaryDark">#512DA8</color>
     <color name="colorAccent">#1fcc94</color>
+    <color name="colorWhite">#ffffff</color>
 
     <color name="textColorPrimary">#3a414d</color>
     <color name="textColorLight">#6f7c92</color>
@@ -42,5 +43,6 @@
     <color name="btn_edit_disabled">#c1acff</color>
     <color name="btn_send">#774df2</color>
     <color name="btn_send_disabled">#8e8e8e</color>
+    <color name="lblError_messageEmail">#ff0000</color>
 
 </resources>
