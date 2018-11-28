@@ -13,7 +13,7 @@
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Sunday School meets every Sunday from 11am. All children from 3-12 will be welcome."
+        android:text="@string/sunday_school_info"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,7 +27,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Sunday School"
+        android:text="@string/sunday_school"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -46,7 +46,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBB"
-        app:srcCompat="@drawable/bb_logo" />
+        app:srcCompat="@drawable/bb_logo"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/txtBB"
@@ -55,7 +56,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:text="BB"
+        android:text="@string/bb"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -70,7 +71,7 @@
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
-        android:text="GB"
+        android:text="@string/gb"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -88,7 +89,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGB"
-        app:srcCompat="@drawable/gb_logo" />
+        app:srcCompat="@drawable/gb_logo"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView28"

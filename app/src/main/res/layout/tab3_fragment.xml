@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Presbyterian Women"
+        android:text="@string/presbyterian_women"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -44,6 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:srcCompat="@drawable/pw_logo" />
+        app:srcCompat="@drawable/pw_logo"
+        android:contentDescription="@string/todo" />
 
 </android.support.constraint.ConstraintLayout>

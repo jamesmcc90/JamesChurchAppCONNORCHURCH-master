@@ -300,11 +300,16 @@ Presbyterian Women aims to highlight the need for:
     <a href="https://www.bible.com/bible/111/JHN.1.NIV">Bible.com.</a>
     </string>
     <string name="BibleLink">Alternatively, you can view it on</string>
-
     <string name="new_message_notification_title_template">New message: %1$s</string>
-
     <string name="action_share">Share</string>
     <string name="action_reply">Reply</string>
+    <string name="sunday_school_info">Sunday School meets every Sunday from 11am. All children from 3-12 will be welcome.</string>
+    <string name="sunday_school">Sunday School</string>
+    <string name="bb">BB</string>
+    <string name="gb">GB</string>
+    <string name="men_organisations_title">Men Organisations</string>
+    <string name="presbyterian_women">Presbyterian Women</string>
+
 
 </resources>
 
