@@ -4,17 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/title_activity_settings">
 
-    <PreferenceCategory android:title="@string/pref_header_about">
+    <PreferenceCategory android:title="@string/title_activity_settings">
 
-        <Preference
-            android:selectable="false"
-            android:summary="@string/summary_about" />
         <Preference
             android:icon="@drawable/round_network_cell_black_48dp"
             android:title="@string/pref_header_network"
             android:summary="@string/pref_header_network_summary"
             android:key="@string/key_data"
             />
+        <SwitchPreference
+            android:icon="@drawable/outline_notifications_active_black_48dp"
+            android:title="@string/pref_header_notifications"
+            android:summary="@string/pref_header_notification_summary"
+            android:key="@string/key_data"/>
+
+
+
 
         <Preference
             android:icon="@drawable/outline_help_outline_black_48dp"
@@ -30,7 +35,10 @@
             android:summary="@string/summary_support"
             android:title="@string/title_send_feedback" />
 
+
+
         <Preference
+
             android:icon="@drawable/outline_info_black_48dp"
             android:selectable="false"
             android:summary="@string/app_version"
