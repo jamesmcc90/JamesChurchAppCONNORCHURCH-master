@@ -1,5 +1,7 @@
 package com.example.james.testapp;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -24,7 +26,10 @@ import android.widget.Toast;
 import android.view.View.OnClickListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import BroadcastReceiver.VerseReceiver;
 
 public class VerseActivity extends AppCompatActivity {
     TextView internetConnnection;
@@ -35,6 +40,10 @@ public class VerseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse);
+
+
+        registerAlarm();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -69,6 +78,19 @@ public class VerseActivity extends AppCompatActivity {
             Toast.makeText(VerseActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
     }
+
+    private void registerAlarm() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 12);
+        calendar.set(Calendar.MINUTE, 8);
+        calendar.set(Calendar.SECOND, 0);
+
+        Intent intent = new Intent(VerseActivity.this, VerseReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(VerseActivity.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT );
+        AlarmManager am = (AlarmManager)this.getSystemService(this.ALARM_SERVICE);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

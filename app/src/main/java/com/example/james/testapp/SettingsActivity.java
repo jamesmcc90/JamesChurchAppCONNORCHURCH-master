@@ -3,6 +3,7 @@ package com.example.james.testapp;
 import android.annotation.TargetApi;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -19,6 +20,7 @@ import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -36,9 +38,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // load settings fragment
+
+
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MainPreferenceFragment()).commit();
 
     }
@@ -48,6 +50,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_main);
+
 
             // feedback preference click listener
             Preference myPref = findPreference(getString(R.string.key_send_feedback));
@@ -71,7 +74,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
                 }
             });
 
-
             // help preference click listener
             Preference myHelp = findPreference(getString(R.string.key_help));
             myHelp.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -87,12 +89,15 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
             });
         }
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

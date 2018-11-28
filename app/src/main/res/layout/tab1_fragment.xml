@@ -12,17 +12,13 @@
         android:layout_width="0dp"
         android:layout_height="208dp"
         android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="29dp"
         android:text="Bible Class is for everyone from School Year 9 to School Leavers.  We meet on Sunday mornings before Church and spend time learning what God teaches us through the Bible, what it means to follow Him, and what this should look like for us as we live each day.
 
 We also like to eat, chat and catch up with one another, so why not come along and join with us on Sunday mornings!
 
 Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in the Loft."
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,12 +29,13 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="308dp"
         android:text="Bible Class"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,29 +43,59 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Ablaze"
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="0dp"
-        android:layout_height="136dp"
+        android:layout_height="39dp"
         android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
         android:text="A meeting for the Young people of the church on Sunday Evenings."
         android:textColor="@color/common_google_signin_btn_text_dark_pressed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Youth Club"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="169dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:srcCompat="@drawable/youth_club" />
 
 </android.support.constraint.ConstraintLayout>

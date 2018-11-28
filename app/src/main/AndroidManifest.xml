@@ -133,6 +133,8 @@
         android:label="Nav test"
         android:screenOrientation="portrait" />
 
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCziB9yRhWTrwW3DXolCfCUqmo-tZexYL0" />
@@ -204,6 +206,9 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
         <activity android:name=".VerseNotificationActivity" />
+
+<receiver android:name="BroadcastReceiver.VerseReceiver"/>
+
     </application>
 
 </manifest>

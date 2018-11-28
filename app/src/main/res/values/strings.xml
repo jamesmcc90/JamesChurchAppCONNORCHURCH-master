@@ -70,6 +70,34 @@
 
 
     </string>
+    <string name="pw">
+        "Presbyterian Women (PW) is an organisation for women within the Presbyterian Church in Ireland (PCI).
+
+"There have been women’s organisations within PCI for over 130 years. PW incorporates the former Presbyterian Women’s Association and the former Young Women’s Groups with a total membership of around 14,000 within 500 groups. PW Groups are envisaged as women’s fellowships in which women are encouraged to become Christians and to become Christ-like. In addition to supporting mission at home and overseas, each group is to seek ways of actively reaching women in its own area for Christ."
+
+"Motto: Living for Jesus"
+
+"Logo: The circle around the cross represents women whose lives are centred on the Lord Jesus Christ."
+
+"Mission Statement and Aims:"
+Presbyterian Women encourages women to become disciples of Christ.
+
+Presbyterian Women aims to highlight the need for:
+
+1. Love and unity
+2. Obedience to God
+3. Christian living and spiritual maturity
+4. Service using gifts, time and money
+5. Local and global mission
+
+    </string>
+
+    <string name="youth_club"></string>
+
+    <string name="men_organisations">
+            "This is a test."
+        </string>
+    <string name="bb_gb">Click the logos below to find out more on Facebook!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_about_connor">AboutConnorActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -173,6 +201,18 @@
         <item>-1</item>
     </string-array>
 
+
+    <string name="pref_title_data_wifi">Network Connectivity</string>
+    <string-array name="pref_example_list_data">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_data_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
     <!-- Example settings for Data & Sync -->
     <string name="pref_header_data_sync">Data &amp; sync</string>
 
@@ -223,8 +263,8 @@
     <string name="pref_header_about">About</string>
     <string name="pref_header_help">Help</string>
     <string name="pref_header_network">Network Connectivity</string>
-    <string name="pref_header_network_summary">Choose when to download data for online features.</string>
-    <string name="pref_header_notification_summary">Toggle Verse of the Day notification.</string>
+    <string name="pref_header_network_summary">Select network settings.</string>
+    <string name="pref_header_notification_summary">Toggle Verse of the Day notification. (WIP)</string>
     <string name="summary_about">This app has been developed by James McConnell.</string>
     <string name="app_version">1.0.0</string>
     <string name="summary_support">For any queries, issues, or suggestions relating to the app.</string>

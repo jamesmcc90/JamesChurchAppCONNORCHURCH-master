@@ -44,7 +44,8 @@ public class WhatsOnActivity extends AppCompatActivity {
 
     adapter.addFragment(new Tab1Fragment(), "Young People");
     adapter.addFragment(new Tab2Fragment(), "Children");
-    adapter.addFragment(new Tab3Fragment(), "Men and Women");
+    adapter.addFragment(new Tab3Fragment(), "Women");
+    adapter.addFragment(new Tab4Fragment(), "Men");
 
     viewPager.setAdapter(adapter);
 }
