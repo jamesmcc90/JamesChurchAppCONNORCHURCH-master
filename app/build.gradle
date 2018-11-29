@@ -1,4 +1,15 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
 
 android {
@@ -21,9 +32,16 @@ android {
 }
 repositories {
     maven { url "https://raw.githubusercontent.com/smilefam/SendBird-SDK-Android/master/" }
+    maven { url 'https://maven.fabric.io/public' }
 }
 dependencies {
-    implementation 'com.sendbird.sdk:sendbird-android-sdk:3.0.80'
+    // Check for v11.4.2 or higher
+    implementation 'com.google.firebase:firebase-core:16.0.5'
+
+    // Add dependency
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.6'
+    implementation 'com.google.firebase:firebase-perf:16.2.0'
+    implementation 'com.sendbird.sdk:sendbird-android-sdk:3.0.83'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -54,8 +72,9 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
 
     // Firebase
-    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-core:16.0.5'
 
     // External libraries
     implementation 'com.github.bumptech.glide:glide:4.3.1'

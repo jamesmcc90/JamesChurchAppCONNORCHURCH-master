@@ -256,6 +256,12 @@ public class MainActivity extends AppCompatActivity implements
             finish();
             startActivity(i);
         }
+        else if (id == R.id.nav_video) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, TheStoryActivity.class);
+            finish();
+            startActivity(i);
+        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

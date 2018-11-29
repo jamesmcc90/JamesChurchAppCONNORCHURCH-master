@@ -3,8 +3,10 @@ package com.example.james.testapp.main;
 
 import android.app.Application;
 
+import com.crashlytics.android.Crashlytics;
 import com.sendbird.android.SendBird;
 import com.example.james.testapp.utils.PreferenceUtils;
+import io.fabric.sdk.android.Fabric;
 
 public class BaseApplication extends Application {
 
@@ -14,6 +16,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         PreferenceUtils.init(getApplicationContext());
 
         SendBird.init(APP_ID, getApplicationContext());

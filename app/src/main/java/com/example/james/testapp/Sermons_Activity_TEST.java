@@ -47,16 +47,7 @@ public class Sermons_Activity_TEST extends AppCompatActivity {
 
         sermonList = findViewById(R.id.sermonSelect);
         arrayList = new ArrayList<>();
-        arrayList.add(new SermonsActivity_TEST("Philip Thompson", "Philip Thompson", R.raw.philip_thompson_evening));
-        arrayList.add(new SermonsActivity_TEST("Immigrant Song", "Led Zepplin", R.raw.immigrant_song));
-        arrayList.add(new SermonsActivity_TEST("Eraser", "Ed Sheeran", R.raw.eraser));
-        arrayList.add(new SermonsActivity_TEST("Castle on The Hill", "Ed Sheeran", R.raw.castle_on_the_hill));
-        arrayList.add(new SermonsActivity_TEST("Dive", "Ed Sheeran", R.raw.dive));
-        arrayList.add(new SermonsActivity_TEST("Shape of You", "Ed Sheeran", R.raw.shape_of_you));
-        arrayList.add(new SermonsActivity_TEST("Perfect", "Ed Sheeran", R.raw.perfect));
-        arrayList.add(new SermonsActivity_TEST("Galway Girl", "Ed Sheeran", R.raw.galway_girl));
-        arrayList.add(new SermonsActivity_TEST("Happier", "Ed Sheeran", R.raw.happier));
-        arrayList.add(new SermonsActivity_TEST("New Man", "Ed Sheeran", R.raw.new_man));
+
 
         adapter = new CustomSermonAdapter(this, R.layout.custom_sermon_item, arrayList);
         sermonList.setAdapter(adapter);

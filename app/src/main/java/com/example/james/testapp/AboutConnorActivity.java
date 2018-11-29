@@ -20,8 +20,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class AboutConnorActivity extends AppCompatActivity {
+import com.google.firebase.analytics.FirebaseAnalytics;
 
+public class AboutConnorActivity extends AppCompatActivity {
+    private FirebaseAnalytics mFirebaseAnalytics;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -39,6 +41,8 @@ public class AboutConnorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_connor);
 
