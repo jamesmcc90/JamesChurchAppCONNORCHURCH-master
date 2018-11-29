@@ -115,11 +115,7 @@ public class AudioStreamActivity extends AppCompatActivity {
                         "<style>" +
                         "body{background-color:#1e73be; color:white} a {color:#1fcc94;}" +
                         "</style>" +
-                        "<iframe width=\"100%\" height=\"100%\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/539015169&color=%230066cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true\"></iframe> \n" +
-                                "<!-- alternative for no javascript -->\n" +
-                                "<noscript>\n" +
-                                "<iframe framespacing=\"0\" frameborder=\"no\" src=\"https://www.biblegateway.com/votd/get/?format=html&version=NIV\">View Verse of the Day</iframe> \n" +
-                                "</noscript></html>"
+                        "<iframe width=\"100%\" height=\"100%\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/539015169&color=%230066cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true\"></iframe> \n"
                         ;
                 webView.loadDataWithBaseURL(null, customHTML,"text/html", "UTF-8", null);
                 webView.getSettings().setDomStorageEnabled(true);

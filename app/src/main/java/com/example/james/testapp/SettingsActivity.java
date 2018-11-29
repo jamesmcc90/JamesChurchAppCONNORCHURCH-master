@@ -74,7 +74,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
                 }
             });
 
-            // help preference click listener
+            /* help preference click listener
             Preference myHelp = findPreference(getString(R.string.key_help));
             myHelp.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
@@ -87,6 +87,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
                     return true;
                 }
             });
+
+            */
         }
     }
 

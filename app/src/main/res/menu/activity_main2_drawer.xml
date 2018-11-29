@@ -21,14 +21,14 @@
             android:icon="@drawable/round_book_24"
             android:title="The Bible" />
         <item
+        android:id="@+id/nav_video"
+        android:icon="@drawable/baseline_video_label_black_48dp"
+        android:title="Video Test"/>
+        <item
             android:id="@+id/nav_external_links"
             android:icon="@drawable/round_link_24"
             android:title="External Links"/>
 
-        <item
-            android:id="@+id/nav_video"
-            android:icon="@drawable/baseline_video_label_black_48dp"
-            android:title="The Story (video)"/>
     </group>
 
 </menu>

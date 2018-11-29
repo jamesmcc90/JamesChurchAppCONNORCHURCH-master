@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+        mavenCentral()
         maven { url 'https://maven.fabric.io/public' }
     }
 
@@ -35,6 +36,7 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 dependencies {
+    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     // Check for v11.4.2 or higher
     implementation 'com.google.firebase:firebase-core:16.0.5'
 

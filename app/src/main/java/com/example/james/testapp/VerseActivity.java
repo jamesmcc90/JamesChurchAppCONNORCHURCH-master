@@ -2,32 +2,28 @@ package com.example.james.testapp;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View.OnClickListener;
-import java.io.File;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
+import android.view.View.OnClickListener;
+
+import com.facebook.FacebookSdk;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 
 import BroadcastReceiver.VerseReceiver;
 
@@ -40,7 +36,6 @@ public class VerseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse);
-
 
         registerAlarm();
 
@@ -77,6 +72,38 @@ public class VerseActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(VerseActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
+
+        ImageView Facebook = findViewById(R.id.btnFacebook);
+        Facebook.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+/*
+                final Intent shareIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Verse of the Day");
+                shareIntent.putExtra(Intent.EXTRA_HTML_TEXT,"<p>Test</p>");
+
+                startActivity(Intent.createChooser(shareIntent, "Share via"));
+                */
+
+            setupFacebookShareIntent();
+            }
+        });
+    }
+
+    public void setupFacebookShareIntent() {
+        ShareDialog shareDialog;
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        shareDialog = new ShareDialog(this);
+
+        ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                .setContentTitle("Verse of the Day")
+                .setContentDescription(
+                        "\"Verse of the Day\"")
+                .setContentUrl(Uri.parse("https://www.biblegateway.com/votd/get/?format=html&version=NIV"))
+                .build();
+
+        shareDialog.show(linkContent);
     }
 
     private void registerAlarm() {

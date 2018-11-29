@@ -20,28 +20,29 @@
             android:summary="@string/pref_header_notification_summary"
             android:key="@string/key_data"/>
 
-        <Preference
-            android:icon="@drawable/outline_help_outline_black_48dp"
-            android:selectable="true"
-            android:key="@string/key_help"
-            android:title="@string/pref_header_help"
-            />
+        <!--
+       <Preference
+           android:icon="@drawable/outline_help_outline_black_48dp"
+           android:selectable="true"
+           android:key="@string/key_help"
+           android:title="@string/pref_header_help"
+           />
+        -->
+       <Preference
+           android:icon="@drawable/outline_feedback_black_48dp"
+           android:selectable="true"
+           android:key="@string/key_send_feedback"
+           android:summary="@string/summary_support"
+           android:title="@string/title_send_feedback" />
 
-        <Preference
-            android:icon="@drawable/outline_feedback_black_48dp"
-            android:selectable="true"
-            android:key="@string/key_send_feedback"
-            android:summary="@string/summary_support"
-            android:title="@string/title_send_feedback" />
+       <Preference
 
-        <Preference
+           android:icon="@drawable/outline_info_black_48dp"
+           android:selectable="false"
+           android:summary="@string/app_version"
+           android:title="@string/title_version"
+           />
 
-            android:icon="@drawable/outline_info_black_48dp"
-            android:selectable="false"
-            android:summary="@string/app_version"
-            android:title="@string/title_version"
-            />
-
-    </PreferenceCategory>>
+   </PreferenceCategory>>
 
 </PreferenceScreen>
