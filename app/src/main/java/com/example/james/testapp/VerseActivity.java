@@ -78,14 +78,6 @@ public class VerseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-/*
-                final Intent shareIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Verse of the Day");
-                shareIntent.putExtra(Intent.EXTRA_HTML_TEXT,"<p>Test</p>");
-
-                startActivity(Intent.createChooser(shareIntent, "Share via"));
-                */
-
             setupFacebookShareIntent();
             }
         });
@@ -100,7 +92,7 @@ public class VerseActivity extends AppCompatActivity {
                 .setContentTitle("Verse of the Day")
                 .setContentDescription(
                         "\"Verse of the Day\"")
-                .setContentUrl(Uri.parse("https://www.biblegateway.com/votd/get/?format=html&version=NIV"))
+                .setContentUrl(Uri.parse("https://www.biblegateway.com/"))
                 .build();
 
         shareDialog.show(linkContent);
