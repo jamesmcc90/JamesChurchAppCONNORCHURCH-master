@@ -2,15 +2,12 @@ package com.example.james.testapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class AboutUsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +31,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             // launch settings activity
-            startActivity(new Intent(ScrollingActivity.this, SettingsActivity.class));
+            startActivity(new Intent(AboutUsActivity.this, SettingsActivity.class));
             return true;
         }
 
@@ -43,7 +40,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent first = new Intent(ScrollingActivity.this,MainActivity.class);
+        Intent first = new Intent(AboutUsActivity.this,MainActivity.class);
         startActivity(first);
 
     }
