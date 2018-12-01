@@ -298,6 +298,8 @@ Presbyterian Women aims to highlight the need for:
     <string name="key_notifications">key_version</string>
     <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below.</string>
 
+    <string name="connor_website">Visit our website!</string>
+
     <string name="linktobibledotcom">
     <a href="https://www.bible.com/bible/111/JHN.1.NIV">Bible.com.</a>
     </string>
@@ -315,6 +317,9 @@ Presbyterian Women aims to highlight the need for:
 
     <string name="app_id">324126878194425</string>
     <string name="title_activity_scrolling">About Us</string>
+
+    <string name="church_times">"Morning Service: 12noon (11.30am July and August)"
+                                "Evening Service: 6.30pm"</string>
 
 </resources>
 

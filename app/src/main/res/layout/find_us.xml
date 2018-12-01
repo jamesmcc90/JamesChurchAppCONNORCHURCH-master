@@ -52,7 +52,7 @@
     <ImageView
         android:id="@+id/btnFacebook"
         android:layout_width="62dp"
-        android:layout_height="66dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="39dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +79,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </WebView>
 
 
 </android.support.constraint.ConstraintLayout>

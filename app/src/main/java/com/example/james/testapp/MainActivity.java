@@ -73,66 +73,6 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Select...");
-        categories.add("About");
-        categories.add("Version");
-        categories.add("Verse of the Day");
-        categories.add("Announcements");
-        categories.add("Church Chat (experimental)");
-        categories.add("The Bible (experimental)");
-        categories.add("Audio Streaming for Sermons/Talks - experimental");
-        categories.add("Other Links");
-
-
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-
-        // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View arg1,
-                                       int position, long arg3) {
-
-
-                if (position == 1) {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, AboutAppActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-                if (position == 2) {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, VersionActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-
-                if (position == 7) {
-                    Intent i = new Intent();
-                    i.setClass(MainActivity.this, AudioStreamActivity.class);
-                    finish();
-                    startActivity(i);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-
-            }
-
-        });
-
-
         Button About = findViewById(R.id.btnAboutUs);
         Button Contact = findViewById(R.id.btnContactiUs);
         Button Find = findViewById(R.id.btnFindUs);

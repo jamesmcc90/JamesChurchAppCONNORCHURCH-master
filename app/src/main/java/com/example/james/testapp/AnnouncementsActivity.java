@@ -43,7 +43,7 @@ public class AnnouncementsActivity extends AppCompatActivity {
                 webView.getSettings().setJavaScriptEnabled(true);
                 webView.setWebViewClient(new WebViewClient());
 
-                webView.loadUrl("https://drive.google.com/file/d/1H4Glf0EzgOIMc4P_OJoTG_5mIywYGaOS/view?usp=sharing");
+                webView.loadUrl("https://drive.google.com/file/d/1WTA91W2Aj-dbkbvo6i3_vEu2nkXh6CWA/view?usp=sharing");
 
                 setContentView(webView);
 
