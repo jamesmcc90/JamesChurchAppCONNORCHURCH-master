@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements
             public void onClick(View arg0) {
 
                 // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, AboutConnorActivity.class);
+                Intent myIntent = new Intent(MainActivity.this, ScrollingActivity.class);
                 startActivity(myIntent);
                 finish();
             }

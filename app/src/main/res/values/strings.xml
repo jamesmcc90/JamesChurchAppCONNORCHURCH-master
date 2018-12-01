@@ -269,6 +269,8 @@ Presbyterian Women aims to highlight the need for:
     <string name="app_version">1.0.0</string>
     <string name="summary_support">For any queries, issues, or suggestions relating to the app.</string>
     <string name="title_send_feedback">Send Feedback</string>
+    <string name="title_autoplay">Autoplay Videos</string>
+    <string name="summary_video">Turn autoplay on or off.</string>
     <string name="title_faq">FAQ</string>
     <string name="summary_faq">View frequently asked questions</string>
     <string name="help_details">Coming soon…</string>
@@ -312,6 +314,7 @@ Presbyterian Women aims to highlight the need for:
     <string name="share_label">Click the button below to share this site on Facebook!</string>
 
     <string name="app_id">324126878194425</string>
+    <string name="title_activity_scrolling">About Us</string>
 
 </resources>
 

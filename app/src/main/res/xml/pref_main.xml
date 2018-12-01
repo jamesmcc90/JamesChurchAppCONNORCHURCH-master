@@ -20,6 +20,11 @@
             android:summary="@string/pref_header_notification_summary"
             android:key="@string/key_data"/>
 
+        <SwitchPreference
+            android:icon="@drawable/round_video_label_black_24dp"
+            android:summary="@string/summary_video"
+            android:title="@string/title_autoplay" />
+
         <!--
        <Preference
            android:icon="@drawable/outline_help_outline_black_48dp"

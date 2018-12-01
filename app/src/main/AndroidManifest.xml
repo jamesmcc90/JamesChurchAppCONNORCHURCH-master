@@ -87,14 +87,6 @@
             android:label="Sermons Test"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutUsActivity"
-            android:label="About Us"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".AboutConnorActivity"
-            android:label="About Us"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".VerseActivity"
             android:label="Verse of the Day"
             android:screenOrientation="portrait" />
@@ -130,12 +122,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TheStoryActivity"
-            android:label="The Story"/>
-
+            android:label="The Story" />
         <activity
-        android:name=".MainActivityNAVIGATION"
-        android:label="Nav test"
-        android:screenOrientation="portrait" />
+            android:name=".MainActivityNAVIGATION"
+            android:label="Nav test"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -209,14 +200,19 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".VerseNotificationActivity" />
 
-<receiver android:name="BroadcastReceiver.VerseReceiver"/>
+        <receiver android:name="BroadcastReceiver.VerseReceiver" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
-
-
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="2bd439b1c33a28b1ce3232889140d236c76ddda3" />
+
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
