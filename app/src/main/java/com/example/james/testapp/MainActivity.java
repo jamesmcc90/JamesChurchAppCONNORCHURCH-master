@@ -1,5 +1,4 @@
 package com.example.james.testapp;
-import java.util.ArrayList;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,14 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import java.util.List;
-
 
 
 public class MainActivity extends AppCompatActivity implements
@@ -59,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Spinner spinner = findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spnRotas);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -180,6 +175,12 @@ public class MainActivity extends AppCompatActivity implements
             i.setClass(MainActivity.this, AnnouncementsActivity.class);
             finish();
             startActivity(i);
+        } else if (id == R.id.nav_rotas) {
+                Intent i = new Intent();
+                i.setClass(MainActivity.this, RotasActivity.class);
+                finish();
+                startActivity(i);
+
         } else if (id == R.id.nav_chat_login) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, ChatLoginActivity.class);

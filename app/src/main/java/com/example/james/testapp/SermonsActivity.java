@@ -71,7 +71,7 @@ public class SermonsActivity extends AppCompatActivity {
         pause.setText("||");
         next.setText(">>");
 
-        Spinner spinner = findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spnRotas);
 
         // Spinner Drop down elements
         List<String> categories = new ArrayList<String>();

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:layout_editor_absoluteY="25dp">
+    tools:layout_editor_absoluteY="25dp"
+    android:background="#1e73be">
 
     <include
         android:id="@+id/include2"
@@ -26,6 +27,7 @@
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="131dp"
         android:text="@string/youversion"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/txtBibleLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +53,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="297dp"
         android:text="@string/BibleLink"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textColorLink="@color/btn_send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtBibleLink"
@@ -64,7 +67,8 @@
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="293dp"
         android:text="@string/linktobibledotcom"
-        android:textColorLink="@color/colorPrimary"
+        android:textColor="@color/lblError_messageEmail"
+        android:textColorLink="@color/lblError_messageEmail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView24"

@@ -127,6 +127,10 @@
             android:name=".MainActivityNAVIGATION"
             android:label="Nav test"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".RotasActivity"
+            android:label="Rotas"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

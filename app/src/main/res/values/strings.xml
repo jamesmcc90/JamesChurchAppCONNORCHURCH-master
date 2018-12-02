@@ -30,7 +30,6 @@
     <string name="welcome_to_connor_presbyterian_church">Welcome to Connor Presbyterian Church</string>
     <string name="find_us">Find us</string>
     <string name="contact_us">Contact us</string>
-    <string name="there_are_older_traces_of_a_religious_settlement_here_but_presbyterian_worship_here_dates_from_the_middle_of_the_17th_century_in_march_1658_a_mr_robert_dewart_is_reported_as_being_on_trials_at_that_date_and_as_being_ordained_soon_after_like_many_others_he_was_deposed_in_1661_and_his_work_here_ended_the_rev_thomas_gowan_of_glasslough_supplied_the_congregation_without_being_installed_from_1667_to_1671_and_then_mr_david_cunningham_lic_antrim_1671_a_scot_entered_on_trials_in_august_1671"></string>
     <string name="back">Back</string>
     <string name="welcome_to_connor_presbyterian_church_s_app_in_connor_our_goal_is_to_see_unbelieving_people_to_be_lifelong_followers_of_jesus_christ_in_our_church_we_have_many_things_going_on_we_look_forward_to_greeting_you_when_you_come_and_visit_us">Welcome to Connor Presbyterian Church\'s app. In Connor our goal is to see unbelieving people to be lifelong followers of Jesus Christ. In our church we have many things going on. We look forward to greeting you when you come and visit us.</string>
     <string name="textview">TextView</string>
@@ -318,8 +317,11 @@ Presbyterian Women aims to highlight the need for:
     <string name="app_id">324126878194425</string>
     <string name="title_activity_scrolling">About Us</string>
 
-    <string name="church_times">"Morning Service: 12noon (11.30am July and August)"
-                                "Evening Service: 6.30pm"</string>
+    <string name="church_times">Morning Service: 12noon (11.30am July and August)
+                                Evening Service: 6.30pm\n\nMinister: Rev. Philip Thompson.\nTel: 028 25898364
+       </string>
+<string name="rotas">Select from the drop-down menu to view a rota.</string>
+
 
 </resources>
 
