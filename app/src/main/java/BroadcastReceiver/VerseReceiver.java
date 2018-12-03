@@ -9,8 +9,8 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
-import com.example.james.testapp.MainActivity;
-import com.example.james.testapp.R;
+import com.connorchurch.james.churchapp.MainActivity;
+import com.connorchurch.james.churchapp.R;
 
 public class VerseReceiver extends BroadcastReceiver {
     @Override

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".AboutUsActivity"
+    tools:context="com.connorchurch.james.churchapp.AboutUsActivity"
     tools:showIn="@layout/activity_scrolling"
     android:background="#1e73be"
 

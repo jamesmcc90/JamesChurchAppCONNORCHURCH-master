@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#1e73be"
     android:theme="@style/AppTheme.AppBarOverlay"
-    tools:context=".FindUsActivity"
+    tools:context="com.connorchurch.james.churchapp.FindUsActivity"
     tools:layout_editor_absoluteY="25dp"
 
     >

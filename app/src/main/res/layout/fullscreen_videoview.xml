@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TheStoryActivity">
+    tools:context="com.connorchurch.james.churchapp.TheStoryActivity">
     <include
         android:id="@+id/include2"
         layout="@layout/app_bar_main_activity_navigation"
