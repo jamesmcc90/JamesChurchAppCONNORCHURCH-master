@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -53,7 +54,15 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.activity_main_tablet);
+        } else {
+            setContentView(R.layout.activity_main);
+        }
+
         Spinner spinner = findViewById(R.id.spnRotas);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

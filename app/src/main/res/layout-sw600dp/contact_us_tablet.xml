@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1e73be"
-    tools:context="com.connorchurch.james.churchapp.ContactActivity"
     android:theme="@style/AppTheme.AppBarOverlay"
+    tools:context="com.connorchurch.james.churchapp.ContactActivity"
     tools:layout_editor_absoluteY="25dp">
 
     <include
@@ -21,33 +21,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/txtSubject2"
         android:layout_width="109dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="129dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
         android:text="Your Message"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtMessage"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/txtMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubject" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Your Name (required)"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/txtName"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <EditText
         android:id="@+id/txtName"
         android:layout_width="230dp"
-        android:layout_height="0dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="3dp"
         android:ems="10"
         android:focusable="true"
         android:importantForAutofill="no"
@@ -60,7 +63,8 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="171dp"
-        android:layout_height="28dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="4dp"
         android:text="Your Email (required)"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toTopOf="@+id/txtEmail"
@@ -71,110 +75,109 @@
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="38dp"
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/txtSubject"
+        app:layout_constraintBottom_toTopOf="@+id/lblSubject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/lblSubject"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="62dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="9dp"
         android:text="Subject"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintStart_toStartOf="@+id/txtSubject"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <EditText
-        android:id="@+id/txtSubject"
-        android:layout_width="361dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="38dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="text|textPersonName"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/txtMessage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/txtSubject"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <EditText
+        android:id="@+id/txtSubject"
+        android:layout_width="361dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="55dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text|textPersonName"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/txtSubject2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSubject" />
+
+    <EditText
         android:id="@+id/txtMessage"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="360dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="9dp"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="101dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:singleLine="false"
         app:layout_constraintBottom_toTopOf="@+id/txtMessageSend"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubject" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubject2" />
 
     <TextView
         android:id="@+id/txtMessageSend"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="3dp"
+        android:layout_width="421dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
         android:lines="10"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSendMessage"
         app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="0dp"
-        android:layout_height="83dp"
+        android:layout_height="88dp"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="9dp"
+        android:layout_marginBottom="737dp"
         android:text="Please get in contact with us if you have any questions.  Our minister can be contacted on 028 2589 8364.  You can fill out the contact form below or if you would prefer send us a email to info@connorpresbyterianchurch.org"
         android:textColor="@color/btn_create"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnSendMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="11dp"
         android:text="SEND"
-        app:layout_constraintEnd_toStartOf="@+id/txtMessageSend"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubject2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imgExclamation"
-        android:layout_width="35dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="14dp"
+        android:layout_width="42dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txtMessageSend"
-        app:layout_constraintHorizontal_bias="0.813"
-        app:layout_constraintStart_toEndOf="@+id/btnSendMessage"
-        app:layout_constraintTop_toBottomOf="@+id/txtMessage"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/sharp_error_outline_red_48dp" />
 
 </android.support.constraint.ConstraintLayout>

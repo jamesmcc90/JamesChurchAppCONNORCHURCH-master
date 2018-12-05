@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,7 +16,17 @@ public class ChatLoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_chat);
+
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.login_chat_tablet);
+        } else {
+            setContentView(R.layout.login_chat);
+        }
+
+
+
 
         Button login = findViewById(R.id.btnLogin);
         final TextView error = findViewById(R.id.txtError);

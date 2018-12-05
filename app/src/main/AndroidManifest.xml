@@ -203,7 +203,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name="com.connorchurch.james.churchapp.VerseNotificationActivity" />
 
-        <receiver android:name="BroadcastReceiver.VerseReceiver" />
+      <!--  <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
