@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,15 @@ public class TheBibleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bible);
+
+
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.bible_tablet);
+        } else {
+            setContentView(R.layout.bible);
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

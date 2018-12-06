@@ -135,30 +135,26 @@
         android:id="@+id/txtMessageSend"
         android:layout_width="421dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:lines="10"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="0dp"
         android:layout_height="88dp"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="9dp"
-        android:layout_marginBottom="737dp"
         android:text="Please get in contact with us if you have any questions.  Our minister can be contacted on 028 2589 8364.  You can fill out the contact form below or if you would prefer send us a email to info@connorpresbyterianchurch.org"
         android:textColor="@color/btn_create"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSendMessage"
