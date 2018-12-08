@@ -81,29 +81,7 @@ public class VerseActivity extends AppCompatActivity {
             Toast.makeText(VerseActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
 
-        ImageView Facebook = findViewById(R.id.btnFacebook);
-        Facebook.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            setupFacebookShareIntent();
-            }
-        });
-    }
-
-    public void setupFacebookShareIntent() {
-        ShareDialog shareDialog;
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        shareDialog = new ShareDialog(this);
-
-        ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                .setContentTitle("Verse of the Day")
-                .setContentDescription(
-                        "\"Verse of the Day\"")
-                .setContentUrl(Uri.parse("https://www.biblegateway.com/"))
-                .build();
-
-        shareDialog.show(linkContent);
     }
 
     private void registerAlarm() {

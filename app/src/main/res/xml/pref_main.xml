@@ -40,6 +40,13 @@
            android:summary="@string/summary_support"
            android:title="@string/title_send_feedback" />
 
+        <Preference
+            android:icon="@drawable/round_share_black_24dp"
+            android:key="@string/key_social"
+            android:selectable="true"
+            android:summary="@string/social_share_summary"
+            android:title="@string/social_share_title" />
+
        <Preference
 
            android:icon="@drawable/outline_info_black_48dp"

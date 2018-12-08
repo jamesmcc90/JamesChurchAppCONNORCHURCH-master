@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
@@ -14,6 +15,7 @@ import android.preference.PreferenceFragment;
 import android.preference.RingtonePreference;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ShareActionProvider;
 
 public class SettingsActivity extends AppCompatPreferenceActivity  {
 
@@ -65,6 +67,20 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
                             "com.android.settings.Settings$DataUsageSummaryActivity"));
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    return true;
+                }
+            });
+
+
+            Preference socialShare = findPreference("key_social");
+
+            socialShare.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent();
+                    intent.setAction(android.content.Intent.ACTION_SEND);
+                    intent.putExtra(Intent.EXTRA_TEXT, "Hey, check out this app at: google.com");
+                    intent.setType("text/plain");
+                    startActivity(Intent.createChooser(intent, "Share App"));
                     return true;
                 }
             });

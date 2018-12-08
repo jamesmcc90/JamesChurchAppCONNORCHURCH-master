@@ -321,6 +321,9 @@ Presbyterian Women aims to highlight the need for:
                                 Evening Service: 6.30pm\n\nMinister: Rev. Philip Thompson.\nTel: 028 25898364
        </string>
 <string name="rotas">Select from the drop-down menu to view a rota.</string>
+    <string name="social_share_summary">Share this app with others!</string>
+    <string name="social_share_title">Share</string>
+    <string name="key_social">key_social</string>
 
 
 </resources>
