@@ -18,12 +18,14 @@
     <VideoView
         android:id="@+id/VideoView"
         android:layout_width="0dp"
-        android:layout_height="506dp"
+        android:layout_height="669dp"
         android:layout_margin="8dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="292dp"
         app:layout_constraintBottom_toBottomOf="@+id/include2"
         app:layout_constraintDimensionRatio="4:3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -269,7 +269,7 @@ Presbyterian Women aims to highlight the need for:
     <string name="summary_support">For any queries, issues, or suggestions relating to the app.</string>
     <string name="title_send_feedback">Send Feedback</string>
     <string name="title_autoplay">Autoplay Videos</string>
-    <string name="summary_video">Turn autoplay on or off.</string>
+    <string name="summary_video">Turn autoplay on or off. (WIP)</string>
     <string name="title_faq">FAQ</string>
     <string name="summary_faq">View frequently asked questions</string>
     <string name="help_details">Coming soon…</string>
@@ -324,6 +324,8 @@ Presbyterian Women aims to highlight the need for:
     <string name="social_share_summary">Share this app with others!</string>
     <string name="social_share_title">Share</string>
     <string name="key_social">key_social</string>
+    <string name="key_notify">key_notify</string>
+    <string name="key_autoplay">key_autoplay</string>
 
 
 </resources>

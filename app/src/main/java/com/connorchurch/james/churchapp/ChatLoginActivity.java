@@ -44,14 +44,14 @@ public class ChatLoginActivity extends AppCompatActivity {
                 if (password.getText().toString().equals("")){
                     error.setText("Incorrect password!");
                 }
-                if (!username.getText().toString().equals("James")){
+                if (!username.getText().toString().equals("Connor")){
                     error.setText("Incorrect username!");
                 }
-                if (!password.getText().toString().equals("password")){
+                if (!password.getText().toString().equals("connorchurch")){
                     error.setText("Incorrect password!");
                 }
 
-                else if(username.getText().toString().equals("James") & password.getText().toString().equals("password")){
+                else if(username.getText().toString().equals("Connor") & password.getText().toString().equals("connorchurch")){
                 Intent myIntent = new Intent(ChatLoginActivity.this, MainChatActivity.class);
                 startActivity(myIntent);
                 finish();
