@@ -212,6 +212,12 @@ public class MainActivity extends AppCompatActivity implements
             finish();
             startActivity(i);
         }
+      /*  else if (id == R.id.nav_verse_notification){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, VerseNotificationActivity.class);
+            finish();
+            startActivity(i);
+        }*/
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -1,78 +1,62 @@
 package com.connorchurch.james.churchapp;
 
 import android.app.Notification;
-import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
-import android.view.View;
-import android.app.Activity;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
+
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 
-public class VerseNotificationActivity extends Activity {
+import android.widget.Button;
+import android.widget.EditText;
 
-    private NotificationCompat.Builder notBuilder;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
-    private static final int MY_NOTIFICATION_ID = 12345;
 
-    private static final int MY_REQUEST_CODE = 100;
+public class VerseNotificationActivity extends AppCompatActivity {
+    EditText ed1, ed2, ed3;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verse_notification);
 
-        this.notBuilder = new NotificationCompat.Builder(this);
+        ed1 = findViewById(R.id.editText);
+        ed2 = findViewById(R.id.editText2);
+        ed3 = findViewById(R.id.editText3);
+        Button b1 = findViewById(R.id.button);
 
-        // The message will automatically be canceled when the user clicks on Panel
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String subject = ed2.getText().toString().trim();
+                String body = ed3.getText().toString().trim();
 
-        this.notBuilder.setAutoCancel(true);
+                NotificationManager notif = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                Notification notify = new Notification.Builder
+                        (getApplicationContext()).setContentText(body).
+                        setContentTitle(subject).setSmallIcon(R.drawable.ic_notifications_black_24dp).build();
+
+                notify.flags |= Notification.FLAG_AUTO_CANCEL;
+                notif.notify(0, notify);
+
+            }
+        });
+
+
 
     }
 
 
-    public void notiButtonClicked(View view)  {
-
-        // --------------------------
-        // Prepare a notification
-        // --------------------------
-
-        this.notBuilder.setSmallIcon(R.mipmap.ic_launcher);
-        this.notBuilder.setTicker("This is a ticker");
-
-
-        // Set the time that the event occurred.
-        // Notifications in the panel are sorted by this time.
-        this.notBuilder.setWhen(System.currentTimeMillis()+ 10* 1000);
-        this.notBuilder.setContentTitle("This is title");
-        this.notBuilder.setContentText("This is content text ....");
-
-
-        // Create Intent
-        Intent intent = new Intent(this, MainActivity.class);
-
-        // PendingIntent.getActivity(..) will start an Activity, and returns PendingIntent object.
-        // It is equivalent to calling Context.startActivity(Intent).
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, MY_REQUEST_CODE,
-                intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-
-        this.notBuilder.setContentIntent(pendingIntent);
-
-
-
-        // Get a notification service (A service available on the system).
-        NotificationManager notificationService  =
-                (NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-        // Builds notification and issue it
-
-        Notification notification =  notBuilder.build();
-        notificationService.notify(MY_NOTIFICATION_ID, notification);
+    @Override
+    public void onBackPressed(){
+        Intent first = new Intent(VerseNotificationActivity.this,MainActivity.class);
+        startActivity(first);
 
     }
-
 }

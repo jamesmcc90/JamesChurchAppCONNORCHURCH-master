@@ -326,7 +326,8 @@ Presbyterian Women aims to highlight the need for:
     <string name="key_social">key_social</string>
     <string name="key_notify">key_notify</string>
     <string name="key_autoplay">key_autoplay</string>
-
+<string name="nav_notification"></string>
+    <string name="channel_description">notifiy</string>
 
 </resources>
 
