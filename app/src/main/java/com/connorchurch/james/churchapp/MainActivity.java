@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         else if (id == R.id.nav_video) {
             Intent i = new Intent();
-            i.setClass(MainActivity.this, TheStoryActivity.class);
+            i.setClass(MainActivity.this, MediaActivity.class);
             finish();
             startActivity(i);
         }

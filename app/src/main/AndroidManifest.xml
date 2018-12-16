@@ -30,7 +30,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name="com.connorchurch.james.churchapp.main.BaseApplication"
+        android:name=".main.BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/burningbush"
         android:label="@string/app_name"
@@ -38,7 +38,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name="com.connorchurch.james.churchapp.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.connorchurch.james.churchapp.MainActivity"
+            android:name=".MainActivity"
             android:label="Connor Presbyterian Church"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -57,80 +57,79 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.connorchurch.james.churchapp.ContactActivity"
+            android:name=".ContactActivity"
             android:label="Contact Us"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.FindUsActivity"
+            android:name=".FindUsActivity"
             android:label="Find Us"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.CalendarActivity"
+            android:name=".CalendarActivity"
             android:label="Calendar"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.AboutAppActivity"
+            android:name=".AboutAppActivity"
             android:label="About"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.VersionActivity"
+            android:name=".VersionActivity"
             android:label="Version"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.Sermons_Activity_TEST"
+            android:name=".Sermons_Activity_TEST"
             android:label="Sermons Test"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.SermonsActivity"
+            android:name=".SermonsActivity"
             android:label="Sermons Test"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.VerseActivity"
+            android:name=".VerseActivity"
             android:label="Verse of the Day"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.WhatsOnActivity"
+            android:name=".WhatsOnActivity"
             android:hardwareAccelerated="true"
             android:label="What&apos;s On" />
         <activity
-            android:name="com.connorchurch.james.churchapp.AnnouncementsActivity"
+            android:name=".AnnouncementsActivity"
             android:label="Announcements" />
         <activity
-            android:name="com.connorchurch.james.churchapp.ChatLoginActivity"
+            android:name=".ChatLoginActivity"
             android:label="Login"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.MainChatActivity"
+            android:name=".MainChatActivity"
             android:label="Chat"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.TheBibleActivity"
+            android:name=".TheBibleActivity"
             android:label="The Bible"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.AudioStreamActivity"
+            android:name=".AudioStreamActivity"
             android:label="Sermons"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.ExternalLinksActivity"
+            android:name=".ExternalLinksActivity"
             android:label="External Links"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.HelpActivity"
+            android:name=".HelpActivity"
             android:label="Help"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.TheStoryActivity"
+            android:name=".TheStoryActivity"
             android:label="The Story" />
         <activity
-            android:name="com.connorchurch.james.churchapp.MainActivityNAVIGATION"
+            android:name=".MainActivityNAVIGATION"
             android:label="Nav test"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.connorchurch.james.churchapp.RotasActivity"
+            android:name=".RotasActivity"
             android:label="Rotas"
             android:screenOrientation="portrait" />
-
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -139,72 +138,72 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name="com.connorchurch.james.churchapp.main.LoginActivity" />
+        <activity android:name=".main.LoginActivity" />
         <activity
-            android:name="com.connorchurch.james.churchapp.SettingsActivity"
+            android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name="com.connorchurch.james.churchapp.main.MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/select_channel_type" />
         <activity
-            android:name="com.connorchurch.james.churchapp.main.SettingsActivity"
+            android:name=".main.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name="com.connorchurch.james.churchapp.main.BlockedMembersListActivity"
+            android:name=".main.BlockedMembersListActivity"
             android:label="@string/blocked_members_list" />
-        <activity android:name="com.connorchurch.james.churchapp.utils.PhotoViewerActivity" />
+        <activity android:name=".utils.PhotoViewerActivity" />
         <activity
-            android:name="com.connorchurch.james.churchapp.utils.MediaPlayerActivity"
+            android:name=".utils.MediaPlayerActivity"
             android:configChanges="orientation|screenSize" />
         <activity
-            android:name="com.connorchurch.james.churchapp.openchannel.CreateOpenChannelActivity"
+            android:name=".openchannel.CreateOpenChannelActivity"
             android:label="@string/create_open_channel"
             android:windowSoftInputMode="stateVisible" />
         <activity
-            android:name="com.connorchurch.james.churchapp.groupchannel.InviteMemberActivity"
+            android:name=".groupchannel.InviteMemberActivity"
             android:label="@string/invite_member" />
         <activity
-            android:name="com.connorchurch.james.churchapp.groupchannel.MemberListActivity"
+            android:name=".groupchannel.MemberListActivity"
             android:label="@string/member_list" />
         <activity
-            android:name="com.connorchurch.james.churchapp.groupchannel.MemberInfoActivity"
+            android:name=".groupchannel.MemberInfoActivity"
             android:label="@string/member_info" />
         <activity
-            android:name="com.connorchurch.james.churchapp.groupchannel.CreateGroupChannelActivity"
+            android:name=".groupchannel.CreateGroupChannelActivity"
             android:label="@string/create_group_channel" />
         <activity
-            android:name="com.connorchurch.james.churchapp.openchannel.ParticipantListActivity"
+            android:name=".openchannel.ParticipantListActivity"
             android:label="@string/participant_list" />
         <activity
-            android:name="com.connorchurch.james.churchapp.openchannel.OpenChannelActivity"
+            android:name=".openchannel.OpenChannelActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.connorchurch.james.churchapp.groupchannel.GroupChannelActivity"
+            android:name=".groupchannel.GroupChannelActivity"
             android:windowSoftInputMode="stateHidden" />
 
-        <service android:name="com.connorchurch.james.churchapp.fcm.MyFirebaseMessagingService">
+        <service android:name=".fcm.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.connorchurch.james.churchapp.fcm.MyFirebaseInstanceIDService">
+        <service android:name=".fcm.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.connorchurch.james.churchapp.fcm.MyFirebaseMessagingService">
+        <service android:name=".fcm.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
         <activity
-            android:name="com.connorchurch.james.churchapp.NavigationDrawerActivity"
+            android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.connorchurch.james.churchapp.VerseNotificationActivity" />
+        <activity android:name=".VerseNotificationActivity" />
 
-      <!--  <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
+        <!-- <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -214,8 +213,12 @@
             android:value="2bd439b1c33a28b1ce3232889140d236c76ddda3" />
 
         <activity
-            android:name="com.connorchurch.james.churchapp.AboutUsActivity"
+            android:name=".AboutUsActivity"
             android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".MediaActivity"
+            android:label="@string/title_activity_media"
             android:theme="@style/AppTheme"></activity>
     </application>
 

@@ -320,14 +320,21 @@ Presbyterian Women aims to highlight the need for:
     <string name="church_times">Morning Service: 12noon (11.30am July and August)
                                 Evening Service: 6.30pm\n\nMinister: Rev. Philip Thompson.\nTel: 028 25898364
        </string>
-<string name="rotas">Select from the drop-down menu to view a rota.</string>
+    <string name="rotas">Select from the drop-down menu to view a rota.</string>
     <string name="social_share_summary">Share this app with others!</string>
     <string name="social_share_title">Share</string>
     <string name="key_social">key_social</string>
     <string name="key_notify">key_notify</string>
     <string name="key_autoplay">key_autoplay</string>
-<string name="nav_notification"></string>
+    <string name="nav_notification"></string>
     <string name="channel_description">notifiy</string>
+    <string name="title_activity_media2">MediaActivity2</string>
+    <string name="title_activity_media">MediaActivity</string>
+
+    <string-array name="fragments">
+        <item>Fragment One</item>
+        <item>Fragment Two</item>
+    </string-array>
 
 </resources>
 
