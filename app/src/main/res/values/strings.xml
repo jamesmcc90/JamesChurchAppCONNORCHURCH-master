@@ -332,8 +332,8 @@ Presbyterian Women aims to highlight the need for:
     <string name="title_activity_media">MediaActivity</string>
 
     <string-array name="fragments">
-        <item>Fragment One</item>
-        <item>Fragment Two</item>
+        <item>Videos</item>
+        <item>Images</item>
     </string-array>
 
 </resources>
