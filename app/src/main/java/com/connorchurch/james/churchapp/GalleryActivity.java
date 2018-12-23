@@ -67,9 +67,7 @@ public class GalleryActivity extends AppCompatActivity {
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1506-resized-image-600x450.jpg",
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1507-resized-image-600x450.jpg",
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1508-resized-image-600x450.jpg",
-                "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1510-resized-image-600x450.jpg",
-                "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1512-resized-image-600x450.jpg",
-                "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1513-resized-image-600x450.jpg"
+                "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1510-resized-image-600x450.jpg"
         };
 
         ArrayList imageUrlList = new ArrayList<>();
