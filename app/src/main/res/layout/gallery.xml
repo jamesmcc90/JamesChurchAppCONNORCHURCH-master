@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1e73be"
+
     tools:layout_editor_absoluteY="25dp">
 
 
@@ -19,8 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
             app:layout_scrollFlags="scroll"
-            app:titleTextColor="@color/colorWhite" />
+            />
     </android.support.design.widget.AppBarLayout>
     <include
         android:id="@+id/include2"
