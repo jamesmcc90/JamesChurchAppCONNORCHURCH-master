@@ -206,12 +206,13 @@ public class MainActivity extends AppCompatActivity implements
             finish();
             startActivity(i);
         }
-        else if (id == R.id.nav_video) {
+        else if (id == R.id.nav_test_gallery) {
             Intent i = new Intent();
-            i.setClass(MainActivity.this, MediaActivity.class);
+            i.setClass(MainActivity.this, GalleryActivity.class);
             finish();
             startActivity(i);
         }
+
       /*  else if (id == R.id.nav_verse_notification){
             Intent i = new Intent();
             i.setClass(MainActivity.this, VerseNotificationActivity.class);

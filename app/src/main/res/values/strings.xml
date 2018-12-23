@@ -335,6 +335,7 @@ Presbyterian Women aims to highlight the need for:
         <item>Videos</item>
         <item>Images</item>
     </string-array>
+    <string name="title_activity_view_pager">ViewPager</string>
 
 </resources>
 
