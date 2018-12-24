@@ -54,6 +54,14 @@
     <string name="sermon_name">Sermon name</string>
     <string name="speaker">Speaker</string>
     <string name="title_activity_about_us">About Us</string>
+    <string name="contact_info">"Please get in contact with us if you have any questions."
+        "You can fill out the contact form below or if you would prefer send us a email to info@connorpresbyterianchurch.org"</string>
+    <string name="contact_name">Your Name</string>
+    <string name="contact_email">Your Email</string>
+    <string name="contact_subject">Subject</string>
+    <string name="contact_message">Your Message</string>
+
+
     <string name="large_text">
         "There are older traces of a religious settlement here but Presbyterian worship here dates from the middle of the 17th century. In March 1658 a Mr Robert Dewart is reported as being on “trials” at that date and as being ordained soon after. Like many others he was deposed in 1661 and his work here ended. The Rev Thomas Gowan of Glasslough supplied the congregation, without being installed, from 1667 to 1671, and then Mr David Cunningham (lic. Antrim 1671) a Scot, entered on trials in August 1671. He was acceptable and was licensed in October 1671, but on account of the intolerance of the period, a public ordination was not attempted. He was, in consequence, ordained privately at Cairncastle on 27 March 1672 with Rev. Patrick Adair presiding.
 

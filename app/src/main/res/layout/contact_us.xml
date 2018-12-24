@@ -2,13 +2,11 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1e73be"
-    android:theme="@style/AppTheme.AppBarOverlay"
-    tools:context="com.connorchurch.james.churchapp.ContactActivity"
     tools:layout_editor_absoluteY="25dp">
+
 
     <include
         android:id="@+id/include2"
@@ -17,182 +15,161 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtSubject2"
-        android:layout_width="109dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="129dp"
-        android:text="Your Message"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.724" />
-
-    <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
-        android:text="Your Name (required)"
+        android:layout_marginBottom="8dp"
+        android:text="@string/contact_info"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/txtName"
+        app:layout_constraintBottom_toTopOf="@+id/textView31"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="76dp"
+        android:text="@string/contact_name"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/textView32"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="75dp"
+        android:text="@string/contact_email"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/textView33"
+        app:layout_constraintStart_toStartOf="@+id/txtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <EditText
         android:id="@+id/txtName"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:focusable="true"
-        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="171dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:text="Your Email (required)"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName"
-        tools:text="Your Email (required)" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="22dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
-        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/txtSubject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/txtName"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/lblSubject"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="8dp"
-        android:text="Subject"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <EditText
         android:id="@+id/txtSubject"
-        android:layout_width="358dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="text|textPersonName"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lblSubject" />
-
-    <EditText
-        android:id="@+id/txtMessage"
-        style="@style/Widget.AppCompat.EditText"
-        android:layout_width="360dp"
-        android:layout_height="134dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="14dp"
+        android:layout_width="289dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:singleLine="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubject2" />
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="89dp"
+        android:text="@string/contact_subject"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <EditText
         android:id="@+id/txtMessageSend"
         android:layout_width="0dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="20dp"
-        android:lines="10"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:textAlignment="gravity"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSendMessage" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubject" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/textView34"
         android:layout_width="0dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="9dp"
-        android:text="Please get in contact with us if you have any questions.  Our minister can be contacted on 028 2589 8364.  You can fill out the contact form below or if you would prefer send us a email to info@connorpresbyterianchurch.org"
-        android:textColor="@color/btn_create"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="159dp"
+        android:text="@string/contact_message"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
+        app:layout_constraintStart_toStartOf="@+id/txtMessageSend"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
     <Button
         android:id="@+id/btnSendMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="8dp"
-        android:text="SEND"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="9dp"
+        android:text="Send"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtMessageSend"
+        app:layout_constraintEnd_toStartOf="@+id/imgExclamation"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubject2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtMessageSend"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imgExclamation"
-        android:layout_width="35dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="14dp"
+        android:layout_width="43dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtMessageSend"
-        app:layout_constraintHorizontal_bias="0.847"
-        app:layout_constraintStart_toEndOf="@+id/btnSendMessage"
-        app:layout_constraintTop_toBottomOf="@+id/txtMessage"
-        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintEnd_toStartOf="@+id/lblError_messageEmail"
         app:srcCompat="@drawable/sharp_error_outline_red_48dp" />
 
+    <TextView
+        android:id="@+id/lblError_messageEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

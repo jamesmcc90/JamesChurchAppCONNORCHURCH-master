@@ -76,21 +76,19 @@ public class ContactActivity extends AppCompatActivity {
         send = findViewById(R.id.btnSendMessage);
         final EditText subject = findViewById(R.id.txtSubject);
         final EditText name = findViewById(R.id.txtName);
-        final EditText message = findViewById(R.id.txtMessage);
+        final EditText message = findViewById(R.id.txtMessageSend);
         final EditText senderEmail = findViewById(R.id.txtEmail);
 
         send.setOnClickListener(new View.OnClickListener() {
             ImageView error = findViewById(R.id.imgExclamation);
-            TextView messageSend = findViewById(R.id.txtMessageSend);
+            TextView messageError = findViewById(R.id.lblError_messageEmail);
             public void onClick(View v) {
-
 
                 // TODO Error-catch when no Internet connection available (crashes when not connected to Internet)
 
                 new Thread(new Runnable() {
 
                     public void run() {
-
 
                             GMailSender sender = new GMailSender(
 
@@ -108,8 +106,8 @@ public class ContactActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     error.setVisibility(View.INVISIBLE);
-                                    messageSend.setTextColor(getResources().getColor(R.color.colorWhite));
-                                    messageSend.setText("Thank you for your message!");
+                                    messageError.setTextColor(getResources().getColor(R.color.colorWhite));
+                                    messageError.setText("Thank you for your message!");
                                 }
                             });
                         } catch (Exception e) {
@@ -117,8 +115,8 @@ public class ContactActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     error.setVisibility(View.VISIBLE);
-                                    messageSend.setTextColor(getResources().getColor(R.color.lblError_messageEmail));
-                                    messageSend.setText("Please fill in all fields!");
+                                    messageError.setTextColor(getResources().getColor(R.color.lblError_messageEmail));
+                                    messageError.setText("Please fill in all fields!");
                                 }
                             });
                         }

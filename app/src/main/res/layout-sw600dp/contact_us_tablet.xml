@@ -29,7 +29,7 @@
         android:layout_marginStart="16dp"
         android:text="Your Message"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/txtMessage"
+        app:layout_constraintBottom_toTopOf="@+id/txtMessageSend"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSubject" />
 
@@ -115,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblSubject" />
 
     <EditText
-        android:id="@+id/txtMessage"
+        android:id="@+id/txtMessageSend"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="0dp"
         android:layout_height="180dp"
