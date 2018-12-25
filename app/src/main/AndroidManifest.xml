@@ -38,6 +38,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".GalleryActivity"
+            android:label="Gallery"
+            android:screenOrientation="portrait"
+            />
+        <activity
             android:name=".SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -216,11 +221,7 @@
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".GalleryActivity"
-            android:label="Gallery"
-            android:theme="@style/AppTheme"
-            />
+
 
     </application>
 
