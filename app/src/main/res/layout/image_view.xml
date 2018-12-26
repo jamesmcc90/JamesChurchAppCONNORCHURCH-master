@@ -4,5 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/imgview"
-    android:contentDescription="TODO">
+    android:scaleType="fitXY"
+    android:background="#1e73be">
 </ImageView>

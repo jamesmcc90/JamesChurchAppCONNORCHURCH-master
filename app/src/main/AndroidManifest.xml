@@ -40,8 +40,7 @@
         <activity
             android:name=".GalleryActivity"
             android:label="Gallery"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreenActivity"
             android:screenOrientation="portrait">
@@ -222,6 +221,10 @@
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme" />
 
+        <activity android:name=".GalleryTest"
+            android:label="Gallery"
+            android:theme="@style/AppTheme"
+            />
 
     </application>
 

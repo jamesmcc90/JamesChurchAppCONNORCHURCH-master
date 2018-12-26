@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         else if (id == R.id.nav_test_gallery) {
             Intent i = new Intent();
-            i.setClass(MainActivity.this, GalleryActivity.class);
+            i.setClass(MainActivity.this, GalleryTest.class);
             finish();
             startActivity(i);
         }

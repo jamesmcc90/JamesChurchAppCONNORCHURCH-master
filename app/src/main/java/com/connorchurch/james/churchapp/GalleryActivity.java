@@ -76,6 +76,7 @@ public class GalleryActivity extends AppCompatActivity {
             imageUrl.setImageUrl(imageUrls[i]);
             imageUrlList.add(imageUrl);
         }
+
         Log.d("GalleryActivity", "List count: " + imageUrlList.size());
         return imageUrlList;
     }
