@@ -42,4 +42,11 @@ public class GalleryTest extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent first = new Intent(GalleryTest.this, MainActivity.class);
+        startActivity(first);
+
+    }
 }

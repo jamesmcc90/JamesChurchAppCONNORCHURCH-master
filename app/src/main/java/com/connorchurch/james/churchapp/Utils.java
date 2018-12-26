@@ -13,7 +13,8 @@ public class Utils {
             "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1506-resized-image-600x450.jpg",
             "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1507-resized-image-600x450.jpg",
             "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1508-resized-image-600x450.jpg",
-            "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1510-resized-image-600x450.jpg"
+            "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1510-resized-image-600x450.jpg",
+
     };
 
     public static ArrayList<ImageModel> getData() {

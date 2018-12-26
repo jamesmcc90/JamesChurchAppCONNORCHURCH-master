@@ -67,7 +67,8 @@ public class GalleryActivity extends AppCompatActivity {
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1506-resized-image-600x450.jpg",
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1507-resized-image-600x450.jpg",
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1508-resized-image-600x450.jpg",
-                "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1510-resized-image-600x450.jpg"
+                "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1510-resized-image-600x450.jpg",
+
         };
 
         ArrayList imageUrlList = new ArrayList<>();
@@ -83,7 +84,7 @@ public class GalleryActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent first = new Intent(GalleryActivity.this,MainActivity.class);
+        Intent first = new Intent(GalleryActivity.this,GalleryTest.class);
         startActivity(first);
 
     }
