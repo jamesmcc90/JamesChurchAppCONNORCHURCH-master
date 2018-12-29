@@ -215,7 +215,8 @@
         <activity
             android:name=".GalleryTest"
             android:label="Gallery"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".TabbedActivity"
             android:label="@string/title_activity_tabbed"

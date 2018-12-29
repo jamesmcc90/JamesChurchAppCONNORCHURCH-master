@@ -1,137 +1,208 @@
 package com.connorchurch.james.churchapp;
 
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.ExpandableListView.OnChildClickListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-
-public class MainActivity extends AppCompatActivity   implements NavigationView.OnNavigationItemSelectedListener  {
+public class MainActivity extends AppCompatActivity  {
     private DrawerLayout mDrawerLayout;
-    ExpandableListAdapter mMenuAdapter;
-    ExpandableListView expandableList;
-    List<ExpandedMenuModel> listDataHeader;
-    HashMap<ExpandedMenuModel, List<String>> listDataChild;
+    List<String> ChildList;
+    Map<String, List<String>> ParentListItems;
+    ExpandableListView expandablelistView;
+
+    // Assign Parent list items here.
+    List<String> ParentList = new ArrayList<String>();
+    {
+        ParentList.add("Around our church");
+        ParentList.add("Bible Resources");
+        ParentList.add("Media");
+        ParentList.add("External Links");
+    }
+
+    // Assign children list element using string array.
+    String[] AndroidName = { "Who We Are", "Announcements","Rotas","Chat Login" };
+    String[] BibleResources = {"The Bible", "Verse of the Day"};
+    String[] MediaName = {"Gallery"};
+    String[] ByDefalutMessage = {"Items Loading"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
-        expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
+        ParentListItems = new LinkedHashMap<String, List<String>>();
 
-
-        prepareListData();
-        mMenuAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, expandableList);
-
-        // setting list adapter
-        expandableList.setAdapter(mMenuAdapter);
-
-        expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
-                //Log.d("DEBUG", "submenu item clicked");
-                return false;
+        for ( String HoldItem : ParentList) {
+            if (HoldItem.equals("Around our church")) {
+                loadChild(AndroidName);
+            } else if(HoldItem.equals("Bible Resources")){
+                loadChild(BibleResources);
             }
-        });
-        expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
-                //Log.d("DEBUG", "heading clicked");
-                return false;
-            }
-        });
-    }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+            else if (HoldItem.equals("Media"))
+                loadChild(MediaName);
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            else
+                loadChild(ByDefalutMessage);
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            ParentListItems.put(HoldItem, ChildList);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        expandablelistView = (ExpandableListView) findViewById(R.id.navigationmenu);
+        final ExpandableListAdapter expListAdapter = new ListAdapter(
+                this, ParentList, ParentListItems);
+        expandablelistView.setAdapter(expListAdapter);
+
+        expandablelistView.setOnChildClickListener(new OnChildClickListener() {
+
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                // TODO Auto-generated method stub
+
+                final String selected = (String) expListAdapter.getChild(
+                        groupPosition, childPosition);
+
+                // Switch case to open selected child element activity on child element selection.
+
+                Intent intent;
+                switch(selected){
+                    case "Who We Are":
+                        intent = new Intent(MainActivity.this, TabbedActivity.class);
+                        startActivity(intent);
+                        break;
+                    case "Announcements":
+                        intent = new Intent(MainActivity.this, AnnouncementsActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case "Rotas":
+                        intent = new Intent(MainActivity.this, RotasActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case "Chat Login":
+                        intent = new Intent(MainActivity.this, ChatLoginActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case "Gallery":
+                        intent = new Intent(MainActivity.this, GalleryTest.class);
+                        startActivity(intent);
+                        break;
+                    case "The Bible":
+                        intent = new Intent(MainActivity.this, TheBibleActivity.class);
+                        startActivity(intent);
+                        break;
+                    case "Verse of the Day":
+                        intent = new Intent(MainActivity.this, VerseActivity.class);
+                        startActivity(intent);
+                        break;
+
+                }
+
+                return true;
+            }
+        });
+
+        Button About = findViewById(R.id.btnAboutUs);
+        Button Contact = findViewById(R.id.btnContactiUs);
+        Button Find = findViewById(R.id.btnFindUs);
+        Button Calendar = findViewById(R.id.btnCalendar);
+        Button Sermons = findViewById(R.id.btnSermons);
+        Button WhatsOn = findViewById(R.id.btnWhatsOn);
+
+        About.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this, AboutUsActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+        });
+        Contact.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View arg0) {
+
+                    // Start NewActivity.class
+                    Intent myIntent = new Intent(MainActivity.this, ContactActivity.class);
+                    startActivity(myIntent);
+                    finish();
+                }
+
+        });
+        Find.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this, FindUsActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+
+        });
+        Calendar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+
+        });
+        Sermons.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this, AudioStreamActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+
+        });
+        WhatsOn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this, WhatsOnActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+
+        });
+
     }
 
-    private void prepareListData() {
-        listDataHeader = new ArrayList<ExpandedMenuModel>();
-        listDataChild = new HashMap<ExpandedMenuModel, List<String>>();
-
-        ExpandedMenuModel item1 = new ExpandedMenuModel();
-        item1.setIconName("heading1");
-        item1.setIconImg(android.R.drawable.ic_delete);
-        // Adding data header
-        listDataHeader.add(item1);
-
-        ExpandedMenuModel item2 = new ExpandedMenuModel();
-        item2.setIconName("heading2");
-        item2.setIconImg(android.R.drawable.ic_delete);
-        listDataHeader.add(item2);
-
-        ExpandedMenuModel item3 = new ExpandedMenuModel();
-        item3.setIconName("heading3");
-        item3.setIconImg(android.R.drawable.ic_delete);
-        listDataHeader.add(item3);
-
-        // Adding child data
-        List<String> heading1 = new ArrayList<String>();
-        heading1.add("Submenu of item 1");
-
-        List<String> heading2 = new ArrayList<String>();
-        heading2.add("Submenu of item 2");
-        heading2.add("Submenu of item 2");
-        heading2.add("Submenu of item 2");
-
-        listDataChild.put(listDataHeader.get(0), heading1);// Header, Child data
-        listDataChild.put(listDataHeader.get(1), heading2);
-
+    private void loadChild(String[] ParentElementsName) {
+        ChildList = new ArrayList<String>();
+        for (String model : ParentElementsName)
+            ChildList.add(model);
     }
 
     @Override
@@ -143,25 +214,19 @@ public class MainActivity extends AppCompatActivity   implements NavigationView.
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                return true;
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
-
-    private void setupDrawerContent(NavigationView navigationView) {
-        //revision: this don't works, use setOnChildClickListener() and setOnGroupClickListener() above instead
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        menuItem.setChecked(true);
-                        mDrawerLayout.closeDrawers();
-                        return true;
-                    }
-                });
+    @Override
+    public void onBackPressed(){
+        moveTaskToBack(true);
     }
 
 }
