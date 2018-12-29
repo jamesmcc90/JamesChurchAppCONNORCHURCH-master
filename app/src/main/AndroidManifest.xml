@@ -81,14 +81,6 @@
             android:label="Version"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Sermons_Activity_TEST"
-            android:label="Sermons Test"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".SermonsActivity"
-            android:label="Sermons Test"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".VerseActivity"
             android:label="Verse of the Day"
             android:screenOrientation="portrait" />
@@ -220,12 +212,14 @@
             android:name=".AboutUsActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme" />
-
-        <activity android:name=".GalleryTest"
+        <activity
+            android:name=".GalleryTest"
             android:label="Gallery"
-            android:theme="@style/AppTheme"
-            />
-
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TabbedActivity"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

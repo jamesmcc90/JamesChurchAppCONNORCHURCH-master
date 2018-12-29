@@ -52,7 +52,6 @@ public class AudioStreamActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        this.seekBar = this.findViewById(R.id.seekBar);
         mContext = getApplicationContext();
         mActivity = AudioStreamActivity.this;
 

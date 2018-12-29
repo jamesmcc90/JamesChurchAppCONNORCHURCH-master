@@ -2,9 +2,14 @@ package com.connorchurch.james.churchapp;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.LeadingMarginSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,7 +31,9 @@ public class AboutUsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

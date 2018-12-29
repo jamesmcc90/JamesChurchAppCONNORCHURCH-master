@@ -5,6 +5,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_who_we_are"
+            android:icon="@drawable/round_person_black_24dp"
+            android:title="Who We Are"/>
+        <item
             android:id="@+id/nav_verse"
             android:icon="@drawable/round_bookmarks_24"
             android:title="Verse of the Day" />
@@ -32,6 +36,7 @@
             android:id="@+id/nav_external_links"
             android:icon="@drawable/round_link_24"
             android:title="External Links"/>
+
        <!--  <item
             android:id="@+id/nav_verse_notification"
             android:icon="@drawable/round_link_24"

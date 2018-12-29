@@ -345,6 +345,8 @@ Presbyterian Women aims to highlight the need for:
     </string-array>
     <string name="title_activity_view_pager">ViewPager</string>
     <string name="title_activity_rotas_login">Sign in</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="title_activity_swipe_test">SwipeTest</string>
 
 </resources>
 

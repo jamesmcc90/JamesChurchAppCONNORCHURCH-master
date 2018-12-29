@@ -174,7 +174,12 @@ public class MainActivity extends AppCompatActivity implements
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_verse) {
+         if (id == R.id.nav_who_we_are) {
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, TabbedActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_verse) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, VerseActivity.class);
             finish();
@@ -212,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements
             finish();
             startActivity(i);
         }
+
 
       /*  else if (id == R.id.nav_verse_notification){
             Intent i = new Intent();
