@@ -8,6 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,57 +18,29 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
-public class MainActivity extends AppCompatActivity implements
-        NavigationView.OnNavigationItemSelectedListener {
-
-    private TextView mTextMessage;
-    int currentItem = 0;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
-        }
-    };
-
-    EditText editText;
+public class MainActivity extends AppCompatActivity   implements NavigationView.OnNavigationItemSelectedListener  {
+    private DrawerLayout mDrawerLayout;
+    ExpandableListAdapter mMenuAdapter;
+    ExpandableListView expandableList;
+    List<ExpandedMenuModel> listDataHeader;
+    HashMap<ExpandedMenuModel, List<String>> listDataChild;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        Configuration config = getResources().getConfiguration();
-
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.activity_main_tablet);
-        } else {
-            setContentView(R.layout.activity_main);
-        }
-
-        Spinner spinner = findViewById(R.id.spnRotas);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -77,76 +50,89 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button About = findViewById(R.id.btnAboutUs);
-        Button Contact = findViewById(R.id.btnContactiUs);
-        Button Find = findViewById(R.id.btnFindUs);
-        Button Calendar = findViewById(R.id.btnCalendar);
-        Button Sermons = findViewById(R.id.btnSermons);
-        Button WhatsOn = findViewById(R.id.btnWhatsOn);
+        expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
 
-        About.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
 
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, AboutUsActivity.class);
-                startActivity(myIntent);
-                finish();
+        prepareListData();
+        mMenuAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, expandableList);
+
+        // setting list adapter
+        expandableList.setAdapter(mMenuAdapter);
+
+        expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                //Log.d("DEBUG", "submenu item clicked");
+                return false;
             }
         });
-
-        Contact.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, ContactActivity.class);
-                startActivity(myIntent);
-                finish();
+        expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                //Log.d("DEBUG", "heading clicked");
+                return false;
             }
         });
-
-        Find.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, FindUsActivity.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-
-        Calendar.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-
-        Sermons.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, AudioStreamActivity.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-
-        WhatsOn.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-
-                // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this, WhatsOnActivity.class);
-                startActivity(myIntent);
-                finish();
-            }
-        });
-
-
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private void prepareListData() {
+        listDataHeader = new ArrayList<ExpandedMenuModel>();
+        listDataChild = new HashMap<ExpandedMenuModel, List<String>>();
+
+        ExpandedMenuModel item1 = new ExpandedMenuModel();
+        item1.setIconName("heading1");
+        item1.setIconImg(android.R.drawable.ic_delete);
+        // Adding data header
+        listDataHeader.add(item1);
+
+        ExpandedMenuModel item2 = new ExpandedMenuModel();
+        item2.setIconName("heading2");
+        item2.setIconImg(android.R.drawable.ic_delete);
+        listDataHeader.add(item2);
+
+        ExpandedMenuModel item3 = new ExpandedMenuModel();
+        item3.setIconName("heading3");
+        item3.setIconImg(android.R.drawable.ic_delete);
+        listDataHeader.add(item3);
+
+        // Adding child data
+        List<String> heading1 = new ArrayList<String>();
+        heading1.add("Submenu of item 1");
+
+        List<String> heading2 = new ArrayList<String>();
+        heading2.add("Submenu of item 2");
+        heading2.add("Submenu of item 2");
+        heading2.add("Submenu of item 2");
+
+        listDataChild.put(listDataHeader.get(0), heading1);// Header, Child data
+        listDataChild.put(listDataHeader.get(1), heading2);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -157,83 +143,25 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            // launch settings activity
-            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-         if (id == R.id.nav_who_we_are) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, TabbedActivity.class);
-            finish();
-            startActivity(i);
-        } else if (id == R.id.nav_verse) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, VerseActivity.class);
-            finish();
-            startActivity(i);
-        } else if (id == R.id.nav_announcements) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, AnnouncementsActivity.class);
-            finish();
-            startActivity(i);
-        } else if (id == R.id.nav_rotas) {
-                Intent i = new Intent();
-                i.setClass(MainActivity.this, RotasActivity.class);
-                finish();
-                startActivity(i);
-
-        } else if (id == R.id.nav_chat_login) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, ChatLoginActivity.class);
-            finish();
-            startActivity(i);
-        } else if (id == R.id.nav_the_bible) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, TheBibleActivity.class);
-            finish();
-            startActivity(i);
-        } else if (id == R.id.nav_external_links) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, ExternalLinksActivity.class);
-            finish();
-            startActivity(i);
-        }
-        else if (id == R.id.nav_test_gallery) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, GalleryTest.class);
-            finish();
-            startActivity(i);
-        }
-
-
-      /*  else if (id == R.id.nav_verse_notification){
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, VerseNotificationActivity.class);
-            finish();
-            startActivity(i);
-        }*/
-
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+    private void setupDrawerContent(NavigationView navigationView) {
+        //revision: this don't works, use setOnChildClickListener() and setOnGroupClickListener() above instead
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
     }
 
-    public void onBackPressed() {
-        moveTaskToBack(true);
-    }
 }
-
