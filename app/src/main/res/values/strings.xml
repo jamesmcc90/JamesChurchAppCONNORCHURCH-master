@@ -348,5 +348,61 @@ Presbyterian Women aims to highlight the need for:
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="title_activity_swipe_test">SwipeTest</string>
 
+    <string name="elders">
+        "Rev Philip Thompson
+Mr Mervyn Johnston (Clerk)
+Mr Matthew Currie
+Mr Nigel Francey
+Mr Alistair Greer
+Mr David Preston
+Mr George McDowell
+Mr Allan Agnew
+Mr Geoffrey Allen
+Mr Robin Nicholl
+Mr Campbell Allen
+Mr Mark Preston
+Mr Charlie Houston
+Mr David McCord
+Mr James Barr
+Mr Warwick Farquhar
+Mr Fred Strain
+Mr David Thompson
+
+The Code of our church lays out the following about Elders:
+(1) The permanent officers in the Church are Presbyters (that is elders), who in Apostolic times were also called bishops or overseers, and Deacons. In each apostolic Church there was a plurality of Presbyters: all ruled and some also laboured in Word and doctrine, hence the titles Teaching Elder and Ruling Elder.
+(2) The Teaching Elder, who is also called preacher, evangelist, teacher, pastor or minister, in addition to the oversight of the Church which he exercises in conjunction with the Ruling Elders, is commissioned to preach God’s Word, to administer the sacraments of the Gospel and to instruct the people, and is set for the defence of the Gospel.
+(3) The Ruling Elder is appointed to watch for souls and to exercise government and discipline in conjunction with the Teaching Elder. This shall include the oversight of the care of those in need and the management of the temporal affairs of the congregation, with the direct responsibility for these two matters delegated to the Congregational Committee.
+
+    </string>
+
+    <string name="committee">
+        "All elders are ex officio members of Committee.
+
+Our Secretary is Matthew Currie and our Treasurer is Nigel Francey.
+
+The current members of the Church Committee are as follows:
+
+Ian Barr
+Ann Currie
+Pat Douglas
+Reuben Glover
+Ann Hill
+Frew Johnston
+David McBride
+Norman McBurney
+Paul McCord
+Neil McCullough
+Robert McIlveen
+James McWhirter
+David Murdoch
+Ian O’Neill
+Sandy Porter
+William Robinson
+David Quail
+Tony Surgenor
+Andrew Swann
+William Warwick
+    </string>
+
 </resources>
 

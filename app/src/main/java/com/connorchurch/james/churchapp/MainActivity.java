@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity  {
         ParentList.add("Around our church");
         ParentList.add("Bible Resources");
         ParentList.add("Media");
-        ParentList.add("External Links");
+
     }
 
     // Assign children list element using string array.

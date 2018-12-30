@@ -2,11 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.connorchurch.james.churchapp.MinisterAboutFragment">
+    tools:context="com.connorchurch.james.churchapp.MinisterAboutFragment"
+    android:background="#1e73be"
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Philip Thompson info...." />
+        android:text="Philip Thompson info...."
+        android:textColor="@android:color/white"/>
 
 </FrameLayout>

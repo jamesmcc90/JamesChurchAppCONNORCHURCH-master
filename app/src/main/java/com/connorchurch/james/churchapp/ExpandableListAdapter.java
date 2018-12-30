@@ -82,6 +82,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.listheader, null);
         }
+
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.submenu);
         lblListHeader.setTypeface(null, Typeface.BOLD);
@@ -98,6 +99,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             LayoutInflater infalInflater = (LayoutInflater) this.mContext
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.list_submenu, null);
+
         }
 
         TextView txtListChild = (TextView) convertView

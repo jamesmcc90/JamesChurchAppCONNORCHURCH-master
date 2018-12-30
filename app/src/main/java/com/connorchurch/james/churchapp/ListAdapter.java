@@ -71,6 +71,10 @@ public class ListAdapter extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             ListView = infalInflater.inflate(R.layout.parent_list_item,null);
         }
+
+        
+
+
         TextView item = (TextView) ListView.findViewById(R.id.textView1);
         item.setText(CoursesFull);
         return ListView;
