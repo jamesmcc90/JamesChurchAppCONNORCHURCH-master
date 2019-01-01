@@ -19,9 +19,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -73,37 +79,67 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
 
         });
 
-    }
+        Spinner spinner = findViewById(R.id.spnFind);
 
+        // Spinner Drop down elements
+        final List<String> categories = new ArrayList<String>();
+        categories.add("NORMAL");
+        categories.add("SATELLITE");
+        categories.add("HYBRID");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item,categories);
+
+        // Drop down layout style - list view with radio button
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View arg1,
+                                       int position, long arg3) {
+
+              if(position == 0) {
+                  mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+              }else if (position == 1){
+                  mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+              }else if (position == 2){
+                  mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+    }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_google_maps, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.maptypeNORMAL:
-                if (mMap != null) {
-                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                return true;
-            }
-            case R.id.maptypeSATELLITE:
-                if (mMap != null) {
-                    mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                    return true;
-                }
-            case R.id.maptypeHYBRID:
-                if (mMap != null) {
-                    mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                    return true;
-                }
+        int id = item.getItemId();
 
+        if (id == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(FindUsActivity.this, SettingsActivity.class));
+            return true;
         }
-        return true;
+
+        return super.onOptionsItemSelected(item);
     }
 
 
