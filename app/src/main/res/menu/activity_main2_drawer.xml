@@ -37,6 +37,13 @@
             android:icon="@drawable/round_link_24"
             android:title="External Links"/>
 
+        <item
+            android:id="@+id/nav_settings"
+            android:title="Settings"
+            android:icon="@drawable/ic_settings_black_24dp">
+
+        </item>
+
        <!--  <item
             android:id="@+id/nav_verse_notification"
             android:icon="@drawable/round_link_24"

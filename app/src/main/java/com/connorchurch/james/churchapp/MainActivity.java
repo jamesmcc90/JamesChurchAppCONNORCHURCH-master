@@ -5,6 +5,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.content.Intent;
 import android.os.Bundle;
@@ -212,6 +214,8 @@ public class MainActivity extends AppCompatActivity  {
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -224,6 +228,20 @@ public class MainActivity extends AppCompatActivity  {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+       if (id == R.id.nav_settings){
+
+           Intent i = new Intent();
+           i.setClass(MainActivity.this, SettingsActivity.class);
+           startActivity(i);
+        }
+        return true;
+    }
+
+
     @Override
     public void onBackPressed(){
         moveTaskToBack(true);
