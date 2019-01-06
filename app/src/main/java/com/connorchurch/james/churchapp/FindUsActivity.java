@@ -44,6 +44,7 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         setSupportActionBar(toolbar);
         mapFragment.getMapAsync(this);
 
+
         ImageView Facebook = findViewById(R.id.btnFacebook);
 
         Facebook.setOnClickListener(new OnClickListener() {
@@ -64,8 +65,7 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
                 view.setOnKeyListener(new View.OnKeyListener() {
                     @Override
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
-                        if( keyCode == KeyEvent.KEYCODE_BACK)
-                        {
+                        if (keyCode == KeyEvent.KEYCODE_BACK) {
                             view.setVisibility(View.INVISIBLE);
                             return true;
                         }
@@ -79,7 +79,8 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
 
         });
 
-        Spinner spinner = findViewById(R.id.spnFind);
+
+       final Spinner spinner = findViewById(R.id.spnFind);
 
         // Spinner Drop down elements
         final List<String> categories = new ArrayList<String>();
@@ -93,11 +94,11 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         // Drop down layout style - list view with radio button
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+
         // attaching data adapter to spinner
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View arg1,
@@ -121,6 +122,21 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         });
 
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        mMap = googleMap;
+
+        LatLng connorPresbyterian = new LatLng(54.805873, -6.208884);
+        mMap.addMarker(new MarkerOptions().position(connorPresbyterian).title("Connor Presbyterian Church"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(connorPresbyterian));
+        mMap.setMinZoomPreference(15);
+
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -166,21 +182,6 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
     };
 
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-
-        mMap = googleMap;
-
-        LatLng connorPresbyterian = new LatLng(54.805873, -6.208884);
-        mMap.addMarker(new MarkerOptions().position(connorPresbyterian).title("Connor Presbyterian Church"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(connorPresbyterian));
-        mMap.setMinZoomPreference(15);
-
-        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-
-
-    }
 
     @Override
     public void onBackPressed(){
@@ -188,6 +189,6 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         startActivity(first);
 
     }
-
-
 }
+
+
