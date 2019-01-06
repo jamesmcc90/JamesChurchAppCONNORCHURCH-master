@@ -35,6 +35,7 @@ public class AboutUsActivity extends AppCompatActivity {
     }
 
 
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -54,7 +55,7 @@ public class AboutUsActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
     @Override
     public void onBackPressed(){
         Intent first = new Intent(AboutUsActivity.this,MainActivity.class);

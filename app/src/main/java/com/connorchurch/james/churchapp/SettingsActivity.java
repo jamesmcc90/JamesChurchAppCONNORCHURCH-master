@@ -101,7 +101,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
         }
     }
 
-
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -117,7 +117,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
+
     private static void bindPreferenceSummaryToValue(Preference preference) {
         preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
 
@@ -178,5 +178,10 @@ public class SettingsActivity extends AppCompatPreferenceActivity  {
         context.startActivity(Intent.createChooser(intent, context.getString(R.string.choose_email_client)));
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent first = new Intent(SettingsActivity.this, MainActivity.class);
+        startActivity(first);
 
+    }
 }

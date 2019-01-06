@@ -95,7 +95,7 @@ public class VerseActivity extends AppCompatActivity {
         AlarmManager am = (AlarmManager)this.getSystemService(this.ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
-
+  /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -115,7 +115,7 @@ public class VerseActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
     @Override
     public void onBackPressed () {
          Intent first = new Intent(VerseActivity.this, MainActivity.class);

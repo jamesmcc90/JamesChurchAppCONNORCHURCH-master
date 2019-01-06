@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class GalleryTest extends AppCompatActivity {
+public class GalleryConnorActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class GalleryTest extends AppCompatActivity {
                 .add(R.id.content, RecyclerViewFragment.newInstance())
                 .commit();
     }
-
+/*
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
@@ -36,16 +36,16 @@ public class GalleryTest extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             // launch settings activity
-            startActivity(new Intent(GalleryTest.this, SettingsActivity.class));
+            startActivity(new Intent(GalleryConnorActivity.this, SettingsActivity.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
     @Override
     public void onBackPressed() {
-        Intent first = new Intent(GalleryTest.this, MainActivity.class);
+        Intent first = new Intent(GalleryConnorActivity.this, MainActivity.class);
         startActivity(first);
 
     }

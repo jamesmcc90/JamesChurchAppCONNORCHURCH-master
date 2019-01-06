@@ -7,8 +7,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -33,7 +31,7 @@ public class GalleryActivity extends AppCompatActivity {
         DataAdapter dataAdapter = new DataAdapter(getApplicationContext(), imageUrlList);
         recyclerView.setAdapter(dataAdapter);
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -54,7 +52,7 @@ public class GalleryActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+*/
 
     private ArrayList prepareData() {
 
@@ -84,7 +82,7 @@ public class GalleryActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent first = new Intent(GalleryActivity.this,GalleryTest.class);
+        Intent first = new Intent(GalleryActivity.this,GalleryConnorActivity.class);
         startActivity(first);
 
     }

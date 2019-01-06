@@ -10,13 +10,13 @@ import android.widget.ListView;
 
 import java.util.Calendar;
 
-public class ListViewItemClickEvent  extends AppCompatActivity {
-    ListView listView;
+//public class ListViewItemClickEvent  extends AppCompatActivity {
+    //ListView listView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    //@Override
+   // protected void onCreate(Bundle savedInstanceState) {
+        //super.onCreate(savedInstanceState);
+/*
         listView = (ListView) findViewById(R.id.navigationmenu);
         String[] values = new String[]{"Android ListView Item 1", "Android ListView Item 2",
                 "Simple List View In Android", "List View onClick Event","Android List View OnItemClickListener",
@@ -44,4 +44,4 @@ public class ListViewItemClickEvent  extends AppCompatActivity {
             }
         });
     }
-}
+}*/

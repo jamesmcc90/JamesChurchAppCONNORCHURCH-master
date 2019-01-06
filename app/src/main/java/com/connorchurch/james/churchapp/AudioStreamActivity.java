@@ -144,7 +144,7 @@ public class AudioStreamActivity extends AppCompatActivity {
         long seconds =  TimeUnit.MILLISECONDS.toSeconds((short) milliseconds) ;
         return minutes+":"+ seconds;
     }
-*/
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -165,7 +165,7 @@ public class AudioStreamActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
     @Override
     public void onBackPressed(){
         WebView webView = findViewById(R.id.webView);

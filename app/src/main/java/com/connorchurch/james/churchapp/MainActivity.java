@@ -1,28 +1,22 @@
 package com.connorchurch.james.churchapp;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.res.ResourcesCompat;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
+
+    int currentItem = 0;
+    /*
     List<String> ChildList;
     Map<String, List<String>> ParentListItems;
     ExpandableListView expandablelistView;
@@ -41,7 +35,7 @@ public class MainActivity extends AppCompatActivity  {
     String[] BibleResources = {"The Bible", "Verse of the Day"};
     String[] MediaName = {"Gallery"};
     String[] ByDefalutMessage = {"Items Loading"};
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +50,10 @@ public class MainActivity extends AppCompatActivity  {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
+/*
         ParentListItems = new LinkedHashMap<String, List<String>>();
 
         for ( String HoldItem : ParentList) {
@@ -114,7 +111,7 @@ public class MainActivity extends AppCompatActivity  {
                         break;
 
                     case "Gallery":
-                        intent = new Intent(MainActivity.this, GalleryTest.class);
+                        intent = new Intent(MainActivity.this, GalleryConnorActivity.class);
                         startActivity(intent);
                         break;
                     case "The Bible":
@@ -132,6 +129,7 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
+        */
         Button About = findViewById(R.id.btnAboutUs);
         Button Contact = findViewById(R.id.btnContactiUs);
         Button Find = findViewById(R.id.btnFindUs);
@@ -201,6 +199,7 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+    /*
     private void loadChild(String[] ParentElementsName) {
         ChildList = new ArrayList<String>();
         for (String model : ParentElementsName)
@@ -228,16 +227,63 @@ public class MainActivity extends AppCompatActivity  {
 
         return super.onOptionsItemSelected(item);
     }
+*/
 
-    public boolean onNavigationItemSelected(MenuItem item) {
+   @SuppressWarnings("StatementWithEmptyBody")
+   @Override
+    public boolean onNavigationItemSelected(MenuItem item){
         int id = item.getItemId();
 
-       if (id == R.id.nav_settings){
+        if(id == R.id.nav_who_we_are){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, TabbedActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_gallery){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, GalleryConnorActivity.class);
+            finish();
+            startActivity(i);
 
-           Intent i = new Intent();
-           i.setClass(MainActivity.this, SettingsActivity.class);
-           startActivity(i);
+        }else if(id == R.id.nav_announcements){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, AnnouncementsActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_rotas){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, RotasActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_chat_login){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, ChatLoginActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_the_bible){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, TheBibleActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_verse){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, VerseActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_external_links){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, ExternalLinksActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_settings){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, SettingsActivity.class);
+            finish();
+            startActivity(i);
         }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 

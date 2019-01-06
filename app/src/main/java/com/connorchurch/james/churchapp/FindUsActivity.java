@@ -137,7 +137,7 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
 
     }
 
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -157,8 +157,6 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -180,7 +178,7 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
 
         }
     };
-
+*/
 
 
     @Override

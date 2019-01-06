@@ -49,14 +49,14 @@ public class WhatsOnActivity extends AppCompatActivity {
 
     viewPager.setAdapter(adapter);
 }
-
+/*
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
     return true;
   }
-
+*/
   @Override
   public void onBackPressed(){
     Intent first = new Intent(WhatsOnActivity.this,MainActivity.class);

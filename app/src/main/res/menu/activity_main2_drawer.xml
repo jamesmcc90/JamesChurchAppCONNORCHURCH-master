@@ -4,51 +4,65 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_who_we_are"
-            android:icon="@drawable/round_person_black_24dp"
-            android:title="Who We Are"/>
-        <item
-            android:id="@+id/nav_verse"
-            android:icon="@drawable/round_bookmarks_24"
-            android:title="Verse of the Day" />
-        <item
-            android:id="@+id/nav_announcements"
-            android:icon="@drawable/round_announcement_24"
-            android:title="Announcements" />
-        <item
-            android:id="@+id/nav_rotas"
-            android:icon="@drawable/round_assignment_black_24dp"
-            android:title="Rotas" />
-        <item
-            android:id="@+id/nav_chat_login"
-            android:icon="@drawable/round_chat_24"
-            android:title="Chat Login" />
-        <item
-            android:id="@+id/nav_the_bible"
-            android:icon="@drawable/round_book_24"
-            android:title="The Bible" />
-        <item
-            android:id="@+id/nav_test_gallery"
-            android:icon="@drawable/baseline_video_label_black_48dp"
-            android:title="Gallery"/>
-        <item
-            android:id="@+id/nav_external_links"
-            android:icon="@drawable/round_link_24"
-            android:title="External Links"/>
 
-        <item
-            android:id="@+id/nav_settings"
-            android:title="Settings"
-            android:icon="@drawable/ic_settings_black_24dp">
 
+        <item android:title="Around Connor Presbyterian">
+            <menu>
+                <item
+                    android:id="@+id/nav_who_we_are"
+                    android:icon="@drawable/round_person_black_24dp"
+                    android:title="Who We Are" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/baseline_video_label_black_48dp"
+                    android:title="Gallery" />
+                <item
+                    android:id="@+id/nav_announcements"
+                    android:icon="@drawable/round_announcement_24"
+                    android:title="Announcements" />
+                <item
+                    android:id="@+id/nav_rotas"
+                    android:icon="@drawable/round_assignment_black_24dp"
+                    android:title="Rotas" />
+                <item
+                    android:id="@+id/nav_chat_login"
+                    android:icon="@drawable/round_chat_24"
+                    android:title="Chat Login" />
+            </menu>
         </item>
 
-       <!--  <item
-            android:id="@+id/nav_verse_notification"
-            android:icon="@drawable/round_link_24"
-            android:title="Notification Test"/>
-       -->
+
+        <item android:title="Bible Resources">
+            <menu>
+                <item
+                    android:id="@+id/nav_the_bible"
+                    android:icon="@drawable/round_book_24"
+                    android:title="The Bible" />
+                <item
+                    android:id="@+id/nav_verse"
+                    android:icon="@drawable/round_bookmarks_24"
+                    android:title="Verse of the Day" />
+
+            </menu>
+        </item>
+
+        <item android:title="Miscellaneous">
+            <menu>
+
+                <item
+                    android:id="@+id/nav_external_links"
+                    android:icon="@drawable/round_link_24"
+                    android:title="External Links" />
+
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="Settings">
+
+                </item>
+            </menu>
+        </item>
+
 
     </group>
 
