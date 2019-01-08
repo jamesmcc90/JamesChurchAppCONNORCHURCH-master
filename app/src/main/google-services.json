@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "872458195712",
-    "firebase_url": "https://my-chat-project-007.firebaseio.com",
-    "project_id": "my-chat-project-007",
-    "storage_bucket": "my-chat-project-007.appspot.com"
+    "project_number": "934549493465",
+    "firebase_url": "https://friendlychat-2bc95.firebaseio.com",
+    "project_id": "friendlychat-2bc95",
+    "storage_bucket": "friendlychat-2bc95.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:872458195712:android:94f517ea33e4ab17",
+        "mobilesdk_app_id": "1:934549493465:android:b6606660bb16ffbd",
         "android_client_info": {
-          "package_name": "com.connorchurch.james.churchapp"
+          "package_name": "com.example.james.testapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "872458195712-f6ulcdbs12u44umr4uboorl4ch6i3vnj.apps.googleusercontent.com",
+          "client_id": "934549493465-tchn8k282ejmkjt45tlmp1p8ssa290ia.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.connorchurch.james.churchapp",
+            "package_name": "com.example.james.testapp",
             "certificate_hash": "999a05b5aca9dd68e2a89f2326c85e470002b948"
           }
         },
         {
-          "client_id": "872458195712-jovgsri7vljs505fcvadc5n8uecbemug.apps.googleusercontent.com",
+          "client_id": "934549493465-2kvbjt4dckivi7rht2cp1itpo6205d7e.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA3IWceVlMZ_5Ma-XsisYyoVrxG3zvGCiI"
+          "current_key": "AIzaSyA-iWfrTqsPhoiEP5Pk5YjHbu_pPRkADZ4"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "872458195712-jovgsri7vljs505fcvadc5n8uecbemug.apps.googleusercontent.com",
+              "client_id": "934549493465-2kvbjt4dckivi7rht2cp1itpo6205d7e.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

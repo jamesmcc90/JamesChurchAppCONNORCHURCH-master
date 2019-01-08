@@ -255,17 +255,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             i.setClass(MainActivity.this, RotasActivity.class);
             finish();
             startActivity(i);
-        }else if(id == R.id.nav_chat_login){
+        }else if(id == R.id.nav_chat_login) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, ChatLoginActivity.class);
             finish();
             startActivity(i);
+        }else if(id == R.id.nav_chat_login_firebase){
+                Intent i = new Intent();
+                i.setClass(MainActivity.this, SignInActivity.class);
+                finish();
+                startActivity(i);
         }else if(id == R.id.nav_the_bible){
             Intent i = new Intent();
             i.setClass(MainActivity.this, TheBibleActivity.class);
             finish();
             startActivity(i);
-        }else if(id == R.id.nav_verse){
+        }else if(id == R.id.nav_verse) {
             Intent i = new Intent();
             i.setClass(MainActivity.this, VerseActivity.class);
             finish();

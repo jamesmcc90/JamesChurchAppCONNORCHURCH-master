@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "907974004052",
+    "firebase_url": "https://connorchurchchat.firebaseio.com",
+    "project_id": "connorchurchchat",
+    "storage_bucket": "connorchurchchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907974004052:android:94f517ea33e4ab17",
+        "android_client_info": {
+          "package_name": "com.connorchurch.james.churchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907974004052-e2cns4rk2kkngmv13fchiea34iqi96c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf_hC-X9d7pAcFybA9_p0BnOd1nfJNBeA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
