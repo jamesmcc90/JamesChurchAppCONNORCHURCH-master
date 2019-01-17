@@ -35,6 +35,9 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -111,6 +114,7 @@ public class MainChatActivity extends AppCompatActivity implements
     private AdView mAdView;
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
     private GoogleApiClient mGoogleApiClient;
+    private GoogleSignInClient mGoogleSignInClient;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -307,7 +311,7 @@ public class MainChatActivity extends AppCompatActivity implements
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("image/*");
+                intent.setType("image/jpeg");
                 startActivityForResult(intent, REQUEST_IMAGE);
             }
         });
@@ -323,6 +327,24 @@ public class MainChatActivity extends AppCompatActivity implements
                 mFirebaseAnalytics.logEvent(MESSAGE_SENT_EVENT, null);
             }
         });
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        Button logout = findViewById(R.id.btnLogout);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        logout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                mFirebaseAuth.signOut();
+                FirebaseAuth.getInstance().signOut();
+                mGoogleSignInClient.signOut();
+                Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
     }
 
     private Action getMessageViewAction(FriendlyMessage friendlyMessage) {
@@ -536,6 +558,10 @@ public class MainChatActivity extends AppCompatActivity implements
         mMessageEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(friendly_msg_length.intValue())});
         Log.d(TAG, "FML is: " + friendly_msg_length);
     }
+
+
+
+
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
