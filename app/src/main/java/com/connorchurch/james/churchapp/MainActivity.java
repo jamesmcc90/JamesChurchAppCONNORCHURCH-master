@@ -255,11 +255,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             i.setClass(MainActivity.this, RotasActivity.class);
             finish();
             startActivity(i);
-        }else if(id == R.id.nav_chat_login) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, ChatLoginActivity.class);
-            finish();
-            startActivity(i);
         }else if(id == R.id.nav_chat_login_firebase){
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, SignInActivity.class);

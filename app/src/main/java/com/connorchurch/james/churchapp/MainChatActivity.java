@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -62,6 +63,8 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -70,6 +73,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainChatActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener {
+
+
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
         TextView messageTextView;
@@ -402,36 +407,22 @@ public class MainChatActivity extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.invite_menu:
-                sendInvitation();
-                return true;
-            case R.id.crash_menu:
-                Log.w("Crashlytics", "Crash button clicked");
-                causeCrash();
-                return true;
-            case R.id.sign_out_menu:
-                mFirebaseAuth.signOut();
-                Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-                mFirebaseUser = null;
-                mUsername = ANONYMOUS;
-                mPhotoUrl = null;
-                startActivity(new Intent(this, SignInActivity.class));
-                finish();
-                return true;
-            case R.id.fresh_config_menu:
-                fetchConfig();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(MainChatActivity.this, SettingsActivity.class));
+            return true;
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void causeCrash() {
@@ -499,7 +490,7 @@ public class MainChatActivity extends AppCompatActivity implements
                                                         .child(key)
                                                         .child(uri.getLastPathSegment());
 
-                                       // putImageInStorage(storageReference, uri, key);
+                                       putImageInStorage(storageReference, uri, key);
                                     } else {
                                         Log.w(TAG, "Unable to write message to database.",
                                                 databaseError.toException());
@@ -528,7 +519,7 @@ public class MainChatActivity extends AppCompatActivity implements
             }
         }
     }
-/*
+
     private void putImageInStorage(StorageReference storageReference, Uri uri, final String key) {
         storageReference.putFile(uri).addOnCompleteListener(MainChatActivity.this,
                 new OnCompleteListener<UploadTask.TaskSnapshot>() {
@@ -548,7 +539,7 @@ public class MainChatActivity extends AppCompatActivity implements
                     }
                 });
     }
-*
+
     /**
      * Apply retrieved length limit to edit text field. This result may be fresh from the server or it may be from
      * cached values.
@@ -560,20 +551,16 @@ public class MainChatActivity extends AppCompatActivity implements
     }
 
 
-
-
-
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
     }
 
+
     @Override
     public void onBackPressed(){
         Intent first = new Intent(MainChatActivity.this,SignInActivity.class);
         startActivity(first);
-        finish();
+
     }
-
-
 }
