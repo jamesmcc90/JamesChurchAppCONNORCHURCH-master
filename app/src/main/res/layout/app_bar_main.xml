@@ -117,7 +117,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#1E73BE"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -140,7 +140,7 @@
             android:layout_height="99dp"
             android:layout_weight="1"
             android:text="@string/church_times"
-            android:textColor="@color/btn_edit"
+            android:textColor="#1e73be"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
