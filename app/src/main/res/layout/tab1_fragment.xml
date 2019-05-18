@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e73be"
+    android:background="#FFFFFF"
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
@@ -18,7 +18,7 @@
 We also like to eat, chat and catch up with one another, so why not come along and join with us on Sunday mornings!
 
 Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in the Loft."
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:layout_marginTop="4dp"
         android:layout_marginBottom="308dp"
         android:text="Bible Class"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView6"
@@ -46,7 +46,7 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="Ablaze"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
@@ -62,7 +62,7 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:layout_marginStart="13dp"
         android:layout_marginEnd="13dp"
         android:text="A meeting for the Young people of the church on Sunday Evenings."
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Youth Club"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e73be"
+    android:background="#FFFFFF"
     tools:layout_editor_absoluteY="25dp">
 
     <include
@@ -25,19 +25,20 @@
         android:layout_marginTop="70dp"
         android:layout_marginBottom="8dp"
         android:text="@string/rotas"
-        android:textColor="@color/colorWhite"
+        android:textColor="#1e73be"
         app:layout_constraintBottom_toTopOf="@+id/spnRotas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spnRotas"
-        android:background="@drawable/spinner_border"
         android:layout_width="0dp"
         android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="9dp"
+        android:background="#1e73be"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/webViewRotas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

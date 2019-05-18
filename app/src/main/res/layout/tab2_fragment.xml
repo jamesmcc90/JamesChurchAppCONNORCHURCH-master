@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e73be"
+    android:background="#ffffff"
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/sunday_school_info"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/sunday_school"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,12 +42,12 @@
         android:layout_height="185dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBB"
-        app:srcCompat="@drawable/bb_logo"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/bb_logo" />
 
     <TextView
         android:id="@+id/txtBB"
@@ -57,7 +57,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="@string/bb"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/txtGB"
@@ -72,7 +72,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:text="@string/gb"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textColor="#1e73be"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,12 +85,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGB"
-        app:srcCompat="@drawable/gb_logo"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/gb_logo" />
 
     <TextView
         android:id="@+id/textView28"
@@ -101,7 +101,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/bb_gb"
 
-        android:textColor="@color/btn_create"
+        android:textColor="#1e73be"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

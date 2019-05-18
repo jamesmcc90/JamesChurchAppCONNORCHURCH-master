@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/design_default_color_primary</item>
         <item name="colorControlActivated">@color/colorPrimary</item>
         <item name="windowActionModeOverlay">true</item>
-        <item name="android:navigationBarColor">@color/design_default_color_primary</item>
+        <item name="android:navigationBarColor">#1e73be</item>
         <item name="android:statusBarColor">@color/design_default_color_primary_dark</item>
     </style>
 
@@ -32,7 +32,11 @@
         <item name="textAllCaps">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="colorAccent">#1e73be</item>
+
+    </style>
+
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 

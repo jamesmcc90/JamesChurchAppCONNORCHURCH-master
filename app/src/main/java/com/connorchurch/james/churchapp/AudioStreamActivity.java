@@ -117,7 +117,7 @@ public class AudioStreamActivity extends AppCompatActivity {
                         "<head>" +
                         "</head>" +
                         "<style>" +
-                        "body{background-color:#1e73be; color:white} a {color:#1fcc94;}" +
+                        "body{background-color:#ffff; color:#1e73be} a {color:#1e73be;}" +
                         "</style>" +
                         "<iframe width=\"100%\" height=\"100%\" scrolling=\"no\" frameborder=\"no\" allow=\"autoplay\" src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/539015169&color=%230066cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true\"></iframe> \n"
                         ;

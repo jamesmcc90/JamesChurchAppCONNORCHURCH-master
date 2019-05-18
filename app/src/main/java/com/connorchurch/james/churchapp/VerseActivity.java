@@ -61,7 +61,7 @@ public class VerseActivity extends AppCompatActivity {
 
                 String customHTML = "<html>" +
                         "<style>" +
-                        "body{background-color:#1e73be; color:white} a {color:#1fcc94;}" +
+                        "body{background-color:#ffff; color:#1e73be} a {color:#1e73be;}" +
                         "</style>" +
                         "<script src=\"https://www.biblegateway.com/votd/votd.write.callback.js\"></script>\n" + " " +
                         "<script src=\"https://www.biblegateway.com/votd/get/?format=json&version=NIV&callback=BG.votdWriteCallback\"></script>\n" +

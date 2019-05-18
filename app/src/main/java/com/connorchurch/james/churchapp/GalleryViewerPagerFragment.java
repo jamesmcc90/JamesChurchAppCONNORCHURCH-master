@@ -1,5 +1,6 @@
 package com.connorchurch.james.churchapp;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -59,4 +60,6 @@ public class GalleryViewerPagerFragment extends Fragment {
         viewPager.setAdapter(galleryPagerAdapter);
         viewPager.setCurrentItem(currentItem);
     }
+
+
 }

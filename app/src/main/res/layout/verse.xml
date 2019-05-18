@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e73be"
+    android:background="#FFFFFF"
     tools:layout_editor_absoluteY="25dp">
 
     <include
@@ -24,9 +24,7 @@
         android:id="@+id/webViewVerse"
         android:layout_width="0dp"
         android:layout_height="799dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

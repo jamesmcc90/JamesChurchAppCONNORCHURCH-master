@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String[] AndroidName = { "Who We Are", "Announcements","Rotas","Chat Login" };
     String[] BibleResources = {"The Bible", "Verse of the Day"};
     String[] MediaName = {"Gallery"};
-    String[] ByDefalutMessage = {"Items Loading"};
+    String[] ByDefaultMessage = {"Items Loading"};
 */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
