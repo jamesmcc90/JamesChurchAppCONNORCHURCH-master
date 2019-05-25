@@ -442,7 +442,7 @@ William Warwick
     <string name="cause_crash">Cause Crash</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="chat_info">Sign in with Google account</string>
-<string name="facebook_login">Sign in with Facebook (work in progress)</string>
+    <string name="facebook_login">Sign in with Facebook (work in progress)</string>
 
     <string name="facebook_app_id">475771149616259</string>
     <string name="fb_login_protocol_scheme">fb475771149616259</string>
@@ -531,6 +531,9 @@ William Warwick
 
     <string name="id_fmt">User ID: %s</string>
     <string name="email_fmt">Email: %s</string>
+    <string name="title_activity_gallery_test">GalleryTest</string>
+
+
 
 </resources>
 

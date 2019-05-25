@@ -10,24 +10,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Calendar;
-import android.view.View.OnClickListener;
-
-import com.facebook.FacebookSdk;
-import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.widget.ShareDialog;
 
 import BroadcastReceiver.VerseReceiver;
 
-public class VerseActivity extends AppCompatActivity {
+public class BibleResourcesActivity extends AppCompatActivity {
     TextView internetConnnection;
 
     private WebView webView;
@@ -78,11 +72,26 @@ public class VerseActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            Toast.makeText(VerseActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
+            Toast.makeText(BibleResourcesActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
 
 
+        ImageView BibleApp = findViewById(R.id.btnYouVersion);
+
+        BibleApp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android"));
+                intent.setPackage("com.android.vending");
+                startActivity(intent);
+            }
+        });
+
+
     }
+
+
+
 
     private void registerAlarm() {
         Calendar calendar = Calendar.getInstance();
@@ -90,8 +99,8 @@ public class VerseActivity extends AppCompatActivity {
         calendar.set(Calendar.MINUTE, 8);
         calendar.set(Calendar.SECOND, 0);
 
-        Intent intent = new Intent(VerseActivity.this, VerseReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(VerseActivity.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT );
+        Intent intent = new Intent(BibleResourcesActivity.this, VerseReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(BibleResourcesActivity.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT );
         AlarmManager am = (AlarmManager)this.getSystemService(this.ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
@@ -109,7 +118,7 @@ public class VerseActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             // launch settings activity
-            startActivity(new Intent(VerseActivity.this, SettingsActivity.class));
+            startActivity(new Intent(BibleResourcesActivity.this, SettingsActivity.class));
             return true;
         }
 
@@ -118,7 +127,7 @@ public class VerseActivity extends AppCompatActivity {
 */
     @Override
     public void onBackPressed () {
-         Intent first = new Intent(VerseActivity.this, MainActivity.class);
+         Intent first = new Intent(BibleResourcesActivity.this, MainActivity.class);
          startActivity(first);
 
          }

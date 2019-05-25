@@ -35,13 +35,9 @@
         <item android:title="Bible Resources">
             <menu>
                 <item
-                    android:id="@+id/nav_the_bible"
-                    android:icon="@drawable/round_book_24"
-                    android:title="The Bible" />
-                <item
-                    android:id="@+id/nav_verse"
+                    android:id="@+id/nav_resources"
                     android:icon="@drawable/round_bookmarks_24"
-                    android:title="Verse of the Day" />
+                    android:title="Verse of the Day and Bible" />
 
             </menu>
         </item>

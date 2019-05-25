@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.connorchurch.james.churchapp">
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -15,7 +14,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -25,7 +23,6 @@
         android:protectionLevel="signature" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -37,6 +34,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".GalleryActivity"
             android:label="Gallery"
@@ -73,16 +71,8 @@
             android:label="Calendar"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutAppActivity"
-            android:label="About"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".VersionActivity"
-            android:label="Version"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".VerseActivity"
-            android:label="Verse of the Day"
+            android:name=".BibleResourcesActivity"
+            android:label="Bible Resources"
             android:screenOrientation="portrait" />
         <activity
             android:name=".WhatsOnActivity"
@@ -94,8 +84,7 @@
         <activity
             android:name=".MainChatActivity"
             android:label="Chat"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".TheBibleActivity"
             android:label="The Bible"
@@ -127,7 +116,6 @@
             android:name=".FacebookTest"
             android:label="Rotas"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".SignInActivity"
             android:label="Sign In"
@@ -140,6 +128,7 @@
             android:name=".ChatLoginActivity"
             android:label="Sign In"
             android:screenOrientation="portrait" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCziB9yRhWTrwW3DXolCfCUqmo-tZexYL0" />
@@ -208,11 +197,7 @@
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
-        <activity android:name=".VerseNotificationActivity" />
-
-        <!-- <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
-
-
+        <activity android:name=".VerseNotificationActivity" /> <!-- <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="2bd439b1c33a28b1ce3232889140d236c76ddda3" />
@@ -224,14 +209,12 @@
         <activity
             android:name=".GalleryConnorActivity"
             android:label="Gallery"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".TabbedActivity"
             android:label="@string/title_activity_tabbed"
             android:theme="@style/AppTheme" />
-
-
     </application>
 
 </manifest>

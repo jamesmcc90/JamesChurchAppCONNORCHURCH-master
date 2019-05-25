@@ -95,7 +95,7 @@ public class MainChatActivity extends AppCompatActivity implements
     public static final String MESSAGES_CHILD = "messages";
     private static final int REQUEST_INVITE = 1;
     private static final int REQUEST_IMAGE = 2;
-    public static final int DEFAULT_MSG_LENGTH_LIMIT = 10;
+    //public static final int DEFAULT_MSG_LENGTH_LIMIT = 10;
     public static final String ANONYMOUS = "anonymous";
     private static final String MESSAGE_SENT_EVENT = "message_sent";
     private static final String MESSAGE_URL = "http://friendlychat.firebase.google.com/message/";
@@ -114,7 +114,7 @@ public class MainChatActivity extends AppCompatActivity implements
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
     private FirebaseAnalytics mFirebaseAnalytics;
-    private EditText mMessageEditText;
+    private EditText messageEditText;
     private ImageView mAddMessageImageView;
     private AdView mAdView;
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
@@ -279,7 +279,9 @@ public class MainChatActivity extends AppCompatActivity implements
         // Define default config values. Defaults are used when fetched config values are not
         // available. Eg: if an error occurred fetching values from the server.
         Map<String, Object> defaultConfigMap = new HashMap<>();
-        defaultConfigMap.put("friendly_msg_length", 10L);
+
+        ////////TO CHANGE LENGTH OF MESSAGE TO SEND//////
+       defaultConfigMap.put("friendly_msg_length", 500L);
 
         // Apply config settings and default values.
         mFirebaseRemoteConfig.setConfigSettings(firebaseRemoteConfigSettings);
@@ -288,10 +290,9 @@ public class MainChatActivity extends AppCompatActivity implements
         // Fetch remote config.
         fetchConfig();
 
-        mMessageEditText = (EditText) findViewById(R.id.messageEditText);
-        mMessageEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(mSharedPreferences
-                .getInt(CodelabPreferences.FRIENDLY_MSG_LENGTH, DEFAULT_MSG_LENGTH_LIMIT))});
-        mMessageEditText.addTextChangedListener(new TextWatcher() {
+        messageEditText = (EditText) findViewById(R.id.editText5);
+
+        messageEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
@@ -299,7 +300,7 @@ public class MainChatActivity extends AppCompatActivity implements
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().trim().length() > 0) {
-                    mSendButton.setEnabled(true);
+                   mSendButton.setEnabled(true);
                 } else {
                     mSendButton.setEnabled(false);
                 }
@@ -310,7 +311,7 @@ public class MainChatActivity extends AppCompatActivity implements
             }
         });
 
-        mAddMessageImageView = (ImageView) findViewById(R.id.addMessageImageView);
+       mAddMessageImageView = (ImageView) findViewById(R.id.addMessageImageView);
         mAddMessageImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -325,10 +326,10 @@ public class MainChatActivity extends AppCompatActivity implements
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FriendlyMessage friendlyMessage = new FriendlyMessage(mMessageEditText.getText().toString(), mUsername,
+                FriendlyMessage friendlyMessage = new FriendlyMessage(messageEditText.getText().toString(), mUsername,
                         mPhotoUrl, null);
                 mFirebaseDatabaseReference.child(MESSAGES_CHILD).push().setValue(friendlyMessage);
-                mMessageEditText.setText("");
+                messageEditText.setText("");
                 mFirebaseAnalytics.logEvent(MESSAGE_SENT_EVENT, null);
             }
         });
@@ -546,7 +547,7 @@ public class MainChatActivity extends AppCompatActivity implements
      */
     private void applyRetrievedLengthLimit() {
         Long friendly_msg_length = mFirebaseRemoteConfig.getLong("friendly_msg_length");
-        mMessageEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(friendly_msg_length.intValue())});
+        messageEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(friendly_msg_length.intValue())});
         Log.d(TAG, "FML is: " + friendly_msg_length);
     }
 

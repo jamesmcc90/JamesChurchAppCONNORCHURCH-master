@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         startActivity(intent);
                         break;
                     case "Verse of the Day":
-                        intent = new Intent(MainActivity.this, VerseActivity.class);
+                        intent = new Intent(MainActivity.this, BibleResourcesActivity.class);
                         startActivity(intent);
                         break;
 
@@ -260,14 +260,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 i.setClass(MainActivity.this, SignInActivity.class);
                 finish();
                 startActivity(i);
-        }else if(id == R.id.nav_the_bible){
+        }else if(id == R.id.nav_resources){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, TheBibleActivity.class);
-            finish();
-            startActivity(i);
-        }else if(id == R.id.nav_verse) {
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, VerseActivity.class);
+            i.setClass(MainActivity.this, BibleResourcesActivity.class);
             finish();
             startActivity(i);
         }else if(id == R.id.nav_external_links){

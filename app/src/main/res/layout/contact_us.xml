@@ -15,58 +15,36 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="57dp"
         android:text="@string/contact_info"
         android:textColor="#1e73be"
-        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintBottom_toTopOf="@+id/txtName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="76dp"
-        android:text="@string/contact_name"
-        android:textColor="#1e73be"
-        app:layout_constraintBottom_toTopOf="@+id/textView32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="75dp"
-        android:text="@string/contact_email"
-        android:textColor="#1e73be"
-        app:layout_constraintBottom_toTopOf="@+id/textView33"
-        app:layout_constraintStart_toStartOf="@+id/txtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <EditText
         android:id="@+id/txtName"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="548dp"
         android:ems="10"
+        android:hint="Your Name"
         android:inputType="textPersonName"
         android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
@@ -74,102 +52,85 @@
         android:id="@+id/txtEmail"
         android:layout_width="215dp"
         android:layout_height="41dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
+        android:hint="Your Email"
         android:inputType="textEmailAddress"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/txtName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtName"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <EditText
         android:id="@+id/txtSubject"
-        android:layout_width="289dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="218dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
+        android:hint="Subject"
         android:inputType="textPersonName"
         android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintEnd_toEndOf="@+id/txtEmail"
+        app:layout_constraintStart_toStartOf="@+id/txtEmail"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="89dp"
-        android:text="@string/contact_subject"
-        android:textColor="#1e73be"
-        app:layout_constraintBottom_toTopOf="@+id/textView34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <EditText
         android:id="@+id/txtMessageSend"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="342dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="Your Message"
         android:inputType="textMultiLine"
+        android:singleLine="false"
         android:textAlignment="gravity"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imgExclamation"
+        app:layout_constraintEnd_toEndOf="@+id/txtSubject"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSubject" />
-
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="159dp"
-        android:text="@string/contact_message"
-        android:textColor="#1e73be"
-        app:layout_constraintBottom_toTopOf="@+id/imgExclamation"
-        app:layout_constraintStart_toStartOf="@+id/txtMessageSend"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintStart_toStartOf="@+id/txtSubject"
+        app:layout_constraintTop_toBottomOf="@+id/txtSubject"
+        app:layout_constraintVertical_bias="0.406" />
 
     <Button
         android:id="@+id/btnSendMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="223dp"
+        android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="9dp"
-        android:text="Send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgExclamation"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMessageSend"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imgExclamation"
-        android:layout_width="43dp"
-        android:layout_height="38dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/lblError_messageEmail"
-        app:srcCompat="@drawable/sharp_error_outline_red_48dp" />
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="@+id/lblError_messageEmail"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="@+id/imgExclamation" />
 
     <TextView
         android:id="@+id/lblError_messageEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="332dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnSendMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/imgExclamation"
+        app:layout_constraintTop_toBottomOf="@+id/txtMessageSend" />
+
+    <ImageView
+        android:id="@+id/imgExclamation"
+        android:layout_width="48dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="108dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sharp_error_outline_red_48dp" />
 </android.support.constraint.ConstraintLayout>
