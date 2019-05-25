@@ -575,10 +575,28 @@ public class MainChatActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed(){
-        Intent first = new Intent(MainChatActivity.this,SignInActivity.class);
-        startActivity(first);
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                mFirebaseAuth.signOut();
+                FirebaseAuth.getInstance().signOut();
+                mGoogleSignInClient.signOut();
+                Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
+                startActivity(myIntent);
+            }
+        })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+        alert.setTitle("Log Out");
+        alert.setMessage("Are you sure you want to logout?");
+        alert.setIcon(R.drawable.round_warning_24);
+        alert.show();
 
     }
-
 
 }
