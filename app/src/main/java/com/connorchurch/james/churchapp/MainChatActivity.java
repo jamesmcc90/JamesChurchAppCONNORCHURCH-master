@@ -1,6 +1,8 @@
 package com.connorchurch.james.churchapp;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -11,14 +13,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,12 +27,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.database.SnapshotParser;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.auth.api.Auth;
@@ -63,18 +61,14 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainChatActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener {
 
-
+    AlertDialog.Builder builder;
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
         TextView messageTextView;
@@ -121,12 +115,15 @@ public class MainChatActivity extends AppCompatActivity implements
     private GoogleApiClient mGoogleApiClient;
     private GoogleSignInClient mGoogleSignInClient;
 
+
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firebase_chat);
 
+        builder = new AlertDialog.Builder(this);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mUsername = ANONYMOUS;
 
@@ -339,15 +336,33 @@ public class MainChatActivity extends AppCompatActivity implements
                 .requestEmail()
                 .build();
 
+
         Button logout = findViewById(R.id.btnLogout);
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
         logout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
-                mFirebaseAuth.signOut();
-                FirebaseAuth.getInstance().signOut();
-                mGoogleSignInClient.signOut();
-                Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
-                startActivity(myIntent);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                mFirebaseAuth.signOut();
+                                FirebaseAuth.getInstance().signOut();
+                                mGoogleSignInClient.signOut();
+                                Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
+                                startActivity(myIntent);
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+                alert.setTitle("Log Out");
+                alert.setMessage("Are you sure you want to logout?");
+                alert.setIcon(R.drawable.round_warning_24);
+                alert.show();
+
             }
         });
 
@@ -564,4 +579,6 @@ public class MainChatActivity extends AppCompatActivity implements
         startActivity(first);
 
     }
+
+
 }
