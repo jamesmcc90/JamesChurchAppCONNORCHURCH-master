@@ -102,7 +102,15 @@ Presbyterian Women aims to highlight the need for:
     <string name="youth_club"></string>
 
     <string name="men_organisations">
-            "This is a test."
+            "Men Alive is a men's group set up in Connor Presbyterian Church that allows Men of all ages to come together, for some fun, food and fellowship!
+
+Vision: 'Building a relationship with God that will last for an eternity'
+
+Mission Statement: 'Men meeting in the right place, for the right reasons and with the right attitudes, in order to encourage each other to be Men of God'
+
+Motto: 'Men of Connor Men of Honour'
+
+Email: menalive@hotmail.co.uk"
         </string>
     <string name="bb_gb">Click the logos below to find out more on Facebook!</string>
     <string name="action_settings">Settings</string>
@@ -318,7 +326,7 @@ Presbyterian Women aims to highlight the need for:
     <string name="sunday_school">Sunday School</string>
     <string name="bb">BB</string>
     <string name="gb">GB</string>
-    <string name="men_organisations_title">Men Organisations</string>
+    <string name="men_organisations_title">Men Alive</string>
     <string name="presbyterian_women">Presbyterian Women</string>
     <string name="share_label">Click the button below to share this site on Facebook!</string>
 
