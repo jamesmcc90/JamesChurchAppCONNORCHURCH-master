@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:clipToPadding="false"
     android:focusableInTouchMode="true"
-    tools:context="com.connorchurch.james.churchapp.MainChatActivity">
+    tools:context="com.connorchurch.james.churchapp.activities.MainChatActivity">
 
     <ListView
         android:layout_width="match_parent"

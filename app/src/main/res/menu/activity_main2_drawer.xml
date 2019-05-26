@@ -24,21 +24,6 @@
                     android:id="@+id/nav_rotas"
                     android:icon="@drawable/round_assignment_black_24dp"
                     android:title="Rotas" />
-                <item
-                    android:id="@+id/nav_chat_login_firebase"
-                    android:icon="@drawable/round_chat_24"
-                    android:title="Connor Chat" />
-            </menu>
-        </item>
-
-
-        <item android:title="Bible Resources">
-            <menu>
-                <item
-                    android:id="@+id/nav_resources"
-                    android:icon="@drawable/round_bookmarks_24"
-                    android:title="Verse of the Day and Bible" />
-
             </menu>
         </item>
 

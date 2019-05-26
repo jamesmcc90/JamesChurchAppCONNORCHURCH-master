@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="#1e73be"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.connorchurch.james.churchapp.AboutUsActivity"
+    tools:context="com.connorchurch.james.churchapp.activities.AboutUsActivity"
     tools:showIn="@layout/activity_about_us"
     android:scrollHorizontally="false">
 

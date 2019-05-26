@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent first = new Intent(MainActivity.this, com.connorchurch.james.churchapp.MainActivity.class);
+        Intent first = new Intent(MainActivity.this, com.connorchurch.james.churchapp.activities.MainActivity.class);
         startActivity(first);
     }
 }

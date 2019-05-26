@@ -9,7 +9,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
-import com.connorchurch.james.churchapp.MainActivity;
+import com.connorchurch.james.churchapp.activities.MainActivity;
 import com.connorchurch.james.churchapp.R;
 
 public class VerseReceiver extends BroadcastReceiver {

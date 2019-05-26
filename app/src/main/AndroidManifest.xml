@@ -36,11 +36,11 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".GalleryActivity"
+            android:name=".activities.GalleryActivity"
             android:label="Gallery"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="Connor Presbyterian Church"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -59,73 +59,69 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ContactActivity"
+            android:name=".activities.ContactActivity"
             android:label="Contact Us"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FindUsActivity"
+            android:name=".activities.FindUsActivity"
             android:label="Find Us"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".CalendarActivity"
+            android:name=".activities.CalendarActivity"
             android:label="Calendar"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".BibleResourcesActivity"
+            android:name=".activities.BibleResourcesActivity"
             android:label="Bible Resources"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".WhatsOnActivity"
+            android:name=".activities.WhatsOnActivity"
             android:hardwareAccelerated="true"
             android:label="What&apos;s On" />
         <activity
-            android:name=".AnnouncementsActivity"
+            android:name=".activities.AnnouncementsActivity"
             android:label="Announcements" />
         <activity
-            android:name=".MainChatActivity"
+            android:name=".activities.MainChatActivity"
             android:label="Chat"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".TheBibleActivity"
+            android:name=".activities.TheBibleActivity"
             android:label="The Bible"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AudioStreamActivity"
+            android:name=".activities.AudioStreamActivity"
             android:label="Sermons"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExternalLinksActivity"
+            android:name=".activities.ExternalLinksActivity"
             android:label="External Links"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HelpActivity"
+            android:name=".activities.HelpActivity"
             android:label="Help"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TheStoryActivity"
+            android:name=".activities.TheStoryActivity"
             android:label="The Story" />
         <activity
-            android:name=".MainActivityNAVIGATION"
+            android:name=".activities.MainActivityNAVIGATION"
             android:label="Nav test"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RotasActivity"
+            android:name=".activities.RotasActivity"
             android:label="Rotas"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FacebookTest"
+            android:name=".activities.FacebookTest"
             android:label="Rotas"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".activities.SignInActivity"
             android:label="Sign In"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainChatScaledroneActivity"
-            android:label="Sign In"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ChatLoginActivity"
+            android:name=".activities.ChatLoginActivity"
             android:label="Sign In"
             android:screenOrientation="portrait" />
 
@@ -141,7 +137,7 @@
 
         <activity android:name=".main.LoginActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".main.MainActivity"
@@ -194,25 +190,25 @@
         </service>
 
         <activity
-            android:name=".NavigationDrawerActivity"
+            android:name=".activities.NavigationDrawerActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme" />
-        <activity android:name=".VerseNotificationActivity" /> <!-- <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
+        <activity android:name=".activities.VerseNotificationActivity" /> <!-- <receiver android:name="BroadcastReceiver.VerseReceiver" /> -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="2bd439b1c33a28b1ce3232889140d236c76ddda3" />
 
         <activity
-            android:name=".AboutUsActivity"
+            android:name=".activities.AboutUsActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".GalleryConnorActivity"
+            android:name=".activities.GalleryConnorActivity"
             android:label="Gallery"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".TabbedActivity"
+            android:name=".activities.TabbedActivity"
             android:label="@string/title_activity_tabbed"
             android:theme="@style/AppTheme" />
     </application>

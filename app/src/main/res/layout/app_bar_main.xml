@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.connorchurch.james.churchapp.NavigationDrawerActivity"
+    tools:context="com.connorchurch.james.churchapp.activities.NavigationDrawerActivity"
     tools:layout_editor_absoluteY="25dp">
 
 
@@ -14,44 +14,30 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/connor_presbyterian"
         android:text="@string/what_s_on"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
-        app:layout_constraintEnd_toStartOf="@+id/btnSermons"
+        app:layout_constraintBottom_toTopOf="@+id/btnFindUs"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalendar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSermons" />
 
     <Button
         android:id="@+id/btnSermons"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/church3"
         android:text="@string/sermons"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintBottom_toTopOf="@+id/btnWhatsOn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnWhatsOn"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalendar" />
-
-    <Button
-        android:id="@+id/btnCalendar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/calendar"
-        android:text="@string/calendar"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnSermons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnFindUs"
-        app:layout_constraintTop_toBottomOf="@+id/btnContactiUs" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAboutUs" />
 
 
     <Button
@@ -59,56 +45,39 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/church1"
         android:text="@string/about_us"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnFindUs"
-        app:layout_constraintEnd_toStartOf="@+id/btnContactiUs"
+        app:layout_constraintBottom_toTopOf="@+id/btnSermons"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-    <Button
-        android:id="@+id/btnContactiUs"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/email_logo"
-        android:text="@string/contact_us"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalendar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnAboutUs"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <Button
         android:id="@+id/btnFindUs"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="75dp"
         android:background="@drawable/church2"
         android:text="@string/find_us"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnWhatsOn"
-        app:layout_constraintEnd_toStartOf="@+id/btnCalendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnContactiUs" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnWhatsOn" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="403dp"
+        android:layout_marginBottom="32dp"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintBottom_toTopOf="@+id/btnAboutUs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -122,28 +91,17 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="7dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="0dp"
-            android:layout_height="99dp"
-            android:layout_weight="1"
-            android:text="@string/church_times"
-            android:textColor="#1e73be"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/btnFindUs"
+        app:layout_constraintVertical_bias="0.923"
+        app:menu="@menu/bottom_nav_menu" />
 
 </android.support.constraint.ConstraintLayout>
