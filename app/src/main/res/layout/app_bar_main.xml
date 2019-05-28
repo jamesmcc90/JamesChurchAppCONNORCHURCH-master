@@ -11,47 +11,39 @@
 
     <Button
         android:id="@+id/btnWhatsOn"
-        android:layout_width="0dp"
+        android:layout_width="0"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/connor_presbyterian"
         android:text="@string/what_s_on"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnFindUs"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSermons"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSermons" />
+        app:layout_constraintStart_toEndOf="@+id/btnSermons"
+        app:layout_constraintTop_toTopOf="@+id/btnSermons" />
 
     <Button
         android:id="@+id/btnSermons"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/church3"
         android:text="@string/sermons"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnWhatsOn"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnFindUs"
+        app:layout_constraintEnd_toStartOf="@+id/btnWhatsOn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAboutUs" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
 
     <Button
         android:id="@+id/btnAboutUs"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/church1"
         android:text="@string/about_us"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnSermons"
+        app:layout_constraintBottom_toTopOf="@+id/btnWhatsOn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
@@ -60,24 +52,22 @@
         android:id="@+id/btnFindUs"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="75dp"
         android:background="@drawable/church2"
         android:text="@string/find_us"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="@+id/btnWhatsOn"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWhatsOn" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSermons" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="168dp"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_constraintBottom_toTopOf="@+id/btnAboutUs"
+        app:layout_constraintBottom_toTopOf="@+id/btnSermons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -95,13 +85,9 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFindUs"
-        app:layout_constraintVertical_bias="0.923"
         app:menu="@menu/bottom_nav_menu" />
 
 </android.support.constraint.ConstraintLayout>
