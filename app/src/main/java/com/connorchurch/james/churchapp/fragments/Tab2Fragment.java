@@ -1,6 +1,5 @@
 package com.connorchurch.james.churchapp.fragments;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -41,7 +40,7 @@ public class Tab2Fragment extends Fragment {
         btnBB.setOnClickListener(new View.OnClickListener(){
         @Override
             public void onClick(View v) {
-                final WebView view = getView().findViewById(R.id.webView);
+                final WebView view = getView().findViewById(R.id.webViewFacebook);
                 view.setWebViewClient(new WebViewClient() {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -72,7 +71,7 @@ public class Tab2Fragment extends Fragment {
         btnGB.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                final WebView view = getView().findViewById(R.id.webView);
+                final WebView view = getView().findViewById(R.id.webViewFacebook);
                 view.setWebViewClient(new WebViewClient() {
                     @Override
                     public boolean shouldOverrideUrlLoading(WebView view, String url) {

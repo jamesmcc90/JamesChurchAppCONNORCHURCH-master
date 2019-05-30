@@ -41,42 +41,6 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         setSupportActionBar(toolbar);
         mapFragment.getMapAsync(this);
 
-
-        ImageView Facebook = findViewById(R.id.btnFacebook);
-
-        Facebook.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final WebView view = (findViewById(R.id.webSocialMedia));
-                view.setWebViewClient(new WebViewClient() {
-                    @Override
-                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                        view.loadUrl(url);
-                        return false;
-                    }
-                });
-                view.getSettings().setJavaScriptEnabled(true);
-                view.setVisibility(View.VISIBLE);
-                view.loadUrl("https://www.facebook.com/connorpci/");
-
-                view.setOnKeyListener(new View.OnKeyListener() {
-                    @Override
-                    public boolean onKey(View v, int keyCode, KeyEvent event) {
-                        if (keyCode == KeyEvent.KEYCODE_BACK) {
-                            view.setVisibility(View.INVISIBLE);
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-
-
-            }
-
-
-        });
-
-
        final Spinner spinner = findViewById(R.id.spnFind);
 
         // Spinner Drop down elements

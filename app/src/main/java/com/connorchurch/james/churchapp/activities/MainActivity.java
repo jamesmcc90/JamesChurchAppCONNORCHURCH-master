@@ -21,26 +21,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
 
     int currentItem = 0;
-    /*
-    List<String> ChildList;
-    Map<String, List<String>> ParentListItems;
-    ExpandableListView expandablelistView;
 
-    // Assign Parent list items here.
-    List<String> ParentList = new ArrayList<String>();
-    {
-        ParentList.add("Around our church");
-        ParentList.add("Bible Resources");
-        ParentList.add("Media");
-
-    }
-
-    // Assign children list element using string array.
-    String[] AndroidName = { "Who We Are", "Announcements","Rotas","Chat Login" };
-    String[] BibleResources = {"The Bible", "Verse of the Day"};
-    String[] MediaName = {"Gallery"};
-    String[] ByDefaultMessage = {"Items Loading"};
-*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,83 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-/*
-        ParentListItems = new LinkedHashMap<String, List<String>>();
-
-        for ( String HoldItem : ParentList) {
-            if (HoldItem.equals("Around our church")) {
-                loadChild(AndroidName);
-            } else if(HoldItem.equals("Bible Resources")){
-                loadChild(BibleResources);
-            }
-
-            else if (HoldItem.equals("Media"))
-                loadChild(MediaName);
-
-            else
-                loadChild(ByDefalutMessage);
-
-            ParentListItems.put(HoldItem, ChildList);
-        }
-
-        expandablelistView = (ExpandableListView) findViewById(R.id.navigationmenu);
-        final ExpandableListAdapter expListAdapter = new ListAdapter(
-                this, ParentList, ParentListItems);
-        expandablelistView.setAdapter(expListAdapter);
-
-        expandablelistView.setOnChildClickListener(new OnChildClickListener() {
-
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                // TODO Auto-generated method stub
-
-                final String selected = (String) expListAdapter.getChild(
-                        groupPosition, childPosition);
-
-                // Switch case to open selected child element activity on child element selection.
-
-                Intent intent;
-                switch(selected){
-                    case "Who We Are":
-                        intent = new Intent(MainActivity.this, TabbedActivity.class);
-                        startActivity(intent);
-                        break;
-                    case "Announcements":
-                        intent = new Intent(MainActivity.this, AnnouncementsActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case "Rotas":
-                        intent = new Intent(MainActivity.this, RotasActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case "Chat Login":
-                        intent = new Intent(MainActivity.this, ChatLoginActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case "Gallery":
-                        intent = new Intent(MainActivity.this, GalleryConnorActivity.class);
-                        startActivity(intent);
-                        break;
-                    case "The Bible":
-                        intent = new Intent(MainActivity.this, TheBibleActivity.class);
-                        startActivity(intent);
-                        break;
-                    case "Verse of the Day":
-                        intent = new Intent(MainActivity.this, BibleResourcesActivity.class);
-                        startActivity(intent);
-                        break;
-
-                }
-
-                return true;
-            }
-        });
-
-        */
         Button About = findViewById(R.id.btnAboutUs);
         Button Find = findViewById(R.id.btnFindUs);
         Button Sermons = findViewById(R.id.btnSermons);
@@ -223,6 +127,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if(id == R.id.nav_gallery){
             Intent i = new Intent();
             i.setClass(MainActivity.this, GalleryConnorActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_news){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, ItemListActivity.class);
             finish();
             startActivity(i);
 

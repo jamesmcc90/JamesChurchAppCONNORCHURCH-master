@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <WebView
-        android:id="@+id/webView"
+        android:id="@+id/webViewFacebook"
         android:layout_width="593dp"
         android:layout_height="940dp"
         android:layout_marginStart="8dp"

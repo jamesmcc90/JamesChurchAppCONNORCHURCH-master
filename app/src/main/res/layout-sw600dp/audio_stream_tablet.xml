@@ -21,7 +21,7 @@
 
 
     <WebView
-        android:id="@+id/webView"
+        android:id="@+id/webViewFacebook"
         android:layout_width="match_parent"
         android:layout_height="1130dp"
         android:layout_marginStart="8dp"

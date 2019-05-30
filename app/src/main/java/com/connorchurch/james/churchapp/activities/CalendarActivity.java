@@ -39,7 +39,7 @@ public class CalendarActivity extends AppCompatActivity {
         try {
             ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
             NetworkInfo nInfo = cManager.getActiveNetworkInfo();
-            WebView webView = findViewById(R.id.webView);
+            WebView webView = findViewById(R.id.webViewFacebook);
 
             if (nInfo != null && nInfo.isConnected()) {
                 webView.getSettings().setJavaScriptEnabled(true);

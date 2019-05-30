@@ -104,7 +104,7 @@ public class AudioStreamActivity extends AppCompatActivity {
         try {
             ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
             NetworkInfo nInfo = cManager.getActiveNetworkInfo();
-            WebView webView = findViewById(R.id.webView);
+            WebView webView = findViewById(R.id.webViewFacebook);
 
             if (nInfo != null && nInfo.isConnected()) {
                 webView.getSettings().setJavaScriptEnabled(true);
@@ -168,7 +168,7 @@ public class AudioStreamActivity extends AppCompatActivity {
 */
     @Override
     public void onBackPressed(){
-        WebView webView = findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webViewFacebook);
         webView.destroy();
         Intent first = new Intent(AudioStreamActivity.this, MainActivity.class);
         startActivity(first);
