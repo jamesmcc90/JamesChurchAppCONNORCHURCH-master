@@ -23,6 +23,14 @@ public class GalleryConnorActivity extends AppCompatActivity {
                 .beginTransaction()
                 .add(R.id.content, RecyclerViewFragment.newInstance())
                 .commit();
+
+
+
+
+
+
+
+
     }
 /*
     public boolean onCreateOptionsMenu(Menu menu) {

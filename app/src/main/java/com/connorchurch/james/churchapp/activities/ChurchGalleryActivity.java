@@ -53,7 +53,7 @@ public class ChurchGalleryActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ImageGalleryAdapter.MyViewHolder holder, int position) {
 
-            ChurchPhoto churchPhoto = mSpacePhotos[position];
+            ChurchPhoto churchPhoto = mChurchPhotos[position];
             ImageView imageView = holder.mPhotoImageView;
 
             Glide.with(mContext)
@@ -63,7 +63,7 @@ public class ChurchGalleryActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return (mSpacePhotos.length);
+            return (mChurchPhotos.length);
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -82,21 +82,21 @@ public class ChurchGalleryActivity extends AppCompatActivity {
 
                 int position = getAdapterPosition();
                 if(position != RecyclerView.NO_POSITION) {
-                    ChurchPhoto spacePhoto = mSpacePhotos[position];
+                    ChurchPhoto ChurchPhoto = mChurchPhotos[position];
 
                     Intent intent = new Intent(mContext, ChurchPhotoActivity.class);
-                    intent.putExtra(ChurchPhotoActivity.EXTRA_SPACE_PHOTO, spacePhoto);
+                    intent.putExtra(ChurchPhotoActivity.EXTRA_SPACE_PHOTO, ChurchPhoto);
                     startActivity(intent);
                 }
             }
         }
 
-        private ChurchPhoto[] mSpacePhotos;
+        private ChurchPhoto[] mChurchPhotos;
         private Context mContext;
 
         public ImageGalleryAdapter(Context context, ChurchPhoto[] churchPhotos) {
             mContext = context;
-            mSpacePhotos = churchPhotos;
+            mChurchPhotos = churchPhotos;
         }
     }
 

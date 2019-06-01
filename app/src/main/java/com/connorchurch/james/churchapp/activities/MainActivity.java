@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
         }else if(id == R.id.nav_gallery){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, GalleryConnorActivity.class);
+            i.setClass(MainActivity.this, ChurchGalleryActivity.class);
             finish();
             startActivity(i);
         }else if(id == R.id.nav_news){
