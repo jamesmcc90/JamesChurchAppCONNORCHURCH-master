@@ -47,7 +47,7 @@ public class ContactActivity extends AppCompatActivity {
             setContentView(R.layout.contact_us);
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         send = findViewById(R.id.btnSendMessage);

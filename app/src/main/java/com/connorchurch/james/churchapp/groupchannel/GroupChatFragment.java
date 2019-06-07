@@ -147,15 +147,15 @@ public class GroupChatFragment extends Fragment {
 
         setRetainInstance(true);
 
-        mRootLayout = (RelativeLayout) rootView.findViewById(R.id.layout_group_chat_root);
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_group_chat);
+        mRootLayout = rootView.findViewById(R.id.layout_group_chat_root);
+        mRecyclerView = rootView.findViewById(R.id.recycler_group_chat);
 
         mCurrentEventLayout = rootView.findViewById(R.id.layout_group_chat_current_event);
-        mCurrentEventText = (TextView) rootView.findViewById(R.id.text_group_chat_current_event);
+        mCurrentEventText = rootView.findViewById(R.id.text_group_chat_current_event);
 
-        mMessageEditText = (EditText) rootView.findViewById(R.id.edittext_group_chat_message);
-        mMessageSendButton = (Button) rootView.findViewById(R.id.button_group_chat_send);
-        mUploadFileButton = (ImageButton) rootView.findViewById(R.id.button_group_chat_upload);
+        mMessageEditText = rootView.findViewById(R.id.edittext_group_chat_message);
+        mMessageSendButton = rootView.findViewById(R.id.button_group_chat_send);
+        mUploadFileButton = rootView.findViewById(R.id.button_group_chat_upload);
 
         mMessageEditText.addTextChangedListener(new TextWatcher() {
             @Override

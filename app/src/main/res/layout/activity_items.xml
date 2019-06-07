@@ -44,6 +44,16 @@
             app:layout_constraintTop_toTopOf="@+id/fragment_items_list"
             android:contentDescription="TODO" />
 
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_marginTop="16dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/pci_logo_286"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_items_list"
+            app:layout_constraintTop_toBottomOf="@+id/list_image" />
+
 
     </android.support.constraint.ConstraintLayout>
 

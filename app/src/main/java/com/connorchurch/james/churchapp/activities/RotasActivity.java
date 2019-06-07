@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,8 +23,18 @@ public class RotasActivity extends AppCompatActivity{
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.rotas);
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+            Configuration config = getResources().getConfiguration();
+
+            if (config.smallestScreenWidthDp >= 600) {
+                setContentView(R.layout.rotas_tablet);
+            } else {
+                setContentView(R.layout.rotas);
+
+            }
+
+            Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
             Spinner spinner = findViewById(R.id.spnRotas);
@@ -40,7 +51,15 @@ public class RotasActivity extends AppCompatActivity{
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, categories);
 
             // Drop down layout style - list view with radio button
-            dataAdapter.setDropDownViewResource(R.layout.spinner_item);
+
+
+            if (config.smallestScreenWidthDp >= 600) {
+                dataAdapter.setDropDownViewResource(R.layout.spinner_item_tablet);
+            } else {
+
+                dataAdapter.setDropDownViewResource(R.layout.spinner_item);
+            }
+
 
             // attaching data adapter to spinner
             spinner.setAdapter(dataAdapter);

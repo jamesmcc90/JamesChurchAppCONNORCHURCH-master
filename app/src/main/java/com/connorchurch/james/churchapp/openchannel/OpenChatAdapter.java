@@ -195,12 +195,12 @@ class OpenChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         UserMessageHolder(View itemView) {
             super(itemView);
 
-            nicknameText = (TextView) itemView.findViewById(R.id.text_open_chat_nickname);
-            messageText = (TextView) itemView.findViewById(R.id.text_open_chat_message);
-            editedText = (TextView) itemView.findViewById(R.id.text_open_chat_edited);
-            timeText = (TextView) itemView.findViewById(R.id.text_open_chat_time);
-            profileImage = (ImageView) itemView.findViewById(R.id.image_open_chat_profile);
-            dateText = (TextView) itemView.findViewById(R.id.text_open_chat_date);
+            nicknameText = itemView.findViewById(R.id.text_open_chat_nickname);
+            messageText = itemView.findViewById(R.id.text_open_chat_message);
+            editedText = itemView.findViewById(R.id.text_open_chat_edited);
+            timeText = itemView.findViewById(R.id.text_open_chat_time);
+            profileImage = itemView.findViewById(R.id.image_open_chat_profile);
+            dateText = itemView.findViewById(R.id.text_open_chat_date);
         }
 
         // Binds message details to ViewHolder item
@@ -265,8 +265,8 @@ class OpenChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         AdminMessageHolder(View itemView) {
             super(itemView);
 
-            messageText = (TextView) itemView.findViewById(R.id.text_open_chat_message);
-            dateText = (TextView) itemView.findViewById(R.id.text_open_chat_date);
+            messageText = itemView.findViewById(R.id.text_open_chat_message);
+            dateText = itemView.findViewById(R.id.text_open_chat_date);
         }
 
         void bind(final AdminMessage message, boolean isNewDay, final OnItemClickListener listener) {
@@ -296,13 +296,13 @@ class OpenChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         FileMessageHolder(View itemView) {
             super(itemView);
 
-            nicknameText = (TextView) itemView.findViewById(R.id.text_open_chat_nickname);
-            timeText = (TextView) itemView.findViewById(R.id.text_open_chat_time);
-            profileImage = (ImageView) itemView.findViewById(R.id.image_open_chat_profile);
-            fileNameText = (TextView) itemView.findViewById(R.id.text_open_chat_file_name);
-            fileSizeText = (TextView) itemView.findViewById(R.id.text_open_chat_file_size);
-            fileThumbnail = (ImageView) itemView.findViewById(R.id.image_open_chat_file_thumbnail);
-            dateText = (TextView) itemView.findViewById(R.id.text_open_chat_date);
+            nicknameText = itemView.findViewById(R.id.text_open_chat_nickname);
+            timeText = itemView.findViewById(R.id.text_open_chat_time);
+            profileImage = itemView.findViewById(R.id.image_open_chat_profile);
+            fileNameText = itemView.findViewById(R.id.text_open_chat_file_name);
+            fileSizeText = itemView.findViewById(R.id.text_open_chat_file_size);
+            fileThumbnail = itemView.findViewById(R.id.image_open_chat_file_thumbnail);
+            dateText = itemView.findViewById(R.id.text_open_chat_date);
         }
 
         // Binds message details to ViewHolder item
@@ -347,7 +347,7 @@ class OpenChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     }
                 } else {
                     if (message.getType().toLowerCase().contains("gif")) {
-                        ImageUtils.displayGifImageFromUrl(context, message.getUrl(), fileThumbnail, (String) null, fileThumbnail.getDrawable());
+                        ImageUtils.displayGifImageFromUrl(context, message.getUrl(), fileThumbnail, null, fileThumbnail.getDrawable());
                     } else {
                         ImageUtils.displayImageFromUrl(context, message.getUrl(), fileThumbnail, fileThumbnail.getDrawable());
                     }

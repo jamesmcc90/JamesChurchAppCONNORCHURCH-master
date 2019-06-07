@@ -23,8 +23,8 @@ public class PhotoViewerActivity extends AppCompatActivity {
         String url = getIntent().getStringExtra("url");
         String type = getIntent().getStringExtra("type");
 
-        ImageView imageView = (ImageView) findViewById(R.id.main_image_view);
-        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        ImageView imageView = findViewById(R.id.main_image_view);
+        final ProgressBar progressBar = findViewById(R.id.progress_bar);
 
 
         progressBar.setVisibility(View.VISIBLE);

@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -37,10 +38,18 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.activity_sign_in_tablet);
+        } else {
+            setContentView(R.layout.activity_sign_in);
+
+        }
+
 
         // Assign fields
-        mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        mSignInButton = findViewById(R.id.sign_in_button);
 
         // Set click listeners
         mSignInButton.setOnClickListener(this);

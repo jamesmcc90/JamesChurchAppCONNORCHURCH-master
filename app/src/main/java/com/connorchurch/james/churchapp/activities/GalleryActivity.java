@@ -28,8 +28,8 @@ public class GalleryActivity extends AppCompatActivity {
         setContentView(R.layout.gallery);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        imageView = findViewById(R.id.imageView);
+        recyclerView = findViewById(R.id.recyclerView);
         gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
@@ -63,7 +63,7 @@ public class GalleryActivity extends AppCompatActivity {
 
     private ArrayList prepareData() {
 
-        String imageUrls[] = {
+        String[] imageUrls = {
                 "http://connorpresbyterianchurch.org/wp-content/uploads/Image-50.png",
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1502-resized-image-600x450.jpg",
                 "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1503-resized-image-600x450.jpg",

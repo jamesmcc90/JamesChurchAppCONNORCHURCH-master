@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Utils {
 
-    static String IMGS[] = {
+    static String[] IMGS = {
             "http://connorpresbyterianchurch.org/wp-content/uploads/Image-50.png",
             "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1502-resized-image-600x450.jpg",
             "http://connorpresbyterianchurch.org/wp-content/uploads/IMG_1503-resized-image-600x450.jpg",

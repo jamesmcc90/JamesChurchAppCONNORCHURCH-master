@@ -26,7 +26,7 @@ public class ExternalLinksActivity extends AppCompatActivity {
             setContentView(R.layout.external_links);
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ImageView ChristianInstitute = findViewById(R.id.btnCI);

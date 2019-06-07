@@ -4,9 +4,7 @@
     package="com.connorchurch.james.churchapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-
     <uses-permission android:name="android.permission.READ_PROFILE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -23,7 +21,6 @@
         android:name="com.connorchurch.googlemaps.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -35,11 +32,33 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activities.ItemListActivity"
+            android:name=".ItemListActivity"
             android:label="@string/title_item_list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.connorchurch.james.churchapp.ItemListActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".activities.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".activities.ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.connorchurch.james.churchapp.activities.ItemListActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ItemDetailPCIActivity"
             android:label="@string/title_item_detail"
             android:parentActivityName=".activities.ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">

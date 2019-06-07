@@ -19,10 +19,9 @@ public class Item implements Serializable {
 
 
     public static ArrayList<Item> getItems() {
-        ArrayList<Item> items = new ArrayList<Item>();
+        ArrayList<Item> items = new ArrayList<>();
        items.add(new Item("Facebook"));
-        //items.add(new Item("Item 2"));
-        //items.add(new Item("Item 3"));
+       items.add(new Item("Presbyterian Church in Ireland (PCI)"));
         return items;
     }
 

@@ -46,7 +46,7 @@ public class BlockedMembersListActivity extends AppCompatActivity {
 
         mSelectedIds = new ArrayList<>();
 
-        mButtonEdit = (Button) findViewById(R.id.button_edit);
+        mButtonEdit = findViewById(R.id.button_edit);
         mButtonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +55,7 @@ public class BlockedMembersListActivity extends AppCompatActivity {
         });
         mButtonEdit.setEnabled(false);
 
-        mButtonUnblock = (Button) findViewById(R.id.button_unblock);
+        mButtonUnblock = findViewById(R.id.button_unblock);
         mButtonUnblock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,14 +65,14 @@ public class BlockedMembersListActivity extends AppCompatActivity {
         });
         mButtonUnblock.setEnabled(false);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_blocked_members_list);
+        mToolbar = findViewById(R.id.toolbar_blocked_members_list);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left_white_24_dp);
         }
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_select_user);
+        mRecyclerView = findViewById(R.id.recycler_select_user);
         mListAdapter = new SelectableUserListAdapter(this, true, false);
         mListAdapter.setItemCheckedChangeListener(new SelectableUserListAdapter.OnItemCheckedChangeListener() {
             @Override

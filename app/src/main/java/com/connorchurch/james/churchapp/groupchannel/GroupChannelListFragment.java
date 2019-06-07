@@ -64,9 +64,9 @@ public class GroupChannelListFragment extends Fragment {
         // Change action bar title
         ((GroupChannelActivity) getActivity()).setActionBarTitle(getResources().getString(R.string.all_group_channels));
 
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_group_channel_list);
-        mCreateChannelFab = (FloatingActionButton) rootView.findViewById(R.id.fab_group_channel_list);
-        mSwipeRefresh = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_layout_group_channel_list);
+        mRecyclerView = rootView.findViewById(R.id.recycler_group_channel_list);
+        mCreateChannelFab = rootView.findViewById(R.id.fab_group_channel_list);
+        mSwipeRefresh = rootView.findViewById(R.id.swipe_layout_group_channel_list);
 
         mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

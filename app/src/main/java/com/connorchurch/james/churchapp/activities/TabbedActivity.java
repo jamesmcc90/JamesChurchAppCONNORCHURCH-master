@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,9 +27,16 @@ public class TabbedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.people);
+        Configuration config = getResources().getConfiguration();
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.people_tablet);
+        } else {
+            setContentView(R.layout.people);
+        }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Log.d(TAG, "onCreate: Starting");
 

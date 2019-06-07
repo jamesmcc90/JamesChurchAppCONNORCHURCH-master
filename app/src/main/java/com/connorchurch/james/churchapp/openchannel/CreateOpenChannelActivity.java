@@ -38,16 +38,16 @@ public class CreateOpenChannelActivity extends AppCompatActivity {
 
         mIMM = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_create_open_channel);
+        Toolbar toolbar = findViewById(R.id.toolbar_create_open_channel);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left_white_24_dp);
         }
 
-        mNameEditText = (TextInputEditText) findViewById(R.id.edittext_create_open_channel_name);
+        mNameEditText = findViewById(R.id.edittext_create_open_channel_name);
 
-        mCreateButton = (Button) findViewById(R.id.button_create_open_channel);
+        mCreateButton = findViewById(R.id.button_create_open_channel);
 
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override

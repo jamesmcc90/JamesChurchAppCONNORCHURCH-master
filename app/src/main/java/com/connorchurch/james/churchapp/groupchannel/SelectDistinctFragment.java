@@ -37,7 +37,7 @@ public class SelectDistinctFragment extends Fragment {
 
         mListener = (CreateGroupChannelActivity) getActivity();
 
-        mCheckBox = (CheckBox) rootView.findViewById(R.id.checkbox_select_distinct);
+        mCheckBox = rootView.findViewById(R.id.checkbox_select_distinct);
         mCheckBox.setChecked(true);
         mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

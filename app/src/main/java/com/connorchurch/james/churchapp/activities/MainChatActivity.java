@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -58,6 +59,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
@@ -80,12 +82,13 @@ public class MainChatActivity extends AppCompatActivity implements
 
         public MessageViewHolder(View v) {
             super(v);
-            messageTextView = (TextView) itemView.findViewById(R.id.messageTextView);
-            messageImageView = (ImageView) itemView.findViewById(R.id.messageImageView);
-            messengerTextView = (TextView) itemView.findViewById(R.id.messengerTextView);
-            messengerImageView = (CircleImageView) itemView.findViewById(R.id.messengerImageView);
+            messageTextView = itemView.findViewById(R.id.messageTextView);
+            messageImageView = itemView.findViewById(R.id.messageImageView);
+            messengerTextView = itemView.findViewById(R.id.messengerTextView);
+            messengerImageView = itemView.findViewById(R.id.messengerImageView);
         }
     }
+
 
     private static final String TAG = "MainActivity";
     public static final String MESSAGES_CHILD = "messages";
@@ -123,7 +126,15 @@ public class MainChatActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.firebase_chat);
+
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.firebase_chat_tablet);
+        } else {
+          setContentView(R.layout.firebase_chat);
+        }
+
 
         builder = new AlertDialog.Builder(this);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -150,8 +161,8 @@ public class MainChatActivity extends AppCompatActivity implements
                 .addApi(Auth.GOOGLE_SIGN_IN_API)
                 .build();
 
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
-        mMessageRecyclerView = (RecyclerView) findViewById(R.id.messageRecyclerView);
+        mProgressBar = findViewById(R.id.progressBar);
+        mMessageRecyclerView = findViewById(R.id.messageRecyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setStackFromEnd(true);
 
@@ -180,7 +191,14 @@ public class MainChatActivity extends AppCompatActivity implements
             @Override
             public MessageViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-                return new MessageViewHolder(inflater.inflate(R.layout.item_message, viewGroup, false));
+                Configuration config = getResources().getConfiguration();
+
+                if (config.smallestScreenWidthDp >= 600) {
+                    return new MessageViewHolder(inflater.inflate(R.layout.item_message_tablet, viewGroup, false));
+                } else {
+                    return new MessageViewHolder(inflater.inflate(R.layout.item_message, viewGroup, false));
+                }
+
             }
 
 
@@ -244,6 +262,8 @@ public class MainChatActivity extends AppCompatActivity implements
             }
         };
 
+
+
         mFirebaseAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
             @Override
             public void onItemRangeInserted(int positionStart, int itemCount) {
@@ -289,7 +309,7 @@ public class MainChatActivity extends AppCompatActivity implements
         // Fetch remote config.
         fetchConfig();
 
-        messageEditText = (EditText) findViewById(R.id.editText5);
+        messageEditText = findViewById(R.id.editText5);
 
         messageEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -310,7 +330,7 @@ public class MainChatActivity extends AppCompatActivity implements
             }
         });
 
-       mAddMessageImageView = (ImageView) findViewById(R.id.addMessageImageView);
+       mAddMessageImageView = findViewById(R.id.addMessageImageView);
         mAddMessageImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -321,7 +341,7 @@ public class MainChatActivity extends AppCompatActivity implements
             }
         });
 
-        mSendButton = (Button) findViewById(R.id.sendButton);
+        mSendButton = findViewById(R.id.sendButton);
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -341,6 +361,9 @@ public class MainChatActivity extends AppCompatActivity implements
 
         Button logout = findViewById(R.id.btnLogout);
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -515,6 +538,7 @@ public class MainChatActivity extends AppCompatActivity implements
                                     }
                                 }
                             });
+
                 }
             }
         } else if (requestCode == REQUEST_INVITE) {
@@ -600,5 +624,7 @@ public class MainChatActivity extends AppCompatActivity implements
         alert.show();
 
     }
+
+
 
 }

@@ -43,7 +43,7 @@ public class ListAdapter extends BaseExpandableListAdapter {
             ListView = inflater.inflate(R.layout.child_list_item, null);
         }
 
-        TextView item = (TextView) ListView.findViewById(R.id.textView1);
+        TextView item = ListView.findViewById(R.id.textView1);
 
         item.setText(CoursesName);
         return ListView;
@@ -77,7 +77,7 @@ public class ListAdapter extends BaseExpandableListAdapter {
         
 
 
-        TextView item = (TextView) ListView.findViewById(R.id.textView1);
+        TextView item = ListView.findViewById(R.id.textView1);
         item.setText(CoursesFull);
         return ListView;
     }

@@ -58,7 +58,7 @@ public class CreateGroupChannelActivity extends AppCompatActivity
                     .commit();
         }
 
-        mNextButton = (Button) findViewById(R.id.button_create_group_channel_next);
+        mNextButton = findViewById(R.id.button_create_group_channel_next);
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +73,7 @@ public class CreateGroupChannelActivity extends AppCompatActivity
         });
         mNextButton.setEnabled(false);
 
-        mCreateButton = (Button) findViewById(R.id.button_create_group_channel_create);
+        mCreateButton = findViewById(R.id.button_create_group_channel_create);
         mCreateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +86,7 @@ public class CreateGroupChannelActivity extends AppCompatActivity
         });
         mCreateButton.setEnabled(false);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_create_group_channel);
+        mToolbar = findViewById(R.id.toolbar_create_group_channel);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

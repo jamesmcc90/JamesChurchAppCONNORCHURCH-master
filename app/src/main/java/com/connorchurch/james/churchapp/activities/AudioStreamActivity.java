@@ -49,7 +49,7 @@ public class AudioStreamActivity extends AppCompatActivity {
 
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         mContext = getApplicationContext();
@@ -102,7 +102,7 @@ public class AudioStreamActivity extends AppCompatActivity {
 
 
         try {
-            ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+            ConnectivityManager cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
             NetworkInfo nInfo = cManager.getActiveNetworkInfo();
             WebView webView = findViewById(R.id.webViewFacebook);
 

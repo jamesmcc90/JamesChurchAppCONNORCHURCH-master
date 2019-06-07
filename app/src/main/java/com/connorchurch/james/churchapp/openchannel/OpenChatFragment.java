@@ -119,17 +119,17 @@ public class OpenChatFragment extends Fragment {
 
         mRootLayout = rootView.findViewById(R.id.layout_open_chat_root);
 
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_open_channel_chat);
+        mRecyclerView = rootView.findViewById(R.id.recycler_open_channel_chat);
 
         mCurrentEventLayout = rootView.findViewById(R.id.layout_open_chat_current_event);
-        mCurrentEventText = (TextView) rootView.findViewById(R.id.text_open_chat_current_event);
+        mCurrentEventText = rootView.findViewById(R.id.text_open_chat_current_event);
 
         setUpChatAdapter();
         setUpRecyclerView();
 
         // Set up chat box
-        mMessageSendButton = (Button) rootView.findViewById(R.id.button_open_channel_chat_send);
-        mMessageEditText = (EditText) rootView.findViewById(R.id.edittext_chat_message);
+        mMessageSendButton = rootView.findViewById(R.id.button_open_channel_chat_send);
+        mMessageEditText = rootView.findViewById(R.id.edittext_chat_message);
 
         mMessageEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -172,7 +172,7 @@ public class OpenChatFragment extends Fragment {
             }
         });
 
-        mUploadFileButton = (ImageButton) rootView.findViewById(R.id.button_open_channel_chat_upload);
+        mUploadFileButton = rootView.findViewById(R.id.button_open_channel_chat_upload);
         mUploadFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

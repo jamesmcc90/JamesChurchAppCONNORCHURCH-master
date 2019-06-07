@@ -1,5 +1,6 @@
 package com.connorchurch.james.churchapp.activities;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.connorchurch.james.churchapp.R;
@@ -12,16 +13,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +30,18 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.find_us);
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.find_us_tablet);
+        } else {
+            setContentView(R.layout.find_us);
+        }
+
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mapFragment.getMapAsync(this);
 

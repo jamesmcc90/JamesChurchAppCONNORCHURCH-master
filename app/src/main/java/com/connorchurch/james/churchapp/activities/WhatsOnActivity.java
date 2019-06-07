@@ -1,6 +1,7 @@
 package com.connorchurch.james.churchapp.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -28,9 +29,15 @@ public class WhatsOnActivity extends AppCompatActivity {
       super.onCreate(savedInstanceState);
 
       setContentView(R.layout.whats_on);
+     Configuration config = getResources().getConfiguration();
 
 
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    if (config.smallestScreenWidthDp >= 600) {
+      setContentView(R.layout.whats_on_tablet);
+    } else {
+      setContentView(R.layout.whats_on);
+    }
+    Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
       Log.d(TAG, "onCreate: Starting");
 

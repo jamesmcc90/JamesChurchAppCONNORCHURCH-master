@@ -34,13 +34,13 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_connor_login);
 
-        mLoginLayout = (CoordinatorLayout) findViewById(R.id.layout_login);
+        mLoginLayout = findViewById(R.id.layout_login);
 
-        mUserIdConnectEditText = (TextInputEditText) findViewById(R.id.edittext_login_user_id);
-        mUserNicknameEditText = (TextInputEditText) findViewById(R.id.edittext_login_user_nickname);
+        mUserIdConnectEditText = findViewById(R.id.edittext_login_user_id);
+        mUserNicknameEditText = findViewById(R.id.edittext_login_user_nickname);
         mUserIdConnectEditText.setText(PreferenceUtils.getUserId());
         mUserNicknameEditText.setText(PreferenceUtils.getNickname());
-        mConnectButton = (Button) findViewById(R.id.button_login_connect);
+        mConnectButton = findViewById(R.id.button_login_connect);
         mConnectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         mUserNicknameEditText.setSelectAllOnFocus(true);
 
         // A loading indicator
-        mProgressBar = (ContentLoadingProgressBar) findViewById(R.id.progress_bar_login);
+        mProgressBar = findViewById(R.id.progress_bar_login);
 
         // Display current SendBird and app versions in a TextView
         String sdkVersion = String.format(getResources().getString(R.string.all_app_version),

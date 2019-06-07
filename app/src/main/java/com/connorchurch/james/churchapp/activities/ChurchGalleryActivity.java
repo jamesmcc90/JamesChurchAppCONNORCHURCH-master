@@ -2,6 +2,7 @@ package com.connorchurch.james.churchapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,18 +16,27 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.connorchurch.james.churchapp.R;
 
-import java.time.temporal.ChronoUnit;
-
 public class ChurchGalleryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_church_gallery);
+
+        Configuration config = getResources().getConfiguration();
+
+        if (config.smallestScreenWidthDp >= 600) {
+            setContentView(R.layout.activity_church_gallery_tablet);
+        } else {
+            setContentView(R.layout.activity_church_gallery);
+        }
+
+
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_images);
+        RecyclerView recyclerView = findViewById(R.id.rv_images);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -73,7 +83,7 @@ public class ChurchGalleryActivity extends AppCompatActivity {
             public MyViewHolder(View itemView) {
 
                 super(itemView);
-                mPhotoImageView = (ImageView) itemView.findViewById(R.id.iv_photo);
+                mPhotoImageView = itemView.findViewById(R.id.iv_photo);
                 itemView.setOnClickListener(this);
             }
 

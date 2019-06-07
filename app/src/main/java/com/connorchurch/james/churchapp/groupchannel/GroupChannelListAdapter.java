@@ -225,15 +225,15 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         ChannelHolder(View itemView) {
             super(itemView);
 
-            topicText = (TextView) itemView.findViewById(R.id.text_group_channel_list_topic);
-            lastMessageText = (TextView) itemView.findViewById(R.id.text_group_channel_list_message);
-            unreadCountText = (TextView) itemView.findViewById(R.id.text_group_channel_list_unread_count);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_channel_list_date);
-            memberCountText = (TextView) itemView.findViewById(R.id.text_group_channel_list_member_count);
-            coverImage = (MultiImageView) itemView.findViewById(R.id.image_group_channel_list_cover);
+            topicText = itemView.findViewById(R.id.text_group_channel_list_topic);
+            lastMessageText = itemView.findViewById(R.id.text_group_channel_list_message);
+            unreadCountText = itemView.findViewById(R.id.text_group_channel_list_unread_count);
+            dateText = itemView.findViewById(R.id.text_group_channel_list_date);
+            memberCountText = itemView.findViewById(R.id.text_group_channel_list_member_count);
+            coverImage = itemView.findViewById(R.id.image_group_channel_list_cover);
             coverImage.setShape(MultiImageView.Shape.CIRCLE);
 
-            typingIndicatorContainer = (LinearLayout) itemView.findViewById(R.id.container_group_channel_list_typing_indicator);
+            typingIndicatorContainer = itemView.findViewById(R.id.container_group_channel_list_typing_indicator);
         }
 
         /**

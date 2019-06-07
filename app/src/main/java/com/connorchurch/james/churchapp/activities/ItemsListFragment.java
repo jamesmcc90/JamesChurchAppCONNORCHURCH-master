@@ -22,7 +22,7 @@ public class ItemsListFragment extends Fragment {
     private OnItemSelectedListener listener;
 
     public interface OnItemSelectedListener {
-        public void onItemSelected(Item i);
+        void onItemSelected(Item i);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class ItemsListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_items_list, container,
                 false);
         // Bind adapter to ListView
-        lvItems = (ListView) view.findViewById(R.id.lvItems);
+        lvItems = view.findViewById(R.id.lvItems);
         lvItems.setAdapter(adapterItems);
         lvItems.setOnItemClickListener(new OnItemClickListener() {
             @Override

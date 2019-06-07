@@ -60,8 +60,8 @@ public class MediaPlayerActivity extends Activity implements
         super.onCreate(icicle);
         setContentView(R.layout.activity_media_player);
 
-        mSurfaceView = (SurfaceView) findViewById(R.id.surface);
-        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        mSurfaceView = findViewById(R.id.surface);
+        mProgressBar = findViewById(R.id.progress_bar);
         mSurfaceHolder = mSurfaceView.getHolder();
         mSurfaceHolder.addCallback(this);
         mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);

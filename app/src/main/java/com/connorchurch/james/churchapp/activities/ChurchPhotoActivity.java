@@ -32,7 +32,7 @@ public class ChurchPhotoActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mImageView = (ImageView) findViewById(R.id.image);
+        mImageView = findViewById(R.id.image);
         ChurchPhoto churchPhoto = getIntent().getParcelableExtra(EXTRA_SPACE_PHOTO);
 
         Glide.with(this)

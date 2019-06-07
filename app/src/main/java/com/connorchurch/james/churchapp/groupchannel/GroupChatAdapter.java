@@ -339,14 +339,10 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         if (message instanceof UserMessage) {
             int index = mFailedMessageIdList.indexOf(((UserMessage) message).getRequestId());
-            if (index >= 0) {
-                return true;
-            }
+            return index >= 0;
         } else if (message instanceof FileMessage) {
             int index = mFailedMessageIdList.indexOf(((FileMessage) message).getRequestId());
-            if (index >= 0) {
-                return true;
-            }
+            return index >= 0;
         }
 
         return false;
@@ -606,8 +602,8 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         AdminMessageHolder(View itemView) {
             super(itemView);
 
-            messageText = (TextView) itemView.findViewById(R.id.text_group_chat_message);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            messageText = itemView.findViewById(R.id.text_group_chat_message);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
         }
 
         void bind(Context context, AdminMessage message, GroupChannel channel, boolean isNewDay) {
@@ -632,17 +628,17 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         MyUserMessageHolder(View itemView) {
             super(itemView);
 
-            messageText = (TextView) itemView.findViewById(R.id.text_group_chat_message);
-            editedText = (TextView) itemView.findViewById(R.id.text_group_chat_edited);
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            messageText = itemView.findViewById(R.id.text_group_chat_message);
+            editedText = itemView.findViewById(R.id.text_group_chat_edited);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
 
-            urlPreviewContainer = (ViewGroup) itemView.findViewById(R.id.url_preview_container);
-            urlPreviewSiteNameText = (TextView) itemView.findViewById(R.id.text_url_preview_site_name);
-            urlPreviewTitleText = (TextView) itemView.findViewById(R.id.text_url_preview_title);
-            urlPreviewDescriptionText = (TextView) itemView.findViewById(R.id.text_url_preview_description);
-            urlPreviewMainImageView = (ImageView) itemView.findViewById(R.id.image_url_preview_main);
+            urlPreviewContainer = itemView.findViewById(R.id.url_preview_container);
+            urlPreviewSiteNameText = itemView.findViewById(R.id.text_url_preview_site_name);
+            urlPreviewTitleText = itemView.findViewById(R.id.text_url_preview_title);
+            urlPreviewDescriptionText = itemView.findViewById(R.id.text_url_preview_description);
+            urlPreviewMainImageView = itemView.findViewById(R.id.image_url_preview_main);
 
             // Dynamic padding that can be hidden or shown based on whether the message is continuous.
             padding = itemView.findViewById(R.id.view_group_chat_padding);
@@ -741,19 +737,19 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public OtherUserMessageHolder(View itemView) {
             super(itemView);
 
-            messageText = (TextView) itemView.findViewById(R.id.text_group_chat_message);
-            editedText = (TextView) itemView.findViewById(R.id.text_group_chat_edited);
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            nicknameText = (TextView) itemView.findViewById(R.id.text_group_chat_nickname);
-            profileImage = (ImageView) itemView.findViewById(R.id.image_group_chat_profile);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            messageText = itemView.findViewById(R.id.text_group_chat_message);
+            editedText = itemView.findViewById(R.id.text_group_chat_edited);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            nicknameText = itemView.findViewById(R.id.text_group_chat_nickname);
+            profileImage = itemView.findViewById(R.id.image_group_chat_profile);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
 
-            urlPreviewContainer = (ViewGroup) itemView.findViewById(R.id.url_preview_container);
-            urlPreviewSiteNameText = (TextView) itemView.findViewById(R.id.text_url_preview_site_name);
-            urlPreviewTitleText = (TextView) itemView.findViewById(R.id.text_url_preview_title);
-            urlPreviewDescriptionText = (TextView) itemView.findViewById(R.id.text_url_preview_description);
-            urlPreviewMainImageView = (ImageView) itemView.findViewById(R.id.image_url_preview_main);
+            urlPreviewContainer = itemView.findViewById(R.id.url_preview_container);
+            urlPreviewSiteNameText = itemView.findViewById(R.id.text_url_preview_site_name);
+            urlPreviewTitleText = itemView.findViewById(R.id.text_url_preview_title);
+            urlPreviewDescriptionText = itemView.findViewById(R.id.text_url_preview_description);
+            urlPreviewMainImageView = itemView.findViewById(R.id.image_url_preview_main);
         }
 
 
@@ -842,11 +838,11 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public MyFileMessageHolder(View itemView) {
             super(itemView);
 
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            fileNameText = (TextView) itemView.findViewById(R.id.text_group_chat_file_name);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            circleProgressBar = (CircleProgressBar) itemView.findViewById(R.id.circle_progress);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            fileNameText = itemView.findViewById(R.id.text_group_chat_file_name);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            circleProgressBar = itemView.findViewById(R.id.circle_progress);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
         }
 
         void bind(Context context, final FileMessage message, GroupChannel channel, boolean isNewDay, boolean isTempMessage, boolean isFailedMessage, Uri tempFileMessageUri, final OnItemClickListener listener) {
@@ -906,14 +902,14 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public OtherFileMessageHolder(View itemView) {
             super(itemView);
 
-            nicknameText = (TextView) itemView.findViewById(R.id.text_group_chat_nickname);
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            fileNameText = (TextView) itemView.findViewById(R.id.text_group_chat_file_name);
+            nicknameText = itemView.findViewById(R.id.text_group_chat_nickname);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            fileNameText = itemView.findViewById(R.id.text_group_chat_file_name);
 //            fileSizeText = (TextView) itemView.findViewById(R.id.text_group_chat_file_size);
 
-            profileImage = (ImageView) itemView.findViewById(R.id.image_group_chat_profile);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
+            profileImage = itemView.findViewById(R.id.image_group_chat_profile);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
         }
 
         void bind(Context context, final FileMessage message, GroupChannel channel, boolean isNewDay, boolean isContinuous, final OnItemClickListener listener) {
@@ -975,11 +971,11 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public MyImageFileMessageHolder(View itemView) {
             super(itemView);
 
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            fileThumbnailImage = (ImageView) itemView.findViewById(R.id.image_group_chat_file_thumbnail);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            circleProgressBar = (CircleProgressBar) itemView.findViewById(R.id.circle_progress);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            fileThumbnailImage = itemView.findViewById(R.id.image_group_chat_file_thumbnail);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            circleProgressBar = itemView.findViewById(R.id.circle_progress);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
         }
 
         void bind(Context context, final FileMessage message, GroupChannel channel, boolean isNewDay, boolean isTempMessage, boolean isFailedMessage, Uri tempFileMessageUri, final OnItemClickListener listener) {
@@ -1036,7 +1032,7 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     }
                 } else {
                     if (message.getType().toLowerCase().contains("gif")) {
-                        ImageUtils.displayGifImageFromUrl(context, message.getUrl(), fileThumbnailImage, (String) null, fileThumbnailImage.getDrawable());
+                        ImageUtils.displayGifImageFromUrl(context, message.getUrl(), fileThumbnailImage, null, fileThumbnailImage.getDrawable());
                     } else {
                         ImageUtils.displayImageFromUrl(context, message.getUrl(), fileThumbnailImage, fileThumbnailImage.getDrawable());
                     }
@@ -1062,12 +1058,12 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public OtherImageFileMessageHolder(View itemView) {
             super(itemView);
 
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            nicknameText = (TextView) itemView.findViewById(R.id.text_group_chat_nickname);
-            fileThumbnailImage = (ImageView) itemView.findViewById(R.id.image_group_chat_file_thumbnail);
-            profileImage = (ImageView) itemView.findViewById(R.id.image_group_chat_profile);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            nicknameText = itemView.findViewById(R.id.text_group_chat_nickname);
+            fileThumbnailImage = itemView.findViewById(R.id.image_group_chat_file_thumbnail);
+            profileImage = itemView.findViewById(R.id.image_group_chat_profile);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
         }
 
         void bind(Context context, final FileMessage message, GroupChannel channel, boolean isNewDay, boolean isContinuous, final OnItemClickListener listener) {
@@ -1116,7 +1112,7 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
             } else {
                 if (message.getType().toLowerCase().contains("gif")) {
-                    ImageUtils.displayGifImageFromUrl(context, message.getUrl(), fileThumbnailImage, (String) null, fileThumbnailImage.getDrawable());
+                    ImageUtils.displayGifImageFromUrl(context, message.getUrl(), fileThumbnailImage, null, fileThumbnailImage.getDrawable());
                 } else {
                     ImageUtils.displayImageFromUrl(context, message.getUrl(), fileThumbnailImage, fileThumbnailImage.getDrawable());
                 }
@@ -1145,11 +1141,11 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public MyVideoFileMessageHolder(View itemView) {
             super(itemView);
 
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            fileThumbnailImage = (ImageView) itemView.findViewById(R.id.image_group_chat_file_thumbnail);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            circleProgressBar = (CircleProgressBar) itemView.findViewById(R.id.circle_progress);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            fileThumbnailImage = itemView.findViewById(R.id.image_group_chat_file_thumbnail);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            circleProgressBar = itemView.findViewById(R.id.circle_progress);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
         }
 
         void bind(Context context, final FileMessage message, GroupChannel channel, boolean isNewDay, boolean isTempMessage, boolean isFailedMessage, Uri tempFileMessageUri, final OnItemClickListener listener) {
@@ -1222,12 +1218,12 @@ class GroupChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public OtherVideoFileMessageHolder(View itemView) {
             super(itemView);
 
-            timeText = (TextView) itemView.findViewById(R.id.text_group_chat_time);
-            nicknameText = (TextView) itemView.findViewById(R.id.text_group_chat_nickname);
-            fileThumbnailImage = (ImageView) itemView.findViewById(R.id.image_group_chat_file_thumbnail);
-            profileImage = (ImageView) itemView.findViewById(R.id.image_group_chat_profile);
-            readReceiptText = (TextView) itemView.findViewById(R.id.text_group_chat_read_receipt);
-            dateText = (TextView) itemView.findViewById(R.id.text_group_chat_date);
+            timeText = itemView.findViewById(R.id.text_group_chat_time);
+            nicknameText = itemView.findViewById(R.id.text_group_chat_nickname);
+            fileThumbnailImage = itemView.findViewById(R.id.image_group_chat_file_thumbnail);
+            profileImage = itemView.findViewById(R.id.image_group_chat_profile);
+            readReceiptText = itemView.findViewById(R.id.text_group_chat_read_receipt);
+            dateText = itemView.findViewById(R.id.text_group_chat_date);
         }
 
         void bind(Context context, final FileMessage message, GroupChannel channel, boolean isNewDay, boolean isContinuous, final OnItemClickListener listener) {

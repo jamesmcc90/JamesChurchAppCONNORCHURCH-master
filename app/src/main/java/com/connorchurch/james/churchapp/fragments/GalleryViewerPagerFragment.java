@@ -59,7 +59,7 @@ public class GalleryViewerPagerFragment extends Fragment {
         ArrayList<ImageModel> images = getArguments().getParcelableArrayList(EXTRA_IMAGES);
         GalleryPagerAdapter galleryPagerAdapter = new GalleryPagerAdapter(getChildFragmentManager(), images);
 
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.animal_view_pager);
+        ViewPager viewPager = view.findViewById(R.id.animal_view_pager);
         viewPager.setAdapter(galleryPagerAdapter);
         viewPager.setCurrentItem(currentItem);
     }

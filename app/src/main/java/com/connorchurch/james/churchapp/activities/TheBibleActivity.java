@@ -28,7 +28,7 @@ public class TheBibleActivity extends AppCompatActivity {
         } else {
             setContentView(R.layout.bible);
         }
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 

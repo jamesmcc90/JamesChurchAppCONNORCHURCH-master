@@ -53,16 +53,6 @@ public class ItemDetailActivity extends FragmentActivity {
                     return false;
                 }
             });
-
-
-
-
-
-
-
-
-
-
         }
 
         @Override
@@ -73,6 +63,6 @@ public class ItemDetailActivity extends FragmentActivity {
 
 
 
-    }
+}
 
 

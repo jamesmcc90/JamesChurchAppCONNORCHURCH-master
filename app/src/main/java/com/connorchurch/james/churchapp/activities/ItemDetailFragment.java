@@ -28,6 +28,8 @@ public class ItemDetailFragment extends Fragment {
        //TextView tvBody = (TextView) view.findViewById(R.id.tvBody);
        // tvTitle.setText(item.getTitle());
        //tvBody.setText(item.getBody());
+
+
         return view;
 
     }

@@ -43,11 +43,11 @@ public class BibleResourcesActivity extends AppCompatActivity {
 
         registerAlarm();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         try {
-            ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+            ConnectivityManager cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
             NetworkInfo nInfo = cManager.getActiveNetworkInfo();
             WebView webView = findViewById(R.id.webViewVerse);
 
@@ -103,7 +103,7 @@ public class BibleResourcesActivity extends AppCompatActivity {
 
         Intent intent = new Intent(BibleResourcesActivity.this, VerseReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(BibleResourcesActivity.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT );
-        AlarmManager am = (AlarmManager)this.getSystemService(this.ALARM_SERVICE);
+        AlarmManager am = (AlarmManager)this.getSystemService(ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
   /*

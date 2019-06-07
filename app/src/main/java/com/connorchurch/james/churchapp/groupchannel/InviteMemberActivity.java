@@ -46,7 +46,7 @@ public class InviteMemberActivity extends AppCompatActivity {
 
         mSelectedUserIds = new ArrayList<>();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_invite_member);
+        mRecyclerView = findViewById(R.id.recycler_invite_member);
         mListAdapter = new SelectableUserListAdapter(this, false, true);
         mListAdapter.setItemCheckedChangeListener(new SelectableUserListAdapter.OnItemCheckedChangeListener() {
             @Override
@@ -66,7 +66,7 @@ public class InviteMemberActivity extends AppCompatActivity {
             }
         });
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_invite_member);
+        mToolbar = findViewById(R.id.toolbar_invite_member);
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -75,7 +75,7 @@ public class InviteMemberActivity extends AppCompatActivity {
 
         mChannelUrl = getIntent().getStringExtra(GroupChatFragment.EXTRA_CHANNEL_URL);
 
-        mInviteButton = (Button) findViewById(R.id.button_invite_member);
+        mInviteButton = findViewById(R.id.button_invite_member);
         mInviteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

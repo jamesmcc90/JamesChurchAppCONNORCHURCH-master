@@ -33,11 +33,11 @@ public class CalendarActivity extends AppCompatActivity {
             setContentView(R.layout.calendar);
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         try {
-            ConnectivityManager cManager = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+            ConnectivityManager cManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
             NetworkInfo nInfo = cManager.getActiveNetworkInfo();
             WebView webView = findViewById(R.id.webViewFacebook);
 

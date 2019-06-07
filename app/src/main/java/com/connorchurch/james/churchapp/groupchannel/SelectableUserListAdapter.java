@@ -137,10 +137,10 @@ public class SelectableUserListAdapter extends RecyclerView.Adapter<RecyclerView
             mIsBlockedList = isBlockedList;
             mShowCheckBox = hideCheckBox;
 
-            nameText = (TextView) itemView.findViewById(R.id.text_selectable_user_list_nickname);
-            profileImage = (ImageView) itemView.findViewById(R.id.image_selectable_user_list_profile);
-            blockedImage = (ImageView) itemView.findViewById(R.id.image_user_list_blocked);
-            checkbox = (CheckBox) itemView.findViewById(R.id.checkbox_selectable_user_list);
+            nameText = itemView.findViewById(R.id.text_selectable_user_list_nickname);
+            profileImage = itemView.findViewById(R.id.image_selectable_user_list_profile);
+            blockedImage = itemView.findViewById(R.id.image_user_list_blocked);
+            checkbox = itemView.findViewById(R.id.checkbox_selectable_user_list);
         }
 
         public void setShowCheckBox(boolean showCheckBox) {

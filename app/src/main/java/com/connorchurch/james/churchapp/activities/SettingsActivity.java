@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
@@ -23,16 +24,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
-        Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.contact_us_tablet);
-        } else {
-            setContentView(R.layout.contact_us);
-        }
 
-        */
+
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MainPreferenceFragment()).commit();
 
     }

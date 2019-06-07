@@ -16,9 +16,9 @@ public class GalleryConnorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gallery_main_test);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.content, RecyclerViewFragment.newInstance())

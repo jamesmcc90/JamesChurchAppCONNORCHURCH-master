@@ -83,9 +83,9 @@ class OpenChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         ChannelHolder(View itemView) {
             super(itemView);
-            nameText = (TextView) itemView.findViewById(R.id.text_open_channel_list_name);
-            participantCountText = (TextView) itemView.findViewById(R.id.text_open_channel_list_participant_count);
-            coloredDecorator = (ImageView) itemView.findViewById(R.id.image_open_channel_list_decorator);
+            nameText = itemView.findViewById(R.id.text_open_channel_list_name);
+            participantCountText = itemView.findViewById(R.id.text_open_channel_list_participant_count);
+            coloredDecorator = itemView.findViewById(R.id.image_open_channel_list_decorator);
         }
 
         void bind(final Context context, final OpenChannel channel, int position, @Nullable final OnItemClickListener clickListener, @Nullable final OnItemLongClickListener longClickListener) {
