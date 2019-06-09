@@ -134,7 +134,6 @@ public class AudioStreamActivity extends AppCompatActivity {
             Toast.makeText(AudioStreamActivity.this, "No Internet connection!", Toast.LENGTH_LONG).show();
         }
 
-
         }
 
 

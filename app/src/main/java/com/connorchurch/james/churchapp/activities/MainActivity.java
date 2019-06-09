@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
         }else if(id == R.id.nav_news){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, ItemListActivity.class);
+            i.setClass(MainActivity.this, ListLinksActivity.class);
             finish();
             startActivity(i);
 
