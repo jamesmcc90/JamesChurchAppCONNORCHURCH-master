@@ -162,8 +162,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.ListLinksActivity"
-            android:label="More Links"
-            android:screenOrientation="portrait" />
+            android:label="Church Updates"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

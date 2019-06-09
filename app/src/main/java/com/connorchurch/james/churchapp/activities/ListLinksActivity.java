@@ -41,7 +41,7 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        initCollapsingToolbar();
+//        initCollapsingToolbar();
 
         albumList = new ArrayList<>();
         adapter = new AlbumsAdapter(this, albumList);
@@ -50,13 +50,10 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
         prepareAlbums();
 
         try {
-            Glide.with(this).load(R.drawable.church3).into((ImageView) findViewById(R.id.backdrop));
+            Glide.with(this).load(R.drawable.church_foyer).into((ImageView) findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
 
         final CardView btnChurch = findViewById(R.id.btnChurch);
         btnChurch.setOnClickListener(new View.OnClickListener(){
@@ -73,7 +70,7 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
                 });
                 view.getSettings().setJavaScriptEnabled(true);
                 view.setVisibility(View.VISIBLE);
-                view.loadUrl("https://www.facebook.com/1stConnorBB/");
+                view.loadUrl("https://www.facebook.com/connorpci/");
 
                 view.setOnKeyListener(new View.OnKeyListener() {
                     @Override
@@ -121,37 +118,6 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    /**
-     * Initializing collapsing toolbar
-     * Will show and hide the toolbar title on scroll
-     */
-    private void initCollapsingToolbar() {
-        final CollapsingToolbarLayout collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("News");
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
-        appBarLayout.setExpanded(true);
-
-        // hiding & showing the title when toolbar expanded & collapsed
-        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-            boolean isShow = false;
-            int scrollRange = -1;
-
-            @Override
-            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (scrollRange == -1) {
-                    scrollRange = appBarLayout.getTotalScrollRange();
-                }
-                if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle("News");
-                    isShow = true;
-                } else if (isShow) {
-                    collapsingToolbar.setTitle(" ");
-                    isShow = false;
-                }
-            }
-        });
-    }
 
     /**
      * Adding few albums for testing
