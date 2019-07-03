@@ -30,9 +30,6 @@ public class ChurchGalleryActivity extends AppCompatActivity {
             setContentView(R.layout.activity_church_gallery);
         }
 
-
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);

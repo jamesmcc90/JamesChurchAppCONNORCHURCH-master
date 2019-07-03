@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -135,6 +136,8 @@ public class MainChatActivity extends AppCompatActivity implements
           setContentView(R.layout.firebase_chat);
         }
 
+        Toolbar toolbar =  findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         builder = new AlertDialog.Builder(this);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);

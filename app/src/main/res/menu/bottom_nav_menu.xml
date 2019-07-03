@@ -5,7 +5,7 @@
         android:id="@+id/action_chat"
         android:enabled="true"
         android:icon="@drawable/round_chat_24"
-        android:title="Church Chat"
+        android:title="Connor Chat"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_calendar"
