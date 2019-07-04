@@ -455,6 +455,7 @@ William Warwick
     <string name="facebook_app_id">475771149616259</string>
     <string name="fb_login_protocol_scheme">fb475771149616259</string>
 
+    <string name="chat_logout">Sign Out</string>
     <string name="app_id">730467113955312</string>
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
     <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>

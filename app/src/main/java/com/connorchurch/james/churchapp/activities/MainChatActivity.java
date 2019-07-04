@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -79,6 +80,7 @@ public class MainChatActivity extends AppCompatActivity implements
         TextView messageTextView;
         ImageView messageImageView;
         TextView messengerTextView;
+        TextView messageTime;
         CircleImageView messengerImageView;
 
         public MessageViewHolder(View v) {
@@ -87,6 +89,7 @@ public class MainChatActivity extends AppCompatActivity implements
             messageImageView = itemView.findViewById(R.id.messageImageView);
             messengerTextView = itemView.findViewById(R.id.messengerTextView);
             messengerImageView = itemView.findViewById(R.id.messengerImageView);
+            messageTime = itemView.findViewById(R.id.messageTime);
         }
     }
 
@@ -204,17 +207,20 @@ public class MainChatActivity extends AppCompatActivity implements
 
             }
 
-
             @Override
             protected void onBindViewHolder(final MessageViewHolder viewHolder,
                                             int position,
                                             FriendlyMessage friendlyMessage) {
+
+                final TextView mTime = viewHolder.messageTime;
 
                 mProgressBar.setVisibility(ProgressBar.INVISIBLE);
                 if (friendlyMessage.getText() != null) {
                     viewHolder.messageTextView.setText(friendlyMessage.getText());
                     viewHolder.messageTextView.setVisibility(TextView.VISIBLE);
                     viewHolder.messageImageView.setVisibility(ImageView.GONE);
+                    mTime.setText(DateFormat.format("dd MMM yyyy  (h:mm a)", friendlyMessage.getMessageTime()));
+
                 } else if (friendlyMessage.getImageUrl() != null) {
                     String imageUrl = friendlyMessage.getImageUrl();
                     if (imageUrl.startsWith("gs://")) {
@@ -229,6 +235,7 @@ public class MainChatActivity extends AppCompatActivity implements
                                             Glide.with(viewHolder.messageImageView.getContext())
                                                     .load(downloadUrl)
                                                     .into(viewHolder.messageImageView);
+
                                         } else {
                                             Log.w(TAG, "Getting download url was not successful.",
                                                     task.getException());
@@ -241,6 +248,7 @@ public class MainChatActivity extends AppCompatActivity implements
                                 .into(viewHolder.messageImageView);
                     }
                     viewHolder.messageImageView.setVisibility(ImageView.VISIBLE);
+                    mTime.setText(DateFormat.format("dd MMM yyyy  (h:mm a)", friendlyMessage.getMessageTime()));
                     viewHolder.messageTextView.setVisibility(TextView.GONE);
                 }
 
@@ -361,38 +369,8 @@ public class MainChatActivity extends AppCompatActivity implements
                 .requestEmail()
                 .build();
 
-
-        Button logout = findViewById(R.id.btnLogout);
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-
-
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                mFirebaseAuth.signOut();
-                                FirebaseAuth.getInstance().signOut();
-                                mGoogleSignInClient.signOut();
-                                Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
-                                startActivity(myIntent);
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-                AlertDialog alert = builder.create();
-                alert.setTitle("Log Out");
-                alert.setMessage("Are you sure you want to logout?");
-                alert.setIcon(R.drawable.round_warning_24);
-                alert.show();
-
-            }
-        });
 
     }
 
@@ -452,7 +430,8 @@ public class MainChatActivity extends AppCompatActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
+        getMenuInflater().inflate(R.menu.chat_menu, menu);
+        
         return true;
     }
 
@@ -461,11 +440,28 @@ public class MainChatActivity extends AppCompatActivity implements
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            // launch settings activity
-            startActivity(new Intent(MainChatActivity.this, SettingsActivity.class));
-            return true;
-        }
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        mFirebaseAuth.signOut();
+                        FirebaseAuth.getInstance().signOut();
+                        mGoogleSignInClient.signOut();
+                        Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
+                        startActivity(myIntent);
+                    }
+                })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
 
+                AlertDialog alert = builder.create();
+                alert.setTitle("Sign Out");
+                alert.setMessage("Are you sure you want to sign out?");
+                alert.setIcon(R.drawable.round_warning_24);
+                alert.show();
+
+            }
         return super.onOptionsItemSelected(item);
     }
 
@@ -622,7 +618,7 @@ public class MainChatActivity extends AppCompatActivity implements
 
         AlertDialog alert = builder.create();
         alert.setTitle("Log Out");
-        alert.setMessage("Are you sure you want to logout?");
+        alert.setMessage("Are you sure you want to sign out?");
         alert.setIcon(R.drawable.round_warning_24);
         alert.show();
 

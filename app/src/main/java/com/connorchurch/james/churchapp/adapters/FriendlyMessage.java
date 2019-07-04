@@ -1,5 +1,7 @@
 package com.connorchurch.james.churchapp.adapters;
 
+import java.util.Date;
+
 public class FriendlyMessage {
 
     private String id;
@@ -17,6 +19,7 @@ public class FriendlyMessage {
         this.name = name;
         this.photoUrl = photoUrl;
         this.imageUrl = imageUrl;
+        messageTime = new Date().getTime();
     }
 
     public String getId() {
