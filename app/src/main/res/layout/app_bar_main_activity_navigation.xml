@@ -6,7 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.connorchurch.james.churchapp.activities.MainActivityNAVIGATION">
 
+    <include
+        android:id="@+id/include3"
+        layout="@layout/content_main_activity_navigation" />
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -14,14 +19,13 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="match_parent"
             android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main_activity_navigation" />
-
 
 
 </android.support.design.widget.CoordinatorLayout>

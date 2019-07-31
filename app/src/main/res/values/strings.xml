@@ -456,6 +456,7 @@ William Warwick
     <string name="fb_login_protocol_scheme">fb475771149616259</string>
 
     <string name="chat_logout">Sign Out</string>
+    <string name="chat_user_logged_in">Logged in as:</string>
     <string name="app_id">730467113955312</string>
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
     <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
@@ -543,6 +544,7 @@ William Warwick
     <string name="title_activity_gallery_test">GalleryTest</string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="test">test</string>
 
 
 </resources>

@@ -40,6 +40,8 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
@@ -67,6 +69,8 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.sendbird.android.User;
+
 import java.util.HashMap;
 import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -123,7 +127,9 @@ public class MainChatActivity extends AppCompatActivity implements
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
     private GoogleApiClient mGoogleApiClient;
     private GoogleSignInClient mGoogleSignInClient;
-
+    private TextView UserLoggedIn;
+    private TextView Username;
+    private ImageView profile;
 
     @SuppressLint("MissingPermission")
     @Override
@@ -150,6 +156,15 @@ public class MainChatActivity extends AppCompatActivity implements
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
+        Username = findViewById(R.id.userName);
+        Username.setText(mFirebaseUser.getDisplayName());
+
+        UserLoggedIn = findViewById(R.id.userLoggedIn);
+        UserLoggedIn.setText(mFirebaseUser.getEmail());
+
+        profile = findViewById(R.id.userImage);
+        Glide.with(this).load(mFirebaseUser.getPhotoUrl().toString()).into(profile);
+
         if (mFirebaseUser == null) {
             // Not signed in, launch the Sign In activity
             startActivity(new Intent(this, SignInActivity.class));
@@ -166,6 +181,9 @@ public class MainChatActivity extends AppCompatActivity implements
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API)
                 .build();
+
+
+        //profile.setImageURI(Uri.parse(mFirebaseUser.getPhotoUrl().toString()));
 
         mProgressBar = findViewById(R.id.progressBar);
         mMessageRecyclerView = findViewById(R.id.messageRecyclerView);
@@ -274,7 +292,6 @@ public class MainChatActivity extends AppCompatActivity implements
         };
 
 
-
         mFirebaseAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
             @Override
             public void onItemRangeInserted(int positionStart, int itemCount) {
@@ -341,6 +358,7 @@ public class MainChatActivity extends AppCompatActivity implements
             }
         });
 
+
        mAddMessageImageView = findViewById(R.id.addMessageImageView);
         mAddMessageImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -370,6 +388,8 @@ public class MainChatActivity extends AppCompatActivity implements
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+
 
 
     }
@@ -430,6 +450,7 @@ public class MainChatActivity extends AppCompatActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.chat_menu, menu);
         
         return true;
