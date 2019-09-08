@@ -38,7 +38,7 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_links);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 //        initCollapsingToolbar();
@@ -54,11 +54,14 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        final CardView btnChurchWebsite = findViewById(R.id.btnChurchWebsite);
         final CardView btnChurch = findViewById(R.id.btnChurch);
+
+
         btnChurch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                btnChurchWebsite.setVisibility(View.INVISIBLE);
                 btnChurch.setVisibility(View.INVISIBLE);
                 final WebView view = findViewById(R.id.webView);
                 view.setWebViewClient(new WebViewClient() {
@@ -71,7 +74,7 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
                 view.getSettings().setJavaScriptEnabled(true);
                 view.setVisibility(View.VISIBLE);
                 view.loadUrl("https://www.facebook.com/connorpci/");
-
+                getSupportActionBar().hide();
                 view.setOnKeyListener(new View.OnKeyListener() {
                     @Override
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -79,6 +82,8 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
                             view.clearCache(true);
                             view.setVisibility(View.INVISIBLE);
                             btnChurch.setVisibility(View.VISIBLE);
+                            btnChurchWebsite.setVisibility(View.VISIBLE);
+
                             return true;
                         }
                         return false;
@@ -87,23 +92,42 @@ public class ListLinksActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
+
+        btnChurchWebsite.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                btnChurchWebsite.setVisibility(View.INVISIBLE);
+                btnChurch.setVisibility(View.INVISIBLE);
+                final WebView view = findViewById(R.id.webView);
+                view.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        view.loadUrl(url);
+                        return false;
+                    }
+                });
+                view.getSettings().setJavaScriptEnabled(true);
+                view.setVisibility(View.VISIBLE);
+                btnChurchWebsite.setVisibility(View.INVISIBLE);
+                view.loadUrl("https://connorpresbyterianchurch.org/");
+
+                view.setOnKeyListener(new View.OnKeyListener() {
+                    @Override
+                    public boolean onKey(View v, int keyCode, KeyEvent event) {
+                        if (keyCode == KeyEvent.KEYCODE_BACK) {
+                            view.clearCache(true);
+                            view.setVisibility(View.INVISIBLE);
+                            btnChurch.setVisibility(View.VISIBLE);
+                            btnChurchWebsite.setVisibility(View.VISIBLE);
+                            return true;
+                        }
+                        return false;
+                    }
+                });
+            }
+        });
     }
 
-    /* Initialise car items in list.
-    private void initializeCarItemList()
-    {
-        if(carItemList == null)
-        {
-            carItemList = new ArrayList<CarRecyclerViewItem>();
-            carItemList.add(new CarRecyclerViewItem("Audi", R.drawable.car_audi));
-            carItemList.add(new CarRecyclerViewItem("BMW", R.drawable.car_bmw));
-            carItemList.add(new CarRecyclerViewItem("Benz", R.drawable.car_benz));
-            carItemList.add(new CarRecyclerViewItem("Jeep", R.drawable.car_jeep));
-            carItemList.add(new CarRecyclerViewItem("Land Rover", R.drawable.car_land_rover));
-            carItemList.add(new CarRecyclerViewItem("Future", R.drawable.car_future));
-        }
-    }
-*/
     @Override
     public void onClick(View v) {
 

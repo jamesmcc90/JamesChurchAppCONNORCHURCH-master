@@ -45,6 +45,12 @@
                     android:title="Settings">
 
                 </item>
+                <item
+                    android:id="@+id/nav_minster"
+                    android:icon="@drawable/round_person_black_24dp"
+                    android:title="Minister (test)">
+
+                </item>
             </menu>
         </item>
 

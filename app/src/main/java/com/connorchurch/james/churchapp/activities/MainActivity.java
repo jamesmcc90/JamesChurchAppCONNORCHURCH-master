@@ -13,8 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import com.connorchurch.james.churchapp.Minister;
 import com.connorchurch.james.churchapp.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -153,6 +153,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if(id == R.id.nav_settings){
             Intent i = new Intent();
             i.setClass(MainActivity.this, SettingsActivity.class);
+            finish();
+            startActivity(i);
+        }else if(id == R.id.nav_minster){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, Minister.class);
             finish();
             startActivity(i);
         }

@@ -112,7 +112,7 @@ public class MainChatActivity extends AppCompatActivity implements
     private String mPhotoUrl;
     private SharedPreferences mSharedPreferences;
 
-    private Button mSendButton;
+    private ImageView mSendButton;
     private RecyclerView mMessageRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
     private FirebaseRecyclerAdapter<FriendlyMessage, MessageViewHolder> mFirebaseAdapter;
