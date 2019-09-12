@@ -9,9 +9,9 @@
         <item android:title="Around Connor Presbyterian">
             <menu>
                 <item
-                    android:id="@+id/nav_who_we_are"
+                    android:id="@+id/nav_minster"
                     android:icon="@drawable/round_person_black_24dp"
-                    android:title="Who We Are" />
+                    android:title="Our Minister"/>
                 <item
                     android:id="@+id/nav_news"
                     android:icon="@drawable/round_fiber_new_24"
@@ -46,9 +46,9 @@
 
                 </item>
                 <item
-                    android:id="@+id/nav_minster"
-                    android:icon="@drawable/round_person_black_24dp"
-                    android:title="Minister (test)">
+                    android:id="@+id/nav_vr"
+                    android:icon="@drawable/round_panorama_24"
+                    android:title="VR Test">
 
                 </item>
             </menu>

@@ -11,10 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activities.ChurchVRActivity"/>
+        <activity android:name=".activities.MainVRActivity"
+            android:label="VR of Church">
+        </activity>
         <activity
             android:name=".Minister"
             android:label="@string/title_activity_minister"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.FacebookChurchNewsActivity" />
         <activity
             android:name=".ItemListActivity"
@@ -255,14 +259,18 @@
             </intent-filter>
         </service>
     </application>
-
     <permission
         android:name="com.connorchurch.googlemaps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <permission
+        android:name="com.connorchurch.james.churchapp.Minister"
         android:protectionLevel="signature" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.INTERNET" />

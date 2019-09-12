@@ -119,9 +119,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item){
         int id = item.getItemId();
 
-        if(id == R.id.nav_who_we_are){
+        if(id == R.id.nav_minster){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, TabbedActivity.class);
+            i.setClass(MainActivity.this, Minister.class);
             finish();
             startActivity(i);
         }else if(id == R.id.nav_gallery){
@@ -155,9 +155,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             i.setClass(MainActivity.this, SettingsActivity.class);
             finish();
             startActivity(i);
-        }else if(id == R.id.nav_minster){
+        }
+        else if(id == R.id.nav_vr){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, Minister.class);
+            i.setClass(MainActivity.this, MainVRActivity.class);
             finish();
             startActivity(i);
         }

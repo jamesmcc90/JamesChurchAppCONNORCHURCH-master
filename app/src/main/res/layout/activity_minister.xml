@@ -60,9 +60,9 @@
             android:paddingBottom="20dp">
 
             <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/imgPhone"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/mobileNumber"
@@ -72,12 +72,13 @@
                 app:srcCompat="@drawable/round_phone_android_24" />
 
             <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/editText6"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/editText6"
+                android:id="@+id/imgEmail"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView31"
+                app:layout_constraintStart_toStartOf="@+id/imgPhone"
+                app:layout_constraintTop_toTopOf="@+id/textView31"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/baseline_email_24" />
 
             <TextView
@@ -85,22 +86,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="24dp"
                 android:clickable="true"
                 android:text="123456789"
-                app:layout_constraintStart_toEndOf="@+id/imageView15"
+                app:layout_constraintStart_toEndOf="@+id/imgPhone"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/editText6"
+            <TextView
+                android:id="@+id/textView31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoLink="email"
-                android:clickable="false"
-                android:ems="10"
-                android:inputType="textEmailAddress"
+                android:layout_marginTop="20dp"
                 android:text="connorrev@icloud.com"
-                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/mobileNumber"
                 app:layout_constraintTop_toBottomOf="@+id/mobileNumber" />
 
