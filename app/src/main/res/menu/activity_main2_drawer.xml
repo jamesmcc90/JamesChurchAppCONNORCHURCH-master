@@ -21,6 +21,12 @@
                     android:icon="@drawable/baseline_video_label_black_48dp"
                     android:title="Gallery" />
                 <item
+                    android:id="@+id/nav_vr"
+                    android:icon="@drawable/round_panorama_24"
+                    android:title="Church VR">
+
+                </item>
+                <item
                     android:id="@+id/nav_announcements"
                     android:icon="@drawable/round_announcement_24"
                     android:title="Announcements" />
@@ -43,12 +49,6 @@
                     android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_settings_black_24dp"
                     android:title="Settings">
-
-                </item>
-                <item
-                    android:id="@+id/nav_vr"
-                    android:icon="@drawable/round_panorama_24"
-                    android:title="VR Test">
 
                 </item>
             </menu>

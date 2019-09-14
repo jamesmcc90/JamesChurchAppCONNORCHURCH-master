@@ -14,6 +14,7 @@ package com.connorchurch.james.churchapp.activities;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -73,5 +74,12 @@ public class MainVRActivity extends AppCompatActivity {
 
             }
         });*/
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent first = new Intent(MainVRActivity.this, MainActivity.class);
+        startActivity(first);
+
     }
 }

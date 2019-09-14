@@ -72,4 +72,6 @@ public class ChurchVRActivity extends Fragment {
         super.onActivityCreated(savedInstanceState);
         loadPanoImage();
     }
+
+
 }
