@@ -13,7 +13,9 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".activities.ChurchVRActivity"/>
         <activity android:name=".activities.MainVRActivity"
-            android:label="VR of Church">
+            android:label="VR of Church"
+            android:screenOrientation="portrait"
+            >
         </activity>
         <activity
             android:name=".Minister"

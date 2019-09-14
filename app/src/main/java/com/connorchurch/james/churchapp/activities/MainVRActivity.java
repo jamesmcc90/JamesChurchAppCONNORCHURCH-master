@@ -34,32 +34,29 @@ public class MainVRActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        assert tabLayout != null;
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        //TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+    /*    assert tabLayout != null;
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);*/
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
             @Override
             public Fragment getItem(int position) {
-                switch (position) {
-                    case 0:
-                        return new ChurchVRActivity();
-                    case 1:
-                        return new TestFragment();
+                if (position == 0) {
+                    return new ChurchVRActivity();
                 }
                 return null;
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 1;
             }
         };
         assert viewPager != null;
         viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+       /* viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -75,6 +72,6 @@ public class MainVRActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
-        });
+        });*/
     }
 }

@@ -3,6 +3,7 @@ package com.connorchurch.james.churchapp.activities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,6 @@ public class ChurchVRActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-
 
         View v =  inflater.inflate(R.layout.church_vr, container,false);
         panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
@@ -60,7 +59,7 @@ public class ChurchVRActivity extends Fragment {
         viewOptions.inputType = VrPanoramaView.Options.TYPE_STEREO_OVER_UNDER;
 
         // use the name of the image in the assets/ directory.
-        String panoImageName = "florida.jpg";
+        String panoImageName = "kitchen.jpg";
 
         // create the task passing the widget view and call execute to start.
         task = new ImageLoaderTask(panoWidgetView, viewOptions, panoImageName);
