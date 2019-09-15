@@ -17,7 +17,7 @@
         android:id="@+id/action_bible"
         android:enabled="true"
         android:icon="@drawable/round_bookmarks_24"
-        android:title="Bible Resources"
+        android:title="Resources"
         app:showAsAction="ifRoom" />
 
 </menu>

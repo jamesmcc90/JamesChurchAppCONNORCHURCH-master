@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         finish();
                         break;
                     case R.id.action_bible:
-                        Intent bible = new Intent(MainActivity.this, BibleResourcesActivity.class);
+                        Intent bible = new Intent(MainActivity.this, ResourcesActivity.class);
                         startActivity(bible);
                         finish();
                         break;

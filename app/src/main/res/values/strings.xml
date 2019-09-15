@@ -138,7 +138,7 @@ Email: menalive@hotmail.co.uk"
     <string name="main_drawer_open">Open navigation drawer</string>
     <string name="main_drawer_close">Close navigation drawer</string>
     <string name="select_channel_type">Select channel type</string>
-    <string name="settings">Settings</string>
+
     <string name="blocked_members_list">Blocked members</string>
 
     <!-- login -->
@@ -265,7 +265,7 @@ Email: menalive@hotmail.co.uk"
     <string name="key_data">key_data</string>
     <string name="key_version">key_version</string>
     <string name="key_notifications">key_version</string>
-    <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below.</string>
+    <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below (opens Google Play Store).</string>
     <string name="connor_website">Visit our website!</string>
     <string name="linktobibledotcom">
     <a href="https://www.bible.com/bible/111/JHN.1.NIV">Bible.com.</a>
@@ -536,12 +536,25 @@ William Warwick
     <string name="title_activity_minister_about">Our Minister</string>
 
     <string name="title_activity_minister">Our Minister</string>
+    <string name="around_connor_presbyterian">Around Connor Presbyterian</string>
+    <string name="our_minister">Our Minister</string>
+    <string name="church_updates">Church Updates</string>
+    <string name="gallery">Gallery</string>
+    <string name="announcements">Announcements</string>
+    <string name="church_vr">Church VR</string>
+    <string name="rotas_menu">Rotas</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="external_links">External Links</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_resources">ResourcesActivity</string>
+
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
     <string-array name="pref_example_list_titles">
         <item>Always</item>
         <item>When possible</item>
         <item>Never</item>
     </string-array>
-
     <string-array name="pref_example_list_values">
         <item>1</item>
         <item>0</item>
@@ -556,6 +569,8 @@ William Warwick
         <item>1</item>
         <item>0</item>
     </string-array>
+
+    <!-- TODO: remove this placeholder text -->
     <string-array name="pref_sync_frequency_titles">
         <item>15 minutes</item>
         <item>30 minutes</item>
@@ -577,8 +592,6 @@ William Warwick
         <item>Entry 2</item>
         <item>Entry 3</item>
     </string-array>
-
-    <!-- TODO: remove this placeholder text -->
     <string-array name="list_preference_entry_values">
         <item>1</item>
         <item>2</item>

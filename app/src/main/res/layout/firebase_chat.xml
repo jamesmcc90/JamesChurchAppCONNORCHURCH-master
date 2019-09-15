@@ -6,12 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <EditText
         android:id="@+id/editText5"
         android:layout_width="0dp"
-        android:layout_height="97dp"
-        android:layout_marginEnd="64dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
         android:ems="10"
         android:gravity="bottom"
         android:hint="Type a message"
@@ -19,29 +18,29 @@
         android:maxLines="4"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sendButton"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/addMessageImageView" />
+        app:layout_constraintStart_toEndOf="@+id/addMessageImageView"
+        app:layout_constraintTop_toBottomOf="@+id/messageRecyclerView"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <ImageView
         android:id="@+id/addMessageImageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="291dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText5"
-        app:layout_constraintEnd_toStartOf="@+id/sendButton"
+        android:layout_width="53dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText5"
         app:srcCompat="@drawable/round_attach_file_24" />
 
     <ImageView
         android:id="@+id/sendButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText5"
+        android:layout_width="67dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addMessageImageView"
-        app:layout_constraintTop_toTopOf="@+id/editText5"
         app:srcCompat="@drawable/ic_send_black_24dp" />
 
     <ProgressBar
@@ -51,27 +50,28 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="296dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="158dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265">
 
         <ImageView
             android:id="@+id/userImage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/userLoggedIn"
             app:layout_constraintEnd_toStartOf="@+id/userName"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,6 @@
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="222dp"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/userLoggedIn"
@@ -96,7 +95,6 @@
             android:id="@+id/userLoggedIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginBottom="30dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -108,14 +106,30 @@
         android:id="@+id/messageRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/addMessageImageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
     </android.support.v7.widget.RecyclerView>
 
+    <include
+        android:id="@+id/include2"
+        layout="@layout/app_bar_main_activity_navigation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
+
+
 
 
 

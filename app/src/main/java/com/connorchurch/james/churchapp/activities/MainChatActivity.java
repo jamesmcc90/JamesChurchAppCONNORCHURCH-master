@@ -30,6 +30,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.connorchurch.james.churchapp.R;
 import com.connorchurch.james.churchapp.adapters.FriendlyMessage;
@@ -172,6 +174,12 @@ public class MainChatActivity extends AppCompatActivity implements
             return;
         } else {
             mUsername = mFirebaseUser.getDisplayName();
+            Toast.makeText(this,
+                    "Welcome " + FirebaseAuth.getInstance()
+                            .getCurrentUser()
+                            .getDisplayName(),
+                    Toast.LENGTH_LONG)
+                    .show();
             if (mFirebaseUser.getPhotoUrl() != null) {
                 mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
             }
@@ -595,7 +603,7 @@ public class MainChatActivity extends AppCompatActivity implements
                             mFirebaseDatabaseReference.child(MESSAGES_CHILD).child(key)
                                     .setValue(friendlyMessage);
                         } else {
-                            Log.w(TAG, "Image upload task was not successful.",
+                            Log.w(TAG, "Image upload not successful.",
                                     task.getException());
                         }
                     }
