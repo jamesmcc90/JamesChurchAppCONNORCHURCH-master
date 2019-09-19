@@ -54,14 +54,13 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         categories.add("HYBRID");
 
         // Creating adapter for spinner
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item,categories);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_church, categories);
 
         // Drop down layout style - list view with radio button
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
+        dataAdapter.setDropDownViewResource(R.layout.spinner_church);
 
         // attaching data adapter to spinner
-        spinner.setAdapter(adapter);
+        spinner.setAdapter(dataAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 

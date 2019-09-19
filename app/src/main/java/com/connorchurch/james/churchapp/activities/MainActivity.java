@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.nav_minster){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, Minister.class);
+            i.setClass(MainActivity.this, MinisterContactActivity.class);
             finish();
             startActivity(i);
         }else if(id == R.id.nav_gallery){

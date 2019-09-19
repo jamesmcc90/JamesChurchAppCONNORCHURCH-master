@@ -89,7 +89,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
                 android:clickable="true"
-                android:text="123456789"
+                android:text="02825 898364"
                 app:layout_constraintStart_toEndOf="@+id/imgPhone"
                 app:layout_constraintTop_toTopOf="parent" />
 

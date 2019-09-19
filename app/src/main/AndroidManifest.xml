@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.connorchurch.james.churchapp">
 
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:name=".main.BaseApplication"
         android:allowBackup="true"
@@ -109,6 +112,10 @@
         <activity
             android:name=".activities.MainChatActivity"
             android:label="Connor Chat"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activities.MinisterContactActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
@@ -258,6 +265,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <service android:name=".fcm.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
@@ -272,10 +280,19 @@
         android:name="com.connorchurch.james.churchapp.Minister"
         android:protectionLevel="signature" />
 
+
+    <permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+
+    <!-- Needed only if your calling app reads numbers from the `PHONE_STATE`
+         intent action. -->
+
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.INTERNET" />

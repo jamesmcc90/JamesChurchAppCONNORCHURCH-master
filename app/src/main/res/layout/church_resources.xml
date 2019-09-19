@@ -9,11 +9,12 @@
 
     <Spinner
         android:id="@+id/spnPDF"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
+        style="@android:style/Widget.DeviceDefault.Light.Spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="#1e73be"
         android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@+id/pdfView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.github.barteksc.pdfviewer.PDFView

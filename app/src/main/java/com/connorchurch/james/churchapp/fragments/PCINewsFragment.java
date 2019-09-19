@@ -32,19 +32,6 @@ public class PCINewsFragment extends Fragment {
         PCI.setVisibility(View.VISIBLE);
         PCI.loadUrl("https://www.presbyterianireland.org/News.aspx");
 
-        PCI.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if( keyCode == KeyEvent.KEYCODE_BACK)
-                {
-                    PCI.clearCache(true);
-                    PCI.setVisibility(View.INVISIBLE);
-                    return true;
-                }
-                return false;
-            }
-        });
-
         return view;
     }
 }
