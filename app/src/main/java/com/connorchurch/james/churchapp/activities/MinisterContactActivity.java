@@ -29,7 +29,6 @@ public class MinisterContactActivity extends AppCompatActivity {
         });
 
 
-
         String mailTo = "connorrev@icloud.com";
         final Intent email_intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",mailTo, null));
         email_intent.setData(Uri.parse("mailto:"));
@@ -51,6 +50,8 @@ public class MinisterContactActivity extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
 
     }
+
+
     public void onBackPressed(){
         Intent first = new Intent(MinisterContactActivity.this, MainActivity.class);
         startActivity(first);

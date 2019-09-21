@@ -88,13 +88,12 @@ Bible Class meets on Sunday mornings from 11.00 to 12.00 in our Church Halls in 
         android:id="@+id/imageView6"
         android:layout_width="169dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:srcCompat="@drawable/youth_club" />
 

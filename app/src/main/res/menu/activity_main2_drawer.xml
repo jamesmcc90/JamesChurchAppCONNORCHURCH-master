@@ -41,11 +41,6 @@
             <menu>
 
                 <item
-                    android:id="@+id/nav_external_links"
-                    android:icon="@drawable/round_link_24"
-                    android:title="@string/external_links" />
-
-                <item
                     android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_settings_black_24dp"
                     android:title="@string/settings">

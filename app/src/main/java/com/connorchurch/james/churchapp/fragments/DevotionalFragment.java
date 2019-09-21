@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -19,6 +20,7 @@ public class DevotionalFragment extends Fragment {
 
         View view  = inflater.inflate(R.layout.devotional, container, false);
 
+
         final WebView devotional = view.findViewById(R.id.webDevotional);
         devotional.setWebViewClient(new WebViewClient() {
             @Override
@@ -28,6 +30,8 @@ public class DevotionalFragment extends Fragment {
             }
         });
         devotional.getSettings().setJavaScriptEnabled(true);
+        WebSettings settings = devotional.getSettings();
+        settings.setDomStorageEnabled(true);
         devotional.setVisibility(View.VISIBLE);
         devotional.loadUrl("https://ourdailybread.org/read/");
 

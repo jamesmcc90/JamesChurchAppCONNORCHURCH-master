@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.connorchurch.james.churchapp.Minister;
 import com.connorchurch.james.churchapp.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -143,11 +142,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if(id == R.id.nav_rotas){
             Intent i = new Intent();
             i.setClass(MainActivity.this, RotasActivity.class);
-            finish();
-            startActivity(i);
-        }else if(id == R.id.nav_external_links){
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, ExternalLinksActivity.class);
             finish();
             startActivity(i);
         }else if(id == R.id.nav_settings){
