@@ -435,7 +435,7 @@ William Warwick
     <string name="fresh_config">Fresh Config</string>
     <string name="cause_crash">Cause Crash</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="chat_info">Sign in with Google account</string>
+    <string name="chat_info">Sign in with a Google or Facebook account</string>
     <string name="facebook_login">Sign in with Facebook (work in progress)</string>
     <string name="facebook_app_id">475771149616259</string>
     <string name="fb_login_protocol_scheme">fb475771149616259</string>

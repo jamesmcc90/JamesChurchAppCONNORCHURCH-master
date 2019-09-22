@@ -35,6 +35,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.connorchurch.james.churchapp.R;
 import com.connorchurch.james.churchapp.adapters.FriendlyMessage;
+import com.facebook.login.LoginManager;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.database.SnapshotParser;
@@ -472,8 +473,8 @@ public class MainChatActivity extends AppCompatActivity implements
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         mFirebaseAuth.signOut();
-                        FirebaseAuth.getInstance().signOut();
                         mGoogleSignInClient.signOut();
+                        LoginManager.getInstance().logOut();
                         Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
                         startActivity(myIntent);
                     }

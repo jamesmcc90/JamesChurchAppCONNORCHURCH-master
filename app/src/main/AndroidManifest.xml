@@ -25,12 +25,12 @@
         <activity
             android:name=".activities.ResourcesActivity"
             android:label="@string/title_activity_resources"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"/>
         <activity android:name=".activities.ChurchVRActivity" />
         <activity
             android:name=".activities.MainVRActivity"
-            android:label="VR of Church"
-            android:screenOrientation="portrait"></activity>
+            android:label="Church VR"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Minister"
             android:label="@string/title_activity_minister"
@@ -264,6 +264,8 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value" />
+
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="2bd439b1c33a28b1ce3232889140d236c76ddda3" />
