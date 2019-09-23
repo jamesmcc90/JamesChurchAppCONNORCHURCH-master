@@ -72,10 +72,6 @@
                 android:value="com.connorchurch.james.churchapp.activities.ItemListActivity" />
         </activity>
         <activity
-            android:name=".activities.GalleryActivity"
-            android:label="Gallery"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activities.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -240,11 +236,6 @@
         <activity
             android:name=".activities.AboutUsActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".activities.GalleryConnorActivity"
-            android:label="Gallery"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activities.TabbedActivity"

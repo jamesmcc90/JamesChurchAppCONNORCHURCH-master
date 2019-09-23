@@ -20,7 +20,7 @@ public class ChurchVRActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v =  inflater.inflate(R.layout.church_vr, container,false);
-        panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
+        panoWidgetView = v.findViewById(R.id.pano_view);
         return v;
 
     }
