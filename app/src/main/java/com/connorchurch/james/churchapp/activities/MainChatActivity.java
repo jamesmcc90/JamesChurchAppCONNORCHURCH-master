@@ -30,12 +30,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.connorchurch.james.churchapp.R;
 import com.connorchurch.james.churchapp.adapters.FriendlyMessage;
-import com.facebook.login.LoginManager;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.database.SnapshotParser;
@@ -145,7 +142,7 @@ public class MainChatActivity extends AppCompatActivity implements
         if (config.smallestScreenWidthDp >= 600) {
             setContentView(R.layout.firebase_chat_tablet);
         } else {
-          setContentView(R.layout.firebase_chat);
+            setContentView(R.layout.firebase_chat);
         }
 
         Toolbar toolbar =  findViewById(R.id.toolbar);
@@ -159,14 +156,7 @@ public class MainChatActivity extends AppCompatActivity implements
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
-        Username = findViewById(R.id.userName);
-        Username.setText(mFirebaseUser.getDisplayName());
-
-        UserLoggedIn = findViewById(R.id.userLoggedIn);
-        UserLoggedIn.setText(mFirebaseUser.getEmail());
-
-        profile = findViewById(R.id.userImage);
-        Glide.with(this).load(mFirebaseUser.getPhotoUrl().toString()).into(profile);
+       // Glide.with(this).load(mFirebaseUser.getPhotoUrl().toString()).into(profile);
 
         if (mFirebaseUser == null) {
             // Not signed in, launch the Sign In activity
@@ -174,13 +164,7 @@ public class MainChatActivity extends AppCompatActivity implements
             finish();
             return;
         } else {
-            mUsername = mFirebaseUser.getDisplayName();
-            Toast.makeText(this,
-                    "Welcome " + FirebaseAuth.getInstance()
-                            .getCurrentUser()
-                            .getDisplayName(),
-                    Toast.LENGTH_LONG)
-                    .show();
+            mUsername = mFirebaseUser.getEmail();
             if (mFirebaseUser.getPhotoUrl() != null) {
                 mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
             }
@@ -292,11 +276,11 @@ public class MainChatActivity extends AppCompatActivity implements
 
                 if (friendlyMessage.getText() != null) {
                     // write this message to the on-device index
-                    FirebaseAppIndex.getInstance().update(getMessageIndexable(friendlyMessage));
+                    //FirebaseAppIndex.getInstance().update(getMessageIndexable(friendlyMessage));
                 }
 
                 // log a view action on it
-                FirebaseUserActions.getInstance().end(getMessageViewAction(friendlyMessage));
+//                FirebaseUserActions.getInstance().end(getMessageViewAction(friendlyMessage));
             }
         };
 
@@ -337,7 +321,7 @@ public class MainChatActivity extends AppCompatActivity implements
         Map<String, Object> defaultConfigMap = new HashMap<>();
 
         ////////TO CHANGE LENGTH OF MESSAGE TO SEND//////
-       defaultConfigMap.put("friendly_msg_length", 500L);
+        defaultConfigMap.put("friendly_msg_length", 500L);
 
         // Apply config settings and default values.
         mFirebaseRemoteConfig.setConfigSettings(firebaseRemoteConfigSettings);
@@ -356,7 +340,7 @@ public class MainChatActivity extends AppCompatActivity implements
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().trim().length() > 0) {
-                   mSendButton.setEnabled(true);
+                    mSendButton.setEnabled(true);
                 } else {
                     mSendButton.setEnabled(false);
                 }
@@ -368,7 +352,7 @@ public class MainChatActivity extends AppCompatActivity implements
         });
 
 
-       mAddMessageImageView = findViewById(R.id.addMessageImageView);
+        mAddMessageImageView = findViewById(R.id.addMessageImageView);
         mAddMessageImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -402,6 +386,7 @@ public class MainChatActivity extends AppCompatActivity implements
 
 
     }
+/*
 
     private Action getMessageViewAction(FriendlyMessage friendlyMessage) {
         return new Action.Builder(Action.Builder.VIEW_ACTION)
@@ -409,8 +394,9 @@ public class MainChatActivity extends AppCompatActivity implements
                 .setMetadata(new Action.Metadata.Builder().setUpload(false))
                 .build();
     }
+*/
 
-    private Indexable getMessageIndexable(FriendlyMessage friendlyMessage) {
+/*    private Indexable getMessageIndexable(FriendlyMessage friendlyMessage) {
         PersonBuilder sender = Indexables.personBuilder()
                 .setIsSelf(mUsername.equals(friendlyMessage.getName()))
                 .setName(friendlyMessage.getName())
@@ -428,7 +414,7 @@ public class MainChatActivity extends AppCompatActivity implements
                 .build();
 
         return messageToIndex;
-    }
+    }*/
 
     @Override
     public void onPause() {
@@ -458,6 +444,7 @@ public class MainChatActivity extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
 
         getMenuInflater().inflate(R.menu.chat_menu, menu);
 
@@ -468,30 +455,29 @@ public class MainChatActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-
         if (id == R.id.action_settings) {
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        mFirebaseAuth.signOut();
-                        mGoogleSignInClient.signOut();
-                        LoginManager.getInstance().logOut();
-                        Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
-                        startActivity(myIntent);
-                    }
-                })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                public void onClick(DialogInterface dialog, int which) {
+                    mFirebaseAuth.signOut();
+                    FirebaseAuth.getInstance().signOut();
+                    mGoogleSignInClient.signOut();
+                    Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
+                    startActivity(myIntent);
+                }
+            })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
 
-                AlertDialog alert = builder.create();
-                alert.setTitle("Sign Out");
-                alert.setMessage("Are you sure you want to sign out?");
-                alert.setIcon(R.drawable.round_warning_24);
-                alert.show();
+            AlertDialog alert = builder.create();
+            alert.setTitle("Sign Out");
+            alert.setMessage("Are you sure you want to sign out?");
+            alert.setIcon(R.drawable.round_warning_24);
+            alert.show();
 
-            }
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -560,7 +546,7 @@ public class MainChatActivity extends AppCompatActivity implements
                                                         .child(key)
                                                         .child(uri.getLastPathSegment());
 
-                                       putImageInStorage(storageReference, uri, key);
+                                        putImageInStorage(storageReference, uri, key);
                                     } else {
                                         Log.w(TAG, "Unable to write message to database.",
                                                 databaseError.toException());
@@ -604,7 +590,7 @@ public class MainChatActivity extends AppCompatActivity implements
                             mFirebaseDatabaseReference.child(MESSAGES_CHILD).child(key)
                                     .setValue(friendlyMessage);
                         } else {
-                            Log.w(TAG, "Image upload not successful.",
+                            Log.w(TAG, "Image upload task was not successful.",
                                     task.getException());
                         }
                     }

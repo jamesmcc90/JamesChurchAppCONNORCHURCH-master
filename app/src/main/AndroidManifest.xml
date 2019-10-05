@@ -3,8 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.connorchurch.james.churchapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <permission
+        android:name="com.connorchurch.googlemaps.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.connorchurch.james.churchapp.Minister"
+        android:protectionLevel="signature" />
+    <permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <!--
+ Needed only if your calling app reads numbers from the `PHONE_STATE`
+         intent action.
+    -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".main.BaseApplication"
@@ -13,24 +40,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"
         android:usesCleartextTraffic="true"
-      >
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login"></activity>
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-
         <activity
             android:name=".activities.ResourcesActivity"
             android:label="@string/title_activity_resources"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity android:name=".activities.ChurchVRActivity" />
         <activity
             android:name=".activities.MainVRActivity"
             android:label="Church VR"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Minister"
             android:label="@string/title_activity_minister"
@@ -108,6 +136,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.WhatsOnActivity"
+            android:hardwareAccelerated="true"
+            android:label="What&apos;s On" />
+        <activity
+            android:name=".activities.ui.login.LoginActivity"
             android:hardwareAccelerated="true"
             android:label="What&apos;s On" />
         <activity
@@ -255,8 +287,6 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value" />
-
-
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="2bd439b1c33a28b1ce3232889140d236c76ddda3" />
@@ -266,43 +296,11 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <service android:name=".fcm.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
     </application>
-    <permission
-        android:name="com.connorchurch.googlemaps.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
-
-    <permission
-        android:name="com.connorchurch.james.churchapp.Minister"
-        android:protectionLevel="signature" />
-
-
-    <permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-    <uses-permission android:name="android.permission.MANAGE_OWN_CALLS"/>
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
-
-    <!-- Needed only if your calling app reads numbers from the `PHONE_STATE`
-         intent action. -->
-
-
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
