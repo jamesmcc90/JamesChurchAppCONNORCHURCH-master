@@ -21,7 +21,7 @@ public class ItemListActivity extends FragmentActivity implements OnItemSelected
     }
 
     private void determinePaneLayout() {
-        FrameLayout fragmentItemDetail = findViewById(R.id.flDetailContainer);
+        FrameLayout fragmentItemDetail = (FrameLayout) findViewById(R.id.flDetailContainer);
         if (fragmentItemDetail != null) {
             isTwoPane = true;
             ItemsListFragment fragmentItemsList =

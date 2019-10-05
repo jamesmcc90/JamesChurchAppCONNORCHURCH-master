@@ -10,14 +10,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.connorchurch.james.churchapp.R;
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -29,12 +21,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-
-import java.util.Arrays;
 
 public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
@@ -42,17 +31,14 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
     private SignInButton mSignInButton;
-    private CallbackManager fbCallback;
+
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mFirebaseAuth;
-    private static final String EMAIL = "email";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Configuration config = getResources().getConfiguration();
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
-        fbCallback = CallbackManager.Factory.create();
 
         if (config.smallestScreenWidthDp >= 600) {
             setContentView(R.layout.activity_sign_in_tablet);
@@ -79,62 +65,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
 
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
-
-        LoginButton loginButton = findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList(EMAIL));
-
-
-        fbCallback = CallbackManager.Factory.create();
-
-        loginButton.setReadPermissions("email", "public_profile");
-        loginButton.registerCallback(fbCallback, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                handleFacebookAccessToken(loginResult.getAccessToken());
-            }
-
-            @Override
-            public void onCancel() {
-                Log.d(TAG, "facebook:onCancel");
-                // ...
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Log.d(TAG, "facebook:onError", error);
-                // ...
-            }
-        });
-
     }
-
-
-    private void handleFacebookAccessToken(AccessToken token) {
-        Log.d(TAG, "handleFacebookAccessToken:" + token);
-
-        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
-        mFirebaseAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-
-                            startActivity(new Intent(SignInActivity.this, MainChatActivity.class));
-                            Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                            //updateUI(user);
-                        } else {
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(SignInActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
-                        }
-
-                    }
-                });
-    }
-
 
     private void handleFirebaseAuthResult(AuthResult authResult) {
         if (authResult != null) {
@@ -166,11 +97,10 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        fbCallback.onActivityResult(requestCode, resultCode, data);
+
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-
             if (result.isSuccess()) {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
@@ -180,11 +110,7 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                 Log.e(TAG, "Google Sign In failed.");
             }
         }
-
     }
-
-
-
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());

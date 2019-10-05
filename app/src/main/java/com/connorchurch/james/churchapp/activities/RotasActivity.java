@@ -48,10 +48,18 @@ public class RotasActivity extends AppCompatActivity{
             categories.add("Finance");
 
             // Creating adapter for spinner
-            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_church, categories);
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, categories);
 
             // Drop down layout style - list view with radio button
-            dataAdapter.setDropDownViewResource(R.layout.spinner_church);
+
+
+            if (config.smallestScreenWidthDp >= 600) {
+                dataAdapter.setDropDownViewResource(R.layout.spinner_item_tablet);
+            } else {
+
+                dataAdapter.setDropDownViewResource(R.layout.spinner_item);
+            }
+
 
             // attaching data adapter to spinner
             spinner.setAdapter(dataAdapter);
@@ -76,6 +84,18 @@ public class RotasActivity extends AppCompatActivity{
                         view.setVisibility(View.VISIBLE);
                         view.loadUrl("https://drive.google.com/file/d/1ai7KtwXQZV1Bf5vl0ZirNcY46ybCABWm/view?usp=sharing");
 
+                        view.setOnKeyListener(new View.OnKeyListener() {
+                            @Override
+                            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                                if( keyCode == KeyEvent.KEYCODE_BACK)
+                                {
+                                    view.clearCache(true);
+                                    view.setVisibility(View.INVISIBLE);
+                                    return true;
+                                }
+                                return false;
+                            }
+                        });
                     }
                     if(position == 1)
                     {
@@ -91,6 +111,18 @@ public class RotasActivity extends AppCompatActivity{
                         view.setVisibility(View.VISIBLE);
                         view.loadUrl("https://drive.google.com/file/d/1WTA91W2Aj-dbkbvo6i3_vEu2nkXh6CWA/view?usp=sharing");
 
+                        view.setOnKeyListener(new View.OnKeyListener() {
+                            @Override
+                            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                                if( keyCode == KeyEvent.KEYCODE_BACK)
+                                {
+                                    view.clearCache(true);
+                                    view.setVisibility(View.INVISIBLE);
+                                    return true;
+                                }
+                                return false;
+                            }
+                        });
                     }
 
 

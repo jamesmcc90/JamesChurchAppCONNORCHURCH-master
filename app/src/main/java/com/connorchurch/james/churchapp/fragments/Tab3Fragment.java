@@ -4,11 +4,9 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.connorchurch.james.churchapp.R;
 
@@ -22,18 +20,13 @@ public class Tab3Fragment extends Fragment {
 
         Configuration config = getResources().getConfiguration();
 
-
-
         if (config.smallestScreenWidthDp >= 600) {
             View view = inflater.inflate(R.layout.tab3_fragment_tablet, container, false);
-            final TextView pw = view.findViewById(R.id.textView21);
-            pw.setMovementMethod(new ScrollingMovementMethod());
             return view;
         } else {
             View view = inflater.inflate(R.layout.tab3_fragment, container, false);
             return view;
         }
-
 
     }
 }

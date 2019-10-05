@@ -1,0 +1,61 @@
+package com.connorchurch.james.churchapp.activities;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+
+import com.connorchurch.james.churchapp.R;
+import com.connorchurch.james.churchapp.fragments.RecyclerViewFragment;
+
+public class GalleryConnorActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.gallery_main_test);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        recyclerView = findViewById(R.id.recyclerView);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.content, RecyclerViewFragment.newInstance())
+                .commit();
+
+
+
+
+
+
+
+
+    }
+/*
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_activity_navigation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            // launch settings activity
+            startActivity(new Intent(GalleryConnorActivity.this, SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+*/
+    @Override
+    public void onBackPressed() {
+        Intent first = new Intent(GalleryConnorActivity.this, MainActivity.class);
+        startActivity(first);
+
+    }
+}

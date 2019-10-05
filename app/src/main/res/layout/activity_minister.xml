@@ -12,17 +12,6 @@
         android:layout_height="wrap_content">
 
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/expanded_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </FrameLayout>
-
         <ImageView
             android:id="@+id/header_cover_image"
             android:layout_width="match_parent"
@@ -100,7 +89,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="24dp"
                 android:clickable="true"
-                android:text="02825 898364"
+                android:text="123456789"
                 app:layout_constraintStart_toEndOf="@+id/imgPhone"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -129,26 +118,5 @@
             android:scaleType="centerCrop"
             android:src="@drawable/philip"
 />
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="402dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text="@string/philip_message"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
-
     </RelativeLayout>
 </ScrollView>

@@ -21,7 +21,7 @@ android {
         applicationId "com.connorchurch.james.churchapp"
         minSdkVersion 22
         targetSdkVersion 28
-        versionCode 18
+        versionCode 16
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -153,14 +153,15 @@ dependencies {
 
     implementation 'com.google.vr:sdk-panowidget:1.80.0'
 
+    implementation 'com.android.support:appcompat-v7:23.3.0'
+    implementation 'com.android.support:design:23.3.0'
+
     implementation 'com.google.vr:sdk-audio:1.10.0'
     implementation 'com.google.vr:sdk-base:1.10.0'
     implementation 'com.google.vr:sdk-common:1.10.0'
     implementation 'com.google.vr:sdk-commonwidget:1.10.0'
     implementation 'com.google.vr:sdk-panowidget:1.10.0'
     implementation 'com.google.vr:sdk-videowidget:1.10.0'
-
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 }
 apply plugin: 'com.google.gms.google-services'

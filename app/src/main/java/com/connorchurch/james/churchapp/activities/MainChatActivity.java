@@ -30,12 +30,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.connorchurch.james.churchapp.R;
 import com.connorchurch.james.churchapp.adapters.FriendlyMessage;
-import com.facebook.login.LoginManager;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.database.SnapshotParser;
@@ -175,12 +172,6 @@ public class MainChatActivity extends AppCompatActivity implements
             return;
         } else {
             mUsername = mFirebaseUser.getDisplayName();
-            Toast.makeText(this,
-                    "Welcome " + FirebaseAuth.getInstance()
-                            .getCurrentUser()
-                            .getDisplayName(),
-                    Toast.LENGTH_LONG)
-                    .show();
             if (mFirebaseUser.getPhotoUrl() != null) {
                 mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
             }
@@ -458,9 +449,10 @@ public class MainChatActivity extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
 
         getMenuInflater().inflate(R.menu.chat_menu, menu);
-
+        
         return true;
     }
 
@@ -468,13 +460,12 @@ public class MainChatActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-
         if (id == R.id.action_settings) {
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         mFirebaseAuth.signOut();
+                        FirebaseAuth.getInstance().signOut();
                         mGoogleSignInClient.signOut();
-                        LoginManager.getInstance().logOut();
                         Intent myIntent = new Intent(MainChatActivity.this, SignInActivity.class);
                         startActivity(myIntent);
                     }
@@ -604,7 +595,7 @@ public class MainChatActivity extends AppCompatActivity implements
                             mFirebaseDatabaseReference.child(MESSAGES_CHILD).child(key)
                                     .setValue(friendlyMessage);
                         } else {
-                            Log.w(TAG, "Image upload not successful.",
+                            Log.w(TAG, "Image upload task was not successful.",
                                     task.getException());
                         }
                     }

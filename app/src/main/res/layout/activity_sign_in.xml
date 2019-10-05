@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/textView37"
-        android:layout_width="wrap_content"
+        android:layout_width="202dp"
         android:layout_height="wrap_content"
         android:text="@string/chat_info"
         android:textAlignment="center"
@@ -33,7 +33,7 @@
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
@@ -45,16 +45,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView37">
 
     </com.google.android.gms.common.SignInButton>
-
-
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/sign_in_button"
-        app:layout_constraintStart_toStartOf="@+id/sign_in_button"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
 
     <ImageView
         android:id="@+id/imageView8"

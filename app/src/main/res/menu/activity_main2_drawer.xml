@@ -6,44 +6,49 @@
     <group android:checkableBehavior="single">
 
 
-        <item android:title="@string/around_connor_presbyterian">
+        <item android:title="Around Connor Presbyterian">
             <menu>
                 <item
                     android:id="@+id/nav_minster"
                     android:icon="@drawable/round_person_black_24dp"
-                    android:title="@string/our_minister"/>
+                    android:title="Our Minister"/>
                 <item
                     android:id="@+id/nav_news"
                     android:icon="@drawable/round_fiber_new_24"
-                    android:title="@string/church_updates" />
+                    android:title="Church Updates" />
                 <item
                     android:id="@+id/nav_gallery"
                     android:icon="@drawable/baseline_video_label_black_48dp"
-                    android:title="@string/gallery" />
+                    android:title="Gallery" />
                 <item
                     android:id="@+id/nav_vr"
                     android:icon="@drawable/round_panorama_24"
-                    android:title="@string/church_vr">
+                    android:title="Church VR">
 
                 </item>
                 <item
                     android:id="@+id/nav_announcements"
                     android:icon="@drawable/round_announcement_24"
-                    android:title="@string/announcements" />
+                    android:title="Announcements" />
                 <item
                     android:id="@+id/nav_rotas"
                     android:icon="@drawable/round_assignment_black_24dp"
-                    android:title="@string/rotas_menu" />
+                    android:title="Rotas" />
             </menu>
         </item>
 
-        <item android:title="@string/miscellaneous">
+        <item android:title="Miscellaneous">
             <menu>
+
+                <item
+                    android:id="@+id/nav_external_links"
+                    android:icon="@drawable/round_link_24"
+                    android:title="External Links" />
 
                 <item
                     android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_settings_black_24dp"
-                    android:title="@string/settings">
+                    android:title="Settings">
 
                 </item>
             </menu>
