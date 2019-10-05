@@ -69,7 +69,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent intent = new Intent();
                     intent.setAction(android.content.Intent.ACTION_SEND);
-                    intent.putExtra(Intent.EXTRA_TEXT, "Hey, check out this app at: google.com");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Hey, check out this app at: http://play.google.com/store/apps/details?id=com.connorchurch.james.churchapp");
                     intent.setType("text/plain");
                     startActivity(Intent.createChooser(intent, "Share App"));
                     return true;

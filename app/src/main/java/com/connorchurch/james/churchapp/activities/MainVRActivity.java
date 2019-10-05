@@ -32,14 +32,14 @@ public class MainVRActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vr_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
     /*    assert tabLayout != null;
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);*/
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final ViewPager viewPager = findViewById(R.id.pager);
         final PagerAdapter adapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
             @Override

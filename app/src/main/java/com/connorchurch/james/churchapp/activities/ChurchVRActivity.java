@@ -11,9 +11,6 @@ import android.view.ViewGroup;
 import com.connorchurch.james.churchapp.R;
 import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 
-/**
- * Fragment for handling the Welcome tab.
- */
 public class ChurchVRActivity extends Fragment {
     private VrPanoramaView panoWidgetView;
     private ImageLoaderTask backgroundImageLoaderTask;
@@ -23,7 +20,7 @@ public class ChurchVRActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v =  inflater.inflate(R.layout.church_vr, container,false);
-        panoWidgetView = (VrPanoramaView) v.findViewById(R.id.pano_view);
+        panoWidgetView = v.findViewById(R.id.pano_view);
         return v;
 
     }

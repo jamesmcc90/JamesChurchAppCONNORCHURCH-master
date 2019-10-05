@@ -1,66 +1,23 @@
 ﻿<resources>
     <string name="app_name">CPC</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
-    <string name="second_view">Second View</string>
-    <string name="button">Button</string>
-    <string name="app_2">App 2</string>
     <string name="about_us">About Us</string>
-    <string name="contact">Contact</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="about">There are older traces of a religious settlement here but Presbyterian worship here dates from the middle of the 17th century. In March 1658 a Mr Robert Dewart is reported as being on “trials” at that date and as being ordained soon after. Like many others he was deposed in 1661 and his work here ended. The Rev Thomas Gowan of Glasslough supplied the congregation, without being installed, from 1667 to 1671, and then Mr David Cunningham (lic. Antrim 1671) a Scot, entered on trials in August 1671. He was acceptable and was licensed in October 1671, but on account of the intolerance of the period, a public ordination was not attempted.  He was, in consequence, ordained privately at Cairncastle on 27 March 1672 with Rev. Patrick Image 50Adair presiding.  For Mr. Cunningham to preach at Connor was also judged injudicious, so he went to Scotland for some months.  He returned in July 1672 and the elders on behalf of the congregation received him as their minister.  Their welcome was apparently not as practical as it might have been for in February 1674 it was reported that though “their kindness and dutifulness to their minister was considerable, their quota came not altogether up to their expectation”.  Even by 1688 we find their elder, Mr. James Brown, promising the Presbytery that they “would bestir themselves to get up arrears due to Mr. Cunningham, when victual came into their hands”.</string>
 
     <string name="use_the_map_below_for_more_information">Use the map below for more information!</string>
     <string name="connor_presbyterian_church">Connor Presbyterian Church</string>
     <string name="todo">TODO</string>
-    <string name="welcome_to_connor_presbyterian_church">Welcome to Connor Presbyterian Church</string>
     <string name="find_us">Find us</string>
     <string name="contact_us">Contact us</string>
-    <string name="back">Back</string>
-    <string name="welcome_to_connor_presbyterian_church_s_app_in_connor_our_goal_is_to_see_unbelieving_people_to_be_lifelong_followers_of_jesus_christ_in_our_church_we_have_many_things_going_on_we_look_forward_to_greeting_you_when_you_come_and_visit_us">Welcome to Connor Presbyterian Church\'s app. In Connor our goal is to see unbelieving people to be lifelong followers of Jesus Christ. In our church we have many things going on. We look forward to greeting you when you come and visit us.</string>
-    <string name="textview">TextView</string>
-    <string name="he_was_acceptable_and_was_licensed_in_october_1671_but_on_account_of_the_intolerance_of_the_period_a_public_ordination_was_not_attempted_he_was_in_consequence_ordained_privately_at_cairncastle_on_27_march_1672_with_rev_patrick_image_50adair_presiding_for_mr_cunningham_to_preach_at_connor_was_also_judged_injudicious_so_he_went_to_scotland_for_some_months_he_returned_in_july_1672_and_the_elders_on_behalf_of_the_congregation_received_him_as_their_minister_their_welcome_was_apparently_not_as_practical_as_it_might_have_been_for_in_february_1674_it_was_reported_that_though_their_kindness_and_dutifulness_to_their_minister_was_considerable_their_quota_came_not_altogether_up_to_their_expectation_even_by_1688_we_find_their_elder_mr_james_brown_promising_the_presbytery_that_they_would_bestir_themselves_to_get_up_arrears_due_to_mr_cunningham_when_victual_came_into_their_hands">He was acceptable and was licensed in October 1671, but on account of the intolerance of the period, a public ordination was not attempted. He was, in consequence, ordained privately at Cairncastle on 27 March 1672 with Rev. Patrick Image 50Adair presiding. For Mr. Cunningham to preach at Connor was also judged injudicious, so he went to Scotland for some months. He returned in July 1672 and the elders on behalf of the congregation received him as their minister. Their welcome was apparently not as practical as it might have been for in February 1674 it was reported that though “their kindness and dutifulness to their minister was considerable, their quota came not altogether up to their expectation”. Even by 1688 we find their elder, Mr. James Brown, promising the Presbytery that they “would bestir themselves to get up arrears due to Mr. Cunningham, when victual came into their hands”.</string>
     <string name="look_through_the_calendar_to_find_an_event">Look through the calendar to find an event.</string>
-    <string name="no_internet_connection_available">No internet connection available!</string>
-    <string name="lt_current_position"><![CDATA[<Current Position>]]></string>
-    <string name="lt_max_time"><![CDATA[<Max Time>]]></string>
-    <string name="select_a_sermon_from_below">Select a sermon from below:</string>
     <string name="calendar">calendar</string>
     <string name="sermons">sermons</string>
-    <string name="go_back">go back</string>
-    <string name="feel_free_to_email_me_with_any_questions_or_with_regards_to_any_technical_issues_with_the_app">Feel free to email me with any questions, or with regards to any technical issues with the app!</string>
-    <string name="author_james_mcconnell">Author: James McConnell</string>
-    <string name="version_1_0">Version 1.0</string>
-    <string name="copyright_2018_james_mcconnell">Copyright © 2018 James McConnell</string>
-    <string name="version_1_0_0">Version 1.0.0</string>
-    <string name="email_james_mcc90_gmail_com">Email: james.mcc90@gmail.com</string>
-    <string name="listen_to_sermons_talks_from_connor_presbyterian">Listen to sermons/talks from Connor Presbyterian.</string>
-    <string name="listen_to_our_sermons_talks_below">Listen to our sermons/talks below.</string>
-    <string name="feel_free_to_message_me_with_any_questions_or_queries_relating_to_the_app">Feel free to message me with any questions or queries relating to the app!</string>
-    <string name="sermon_name">Sermon name</string>
-    <string name="speaker">Speaker</string>
-    <string name="title_activity_about_us">About Us</string>
     <string name="contact_info">"Please get in contact with us if you have any questions."
         "You can fill out the contact form below or if you would prefer send us a email to info@connorpresbyterianchurch.org"</string>
-    <string name="contact_name">Your Name</string>
-    <string name="contact_email">Your Email</string>
-    <string name="contact_subject">Subject</string>
-    <string name="contact_message">Your Message</string>
+    <string name="philip_message">
+    I love being part of the Church family in Connor because this is a church that really cares about people. Lots of members give of their time to serve Jesus and their community. We do this because we believe what Jesus said about himself: \n "\n "\"I am the Way, the Truth and the Life. No one comes to the Father except through me."\" (John 14:6)
+    "\nWe would love to help you discover this truth about Jesus. If you want to find out more about this good news, please contact us or call in."
 
+</string>
 
     <string name="large_text">
         "There are older traces of a religious settlement here but Presbyterian worship here dates from the middle of the 17th century. In March 1658 a Mr Robert Dewart is reported as being on “trials” at that date and as being ordained soon after. Like many others he was deposed in 1661 and his work here ended. The Rev Thomas Gowan of Glasslough supplied the congregation, without being installed, from 1667 to 1671, and then Mr David Cunningham (lic. Antrim 1671) a Scot, entered on trials in August 1671. He was acceptable and was licensed in October 1671, but on account of the intolerance of the period, a public ordination was not attempted. He was, in consequence, ordained privately at Cairncastle on 27 March 1672 with Rev. Patrick Adair presiding.
@@ -99,8 +56,6 @@ Presbyterian Women aims to highlight the need for:
 
     </string>
 
-    <string name="youth_club"></string>
-
     <string name="men_organisations">
             "Men Alive is a men's group set up in Connor Presbyterian Church that allows Men of all ages to come together, for some fun, food and fellowship!
 
@@ -114,31 +69,21 @@ Email: menalive@hotmail.co.uk"
         </string>
     <string name="bb_gb">Click the logos below to find out more on Facebook!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_about_connor">AboutConnorActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_whats_on">WhatsOnActivity</string>
-    <string name="boys_brigade">Boys\' Brigade</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="page_1">Page 1</string>
     <string name="what_s_on">what\'s on</string>
 
 
     <!-- all -->
     <string name="all_app_version">Sample UI v%1$s / SDK v%2$s</string>
 
-    <string name="all_create">Create</string>
-    <string name="all_invite">Invite</string>
-
     <string name="all_group_channels">Group Channels</string>
     <string name="all_open_channels">Open Channels</string>
 
     <!-- main -->
-    <string name="main_drawer_open">Open navigation drawer</string>
-    <string name="main_drawer_close">Close navigation drawer</string>
     <string name="select_channel_type">Select channel type</string>
-    <string name="settings">Settings</string>
+
     <string name="blocked_members_list">Blocked members</string>
 
     <!-- login -->
@@ -166,7 +111,6 @@ Email: menalive@hotmail.co.uk"
     <string name="open_channel_chat_content_desc_profile">Profile image</string>
 
     <!-- Menu actions -->
-    <string name="action_create_channel">Create channel</string>
 
     <string name="download">Download</string>
     <string name="cancel">Cancel</string>
@@ -178,47 +122,22 @@ Email: menalive@hotmail.co.uk"
     <string name="message_sending">Sending</string>
     <string name="message_failed">Failed</string>
     <string name="login">Login</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="name">Name</string>
-    <string name="title_activity_navigation_test">NavigationTest</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Connor Presbyterian Church</string>
-    <string name="nav_header_subtitle">james.mcc90@gmail.com</string>
+    <string name="nav_header_subtitle">info@connorpresbyterianchurch.org</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_activity_main_navigation">MainActivityNAVIGATION</string>
 
 
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string name="pref_title_data_wifi">Network Connectivity</string>
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-    <string name="pref_title_new_message_notifications">New message notifications</string>
 
     <!-- Example settings for Data & Sync -->
-    <string name="pref_title_vibrate">Vibrate</string>
 
     <string name="title_activity_settings">Settings</string>
-    <string name="pref_header_notifications">Verse of the Day Notification</string>
-    <string name="pref_header_about">About</string>
 
     <string name="pref_header_help">Help</string>
 
@@ -226,63 +145,30 @@ Email: menalive@hotmail.co.uk"
 
     <string name="pref_header_network_summary">Select network settings.</string>
 
-    <string name="pref_header_notification_summary">Toggle Verse of the Day notification. (WIP)</string>
-
     <!-- Example settings for Notifications -->
-
-
-    <string name="summary_about">This app has been developed by James McConnell.</string>
 
 
     <string name="app_version">1.0.0</string>
 
     <string name="summary_support">For any queries, issues, or suggestions relating to the app.</string>
     <string name="title_send_feedback">Send Feedback</string>
-    <string name="title_autoplay">Autoplay Videos</string>
-    <string name="summary_video">Turn autoplay on or off. (WIP)</string>
-    <string name="title_faq">FAQ</string>
-    <string name="summary_faq">View frequently asked questions</string>
     <string name="help_details">Coming soon…</string>
-    <string name="url_faq">https://www.androidhive.info/privacy-policy/</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="url_privacy">https://www.androidhive.info/privacy-policy/</string>
-    <string name="title_terms">Terms &amp; Conditions</string>
-    <string name="url_terms">https://www.androidhive.info/terms-of-service/</string>
     <string name="title_version">Version</string>
     <string name="choose_email_client">Choose email client</string>
-    <string name="title_gallery_storage">Default Storage</string>
-    <string name="title_new_notification_sound">Verse of the Day notification</string>
-    <string name="title_vibrate">Vibrate</string>
-    <string name="summary_vibrate">Vibrate on new notification</string>
-    <string name="key_upload_over_wifi">key_upload_over_wifi</string>
-    <string name="key_gallery_name">key_gallery_name</string>
-    <string name="key_upload_quality">key_upload_quality</string>
-    <string name="notifications_new_message">notifications_new_message</string>
-    <string name="key_notifications_new_message_ringtone">key_notifications_new_message_ringtone</string>
-    <string name="key_vibrate">key_vibrate</string>
     <string name="key_send_feedback">key_send_feedback</string>
-    <string name="key_help">key_help</string>
     <string name="key_data">key_data</string>
-    <string name="key_version">key_version</string>
-    <string name="key_notifications">key_version</string>
-    <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below.</string>
-    <string name="connor_website">Visit our website!</string>
+    <string name="youversion">If you wish, you can download the YouVersion app by clicking the button below (opens Google Play Store).</string>
     <string name="linktobibledotcom">
     <a href="https://www.bible.com/bible/111/JHN.1.NIV">Bible.com.</a>
     </string>
     <string name="BibleLink">Alternatively, you can view it on</string>
-    <string name="new_message_notification_title_template">New message: %1$s</string>
-    <string name="action_share">Share</string>
-    <string name="action_reply">Reply</string>
     <string name="sunday_school_info">Sunday School meets every Sunday from 11am. All children from 3-12 will be welcome.</string>
     <string name="sunday_school">Sunday School</string>
     <string name="bb">BB</string>
 
     <string name="gb">GB</string>
 
-    <string name="men_organisations_title">Men Alive</string>
     <string name="presbyterian_women">Presbyterian Women</string>
-    <string name="share_label">Click the button below to share this site on Facebook!</string>
     <string name="title_activity_scrolling">About Us</string>
     <string name="church_times">Morning Service: 12noon (11.30am July and August)
                                 Evening Service: 6.30pm\n\nMinister: Rev. Philip Thompson.\nTel: 028 25898364
@@ -291,19 +177,9 @@ Email: menalive@hotmail.co.uk"
     <string name="social_share_summary">Share this app with others!</string>
     <string name="social_share_title">Share</string>
     <string name="key_social">key_social</string>
-    <string name="key_notify">key_notify</string>
-    <string name="key_autoplay">key_autoplay</string>
-    <string name="nav_notification"></string>
 
 
-    <string name="channel_description">notifiy</string>
-
-    <string name="title_activity_media2">MediaActivity2</string>
-    <string name="title_activity_media">MediaActivity</string>
-    <string name="title_activity_view_pager">ViewPager</string>
-    <string name="title_activity_rotas_login">Sign in</string>
     <string name="title_activity_tabbed">TabbedActivity</string>
-    <string name="title_activity_swipe_test">SwipeTest</string>
     <string name="minister">
 
         "Rev Philip Thompson was installed as minister of Connor on 28th June 2017 having previously ministered in Waringstown. \n
@@ -414,181 +290,41 @@ Andrew Swann
 William Warwick
     </string>
     <string name="connor_chat">Connor Chat</string>
-    <string name="welcome_msg">Welcome!</string>
 
     <string name="sign_out">Sign Out</string>
-    <string name="contacts_permission_rationale">Access to account information is required to sign in.</string>
-    <string name="invite_menu_label">Invite</string>
     <string name="invitation_message">Please join me for a friendly chat</string>
     <string name="invitation_cta">Call to action</string>
 
     <string name="invitation_title">Friendly Chat Invite</string>
 
-    <string name="sign_in">Sign In</string>
-
-    <string name="sign_up">Sign Up</string>
-
-    <string name="fresh_config">Fresh Config</string>
-    <string name="cause_crash">Cause Crash</string>
-    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="chat_info">Sign in with Google account</string>
-    <string name="facebook_login">Sign in with Facebook (work in progress)</string>
+    <string name="chat_info">Sign in with a Google or Facebook account</string>
     <string name="facebook_app_id">475771149616259</string>
     <string name="fb_login_protocol_scheme">fb475771149616259</string>
     <string name="chat_logout">Sign Out</string>
-    <string name="chat_user_logged_in">Logged in as:</string>
-    <string name="app_id">730467113955312</string>
-    <string name="label_google_sign_in">Firebase + Google Sign In</string>
-    <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
-    <string name="label_facebook_login">Firebase + Facebook Login</string>
-    <string name="desc_facebook_login">Use a Facebook Login credential to authenticate with Firebase.</string>
-    <string name="label_twitter_login">Firebase + Twitter Login</string>
 
-    <string name="desc_twitter_login">Use a Twitter Login credential to authenticate with Firebase.</string>
-    <string name="label_emailpassword">Email/Password Authentication</string>
-
-    <string name="desc_emailpassword">Use an email and password to authenticate with Firebase.</string>
-    <string name="label_passwordless">Passwordless Authentication</string>
-    <string name="desc_passwordless">Use only an email to authenticate with Firebase.</string>
-    <string name="label_phone_auth">Phone Number Authentication</string>
-    <string name="desc_phone_auth">Use a phone number to authenticate with Firebase.</string>
-
-    <string name="label_anonymous_auth">Anonymous Authentication</string>
-    <string name="desc_anonymous_auth">Sign in anonymously and then later upgrade to a full Firebase Auth user.</string>
-
-    <string name="label_custom_auth">Custom Authentication</string>
-    <string name="desc_custom_auth">Use a custom token signed by your own server to authenticate with Firebase.</string>
-
-    <string name="label_firebase_ui">FirebaseUI Auth</string>
-    <string name="desc_firebase_ui">Use the FirebaseUI-Android library to authenticate with Firebase.</string>
-
-    <string name="hint_user_id">User ID</string>
-    <string name="get_custom_token">Get Token</string>
-
-    <string name="sign_in_facebook">Sign In</string>
-    <string name="create_account">Create Account</string>
-
-    <string name="send_link">Send Link</string>
-    <string name="sign_out_facebook">Sign Out</string>
-
-    <string name="verify_email">Verify Email</string>
-    <string name="disconnect">Disconnect</string>
-
-    <string name="loading">Loading…</string>
-    <string name="custom_token">Custom Token</string>
-
-    <string name="signed_in">Signed In</string>
     <string name="signed_out">Signed Out</string>
-    <string name="token_null">Token: null</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
-    <string name="desc_firebase_lockup">Firebase logo and name</string>
-    <string name="auth_failed">Authentication failed</string>
-    <string name="start_phone_auth">Start</string>
-    <string name="verify_phone_auth">Verify</string>
-    <string name="resend_phone_auth">Resend</string>
-    <string name="hint_phone_number">Phone Number</string>
-    <string name="hint_verification_code">Verification Code</string>
-    <string name="status_code_sent">Code Sent</string>
-    <string name="status_verification_failed">Verification failed</string>
-    <string name="status_verification_succeeded">Verification succeeded</string>
-    <string name="status_sign_in_failed">Sign-in failed</string>
-    <string name="instant_validation">(instant validation)</string>
     <string name="firebase_status_fmt">Firebase User: %s</string>
-    <string name="firebase_user_management">Firebase User Management</string>
-    <string name="google_status_fmt">Google User: %s</string>
-    <string name="google_title_text">Google Sign In</string>
     <string name="facebook_status_fmt">Facebook User: %s</string>
-    <string name="facebook_title_text">Facebook Login</string>
-    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
-    <string name="emailpassword_title_text">Email and Password</string>
-    <string name="passwordless_status_fmt">Email User: %1$s (verified: %2$b)</string>
-    <string name="passwordless_title_text">Passwordless Sign In</string>
 
-    <string name="status_email_not_sent">Send link to your email to get started.</string>
-    <string name="status_email_sent">Link sent, check your email to continue.</string>
-
-    <string name="status_link_found">Link received, enter email to sign in.</string>
-    <string name="phone_title_text">Phone Number</string>
-
-    <string name="twitter_status_fmt">Twitter User: %s</string>
-    <string name="twitter_title_text">Twitter Login</string>
-
-    <string name="firebaseui_status_fmt">Firebase User: %s</string>
-    <string name="firebaseui_title_text">FirebaseUI Auth</string>
-
-    <string name="id_fmt">User ID: %s</string>
-    <string name="email_fmt">Email: %s</string>
-    <string name="title_activity_gallery_test">GalleryTest</string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
 
-    <string name="test">test</string>
-
-    <string name="new_message_notification_placeholder_text_template">You said %1$s and lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Etiam non enim magna. Morbi dictum, velit vel
-        semper venenatis, magna odio volutpat velit, at ullamcorper nulla lacus sed turpis.
-        Pellentesque vitae metus elit, nec tincidunt tellus. Integer sed nisl sem, ullamcorper
-        ornare lacus. Duis ac mauris sed massa congue volutpat. Donec sed erat sit amet turpis
-        viverra rhoncus sit amet nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec
-        tortor.
-    </string>
-    <string name="title_activity_minister_about">Our Minister</string>
-
     <string name="title_activity_minister">Our Minister</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
+    <string name="around_connor_presbyterian">Around Connor Presbyterian</string>
+    <string name="our_minister">Our Minister</string>
+    <string name="church_updates">Church Updates</string>
+    <string name="gallery">Gallery</string>
+    <string name="announcements">Announcements</string>
+    <string name="church_vr">Church VR</string>
+    <string name="rotas_menu">Rotas</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_resources">ResourcesActivity</string>
 
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
-    <string-array name="pref_example_list_data">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_data_values">
-        <item>1</item>
-        <item>0</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 
     <!-- TODO: remove this placeholder text -->
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-    <string-array name="multi_select_list_preference_default_value" />
-    <string-array name="fragments">
-        <item>Videos</item>
-        <item>Images</item>
-    </string-array>
 
 
 </resources>

@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.connorchurch.james.churchapp.Minister;
 import com.connorchurch.james.churchapp.R;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,16 +26,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         Button About = findViewById(R.id.btnAboutUs);
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         finish();
                         break;
                     case R.id.action_bible:
-                        Intent bible = new Intent(MainActivity.this, BibleResourcesActivity.class);
+                        Intent bible = new Intent(MainActivity.this, ResourcesActivity.class);
                         startActivity(bible);
                         finish();
                         break;
@@ -121,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.nav_minster){
             Intent i = new Intent();
-            i.setClass(MainActivity.this, Minister.class);
+            i.setClass(MainActivity.this, MinisterContactActivity.class);
             finish();
             startActivity(i);
         }else if(id == R.id.nav_gallery){
@@ -145,11 +144,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             i.setClass(MainActivity.this, RotasActivity.class);
             finish();
             startActivity(i);
-        }else if(id == R.id.nav_external_links){
-            Intent i = new Intent();
-            i.setClass(MainActivity.this, ExternalLinksActivity.class);
-            finish();
-            startActivity(i);
         }else if(id == R.id.nav_settings){
             Intent i = new Intent();
             i.setClass(MainActivity.this, SettingsActivity.class);
@@ -163,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
