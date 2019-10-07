@@ -15,6 +15,7 @@ import com.connorchurch.james.churchapp.activities.AudioStreamActivity;
 import com.connorchurch.james.churchapp.activities.BaseActivity;
 import com.connorchurch.james.churchapp.activities.MainActivity;
 import com.connorchurch.james.churchapp.activities.MainChatActivity;
+import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,6 +32,7 @@ public class LoginActivity extends BaseActivity implements
     private EditText mEmailField;
     private EditText mPasswordField;
     private Button signInUsername;
+    private Button passwordReset;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -46,7 +48,7 @@ public class LoginActivity extends BaseActivity implements
         mDetailTextView = findViewById(R.id.detail);
         mEmailField = findViewById(R.id.username);
         mPasswordField = findViewById(R.id.password);
-
+        passwordReset = findViewById(R.id.btnPasswordReset);
 
 
         // Buttons
@@ -59,6 +61,19 @@ public class LoginActivity extends BaseActivity implements
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
 
+
+        passwordReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = mEmailField.getText().toString().trim();
+        try {
+                mAuth.sendPasswordResetEmail(email);
+            }
+        catch (Exception exception){
+            Toast.makeText(getApplicationContext(),"Sorry! Error occurred.",Toast.LENGTH_SHORT).show();
+        }
+            }
+        });
 
     }
 
@@ -108,6 +123,8 @@ public class LoginActivity extends BaseActivity implements
                 });
     }
 
+
+
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
         if (!validateForm()) {
@@ -146,6 +163,8 @@ public class LoginActivity extends BaseActivity implements
                 });
         // [END sign_in_with_email]
     }
+
+
 
 
 
@@ -221,6 +240,8 @@ public class LoginActivity extends BaseActivity implements
             createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.btnSignIn) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
+        } else if (i == R.id.btnPasswordReset){
+
         }
     }
 }
