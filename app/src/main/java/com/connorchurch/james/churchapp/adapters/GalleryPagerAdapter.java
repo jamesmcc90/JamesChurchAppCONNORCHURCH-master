@@ -1,8 +1,8 @@
 package com.connorchurch.james.churchapp.adapters;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.connorchurch.james.churchapp.fragments.ImageDetailFragment;
 import com.connorchurch.james.churchapp.models.ImageModel;

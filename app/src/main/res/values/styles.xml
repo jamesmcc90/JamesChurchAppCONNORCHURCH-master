@@ -46,5 +46,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="MyButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorButtonNormal">#1E73BE</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+    </style>
 
 </resources>

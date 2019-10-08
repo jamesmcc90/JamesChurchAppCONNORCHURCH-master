@@ -2,7 +2,7 @@ package com.connorchurch.james.churchapp.activities.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -11,13 +11,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.connorchurch.james.churchapp.R;
-import com.connorchurch.james.churchapp.activities.AudioStreamActivity;
 import com.connorchurch.james.churchapp.activities.BaseActivity;
-import com.connorchurch.james.churchapp.activities.MainActivity;
 import com.connorchurch.james.churchapp.activities.MainChatActivity;
-import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,7 +30,7 @@ public class LoginActivity extends BaseActivity implements
     private EditText mEmailField;
     private EditText mPasswordField;
     private Button signInUsername;
-    private Button passwordReset;
+    private MaterialButton passwordReset;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
