@@ -64,6 +64,19 @@ public class VODFragment extends Fragment {
             }
         });
 
+        ImageView BibleAppKids = view.findViewById(R.id.btnBibleKids);
+        BibleAppKids.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent kids = new Intent(Intent.ACTION_VIEW);
+                kids.setData(Uri.parse(
+                        "https://play.google.com/store/apps/details?id=com.bible.kids&hl=en_GB"));
+                kids.setPackage("com.android.vending");
+                startActivity(kids);
+
+            }
+        });
+
         return view;
 
     }

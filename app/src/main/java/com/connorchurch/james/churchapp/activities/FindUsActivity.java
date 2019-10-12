@@ -8,6 +8,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -25,6 +26,7 @@ import java.util.List;
 public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private UiSettings mUiSettings;
     private TextView mTextMessage;
 
     @Override
@@ -91,6 +93,7 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
+        mUiSettings = mMap.getUiSettings();
 
         LatLng connorPresbyterian = new LatLng(54.805873, -6.208884);
         mMap.addMarker(new MarkerOptions().position(connorPresbyterian).title("Connor Presbyterian Church"));
@@ -98,6 +101,8 @@ public class FindUsActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap.setMinZoomPreference(15);
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.getUiSettings();
+        mUiSettings.setZoomControlsEnabled(true);
 
     }
 

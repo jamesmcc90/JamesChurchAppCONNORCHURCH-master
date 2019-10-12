@@ -66,6 +66,7 @@ public class LoginActivity extends BaseActivity implements
                 String email = mEmailField.getText().toString().trim();
         try {
                 mAuth.sendPasswordResetEmail(email);
+                //Toast.makeText(getApplicationContext(), "Reset email sent.", Toast.LENGTH_LONG).show();
             }
         catch (Exception exception){
             Toast.makeText(getApplicationContext(),"Sorry! Error occurred.",Toast.LENGTH_SHORT).show();
