@@ -5,9 +5,12 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.connorchurch.james.churchapp.R;
@@ -39,16 +42,24 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Arrays;
 
-public class SignInActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
+public class SignInActivity extends BaseActivity implements GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
     private static final String TAG = "SignInActivity";
+
+
+    private TextView mStatusTextView;
+    private TextView mDetailTextView;
     private static final int RC_SIGN_IN = 9001;
     private SignInButton mSignInButton;
     private CallbackManager fbCallback;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mFirebaseAuth;
     private static final String EMAIL = "email";
+    private EditText mEmailField;
+    private EditText mPasswordField;
+    private MaterialButton passwordReset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,11 +76,19 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         }
 
 
+        mStatusTextView = findViewById(R.id.status);
+        mDetailTextView = findViewById(R.id.detail);
+        mEmailField = findViewById(R.id.username);
+        mPasswordField = findViewById(R.id.password);
+
+
         // Assign fields
         mSignInButton = findViewById(R.id.sign_in_button);
 
         // Set click listeners
         mSignInButton.setOnClickListener(this);
+        findViewById(R.id.btnSignIn).setOnClickListener(this);
+        findViewById(R.id.btnRegisterNew).setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -83,15 +102,21 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
 
+        passwordReset = findViewById(R.id.btnPasswordReset);
 
-        MaterialButton register = findViewById(R.id.btnRegister);
-        register.setOnClickListener(new View.OnClickListener() {
+        passwordReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(SignInActivity.this, LoginActivity.class);
-                startActivity(myIntent);
+                String email = mEmailField.getText().toString().trim();
+                try {
+                    mFirebaseAuth.sendPasswordResetEmail(email);
+                    //Toast.makeText(getApplicationContext(), "Reset email sent.", Toast.LENGTH_LONG).show();
+                } catch (Exception exception) {
+                    Toast.makeText(getApplicationContext(), "Sorry! Error occurred.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
 
         LoginButton loginButton = findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList(EMAIL));
@@ -160,16 +185,6 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.sign_in_button:
-                signIn();
-                break;
-            default:
-                return;
-        }
-    }
 
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
@@ -221,6 +236,137 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
                         }
                     }
                 });
+    }
+
+    // [START on_start_check_user]
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+    // [END on_start_check_user]
+
+    private void createAccount(String email, String password) {
+        Log.d(TAG, "createAccount:" + email);
+        if (!validateForm()) {
+            return;
+        }
+
+        showProgressDialog();
+
+        // [START create_user_with_email]
+        mFirebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            updateUI(user);
+
+                            Toast.makeText(SignInActivity.this, "Account created",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Account already exists with this email.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+
+                        // [START_EXCLUDE]
+                        hideProgressDialog();
+                        // [END_EXCLUDE]
+                    }
+                });
+    }
+
+
+    private void signIn(String email, String password) {
+        Log.d(TAG, "signIn:" + email);
+        if (!validateForm()) {
+            return;
+        }
+
+        showProgressDialog();
+
+        // [START sign_in_with_email]
+        mFirebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            startActivity(new Intent(SignInActivity.this, MainChatActivity.class));
+
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Incorrect email/password.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+
+                        // [START_EXCLUDE]
+                        if (!task.isSuccessful()) {
+                            // mStatusTextView.setText(R.string.auth_failed);
+                        }
+                        hideProgressDialog();
+                        // [END_EXCLUDE]
+                    }
+                });
+        // [END sign_in_with_email]
+    }
+
+
+    private void signOut() {
+        mFirebaseAuth.signOut();
+        updateUI(null);
+    }
+
+    private boolean validateForm() {
+        boolean valid = true;
+
+        String email = mEmailField.getText().toString();
+        if (TextUtils.isEmpty(email)) {
+            mEmailField.setError("Required.");
+            valid = false;
+        } else {
+            mEmailField.setError(null);
+        }
+
+        String password = mPasswordField.getText().toString();
+        if (TextUtils.isEmpty(password)) {
+            mPasswordField.setError("Required.");
+            valid = false;
+        } else {
+            mPasswordField.setError(null);
+        }
+
+        return valid;
+    }
+
+    private void updateUI(FirebaseUser user) {
+        hideProgressDialog();
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.btnRegisterNew) {
+            createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
+        } else if (i == R.id.btnSignIn) {
+            signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
+        } else if (i == R.id.sign_in_button) {
+            signIn();
+        }
     }
 
     @Override

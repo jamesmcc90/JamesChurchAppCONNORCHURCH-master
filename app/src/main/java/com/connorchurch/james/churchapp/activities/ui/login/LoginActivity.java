@@ -2,7 +2,9 @@ package com.connorchurch.james.churchapp.activities.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.connorchurch.james.churchapp.R;
 import com.connorchurch.james.churchapp.activities.BaseActivity;
 import com.connorchurch.james.churchapp.activities.MainChatActivity;
@@ -51,7 +54,7 @@ public class LoginActivity extends BaseActivity implements
 
         // Buttons
         findViewById(R.id.btnSignIn).setOnClickListener(this);
-        findViewById(R.id.btnRegister).setOnClickListener(this);
+        findViewById(R.id.btnRegisterNew).setOnClickListener(this);
 
 
         // [START initialize_auth]
@@ -64,13 +67,12 @@ public class LoginActivity extends BaseActivity implements
             @Override
             public void onClick(View v) {
                 String email = mEmailField.getText().toString().trim();
-        try {
-                mAuth.sendPasswordResetEmail(email);
-                //Toast.makeText(getApplicationContext(), "Reset email sent.", Toast.LENGTH_LONG).show();
-            }
-        catch (Exception exception){
-            Toast.makeText(getApplicationContext(),"Sorry! Error occurred.",Toast.LENGTH_SHORT).show();
-        }
+                try {
+                    mAuth.sendPasswordResetEmail(email);
+                    //Toast.makeText(getApplicationContext(), "Reset email sent.", Toast.LENGTH_LONG).show();
+                } catch (Exception exception) {
+                    Toast.makeText(getApplicationContext(), "Sorry! Error occurred.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -123,7 +125,6 @@ public class LoginActivity extends BaseActivity implements
     }
 
 
-
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
         if (!validateForm()) {
@@ -154,7 +155,7 @@ public class LoginActivity extends BaseActivity implements
 
                         // [START_EXCLUDE]
                         if (!task.isSuccessful()) {
-                           // mStatusTextView.setText(R.string.auth_failed);
+                            // mStatusTextView.setText(R.string.auth_failed);
                         }
                         hideProgressDialog();
                         // [END_EXCLUDE]
@@ -164,46 +165,10 @@ public class LoginActivity extends BaseActivity implements
     }
 
 
-
-
-
-
-
     private void signOut() {
         mAuth.signOut();
         updateUI(null);
     }
-
-/*    private void sendEmailVerification() {
-        // Disable button
-        findViewById(R.id.verifyEmailButton).setEnabled(false);
-
-        // Send verification email
-        // [START send_email_verification]
-        final FirebaseUser user = mAuth.getCurrentUser();
-        user.sendEmailVerification()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // [START_EXCLUDE]
-                        // Re-enable button
-                        findViewById(R.id.verifyEmailButton).setEnabled(true);
-
-                        if (task.isSuccessful()) {
-                            Toast.makeText(UsernamePasswordChatActivity.this,
-                                    "Verification email sent to " + user.getEmail(),
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(UsernamePasswordChatActivity.this,
-                                    "Failed to send verification email.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                        // [END_EXCLUDE]
-                    }
-                });
-        // [END send_email_verification]
-    }*/
 
     private boolean validateForm() {
         boolean valid = true;
@@ -235,11 +200,11 @@ public class LoginActivity extends BaseActivity implements
     @Override
     public void onClick(View v) {
         int i = v.getId();
-        if (i == R.id.btnRegister) {
+        if (i == R.id.btnRegisterNew) {
             createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
         } else if (i == R.id.btnSignIn) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
-        } else if (i == R.id.btnPasswordReset){
+        } else if (i == R.id.btnPasswordReset) {
 
         }
     }

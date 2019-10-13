@@ -34,12 +34,12 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:theme="@style/MyButton"
-        app:layout_constraintBottom_toBottomOf="@+id/btnRegister"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRegisterNew"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnRegisterNew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
@@ -99,7 +99,7 @@
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:theme="@style/MyButton"
-        app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegisterNew"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnSignIn"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
