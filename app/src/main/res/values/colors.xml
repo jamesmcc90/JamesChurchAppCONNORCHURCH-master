@@ -32,13 +32,13 @@
     <color name="groupChannelUnreadCountText">#ffffff</color>
 
     <!-- Selector -->
-    <color name="btn_create">#ffffff</color>
-    <color name="btn_edit">#ffffff</color>
+    <color name="btn_create">#FFFFFF</color>
+    <color name="btn_edit">#FFFFFF</color>
     <color name="btn_edit_disabled">#c1acff</color>
     <color name="btn_send">#774df2</color>
     <color name="btn_send_disabled">#8e8e8e</color>
     <color name="lblError_messageEmail">#ff0000</color>
-
+    <color name="lblSignUp">#ff0000</color>
     <color name="album_title">#4c4c4c</color>
 
 </resources>

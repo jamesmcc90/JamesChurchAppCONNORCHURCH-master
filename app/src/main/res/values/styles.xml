@@ -46,10 +46,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="MyButton" parent="Theme.AppCompat.Light">
+    <style name="MyButton" parent="Theme.MaterialComponents.Light">
         <item name="colorControlHighlight">@color/colorPrimary</item>
-        <item name="colorButtonNormal">#1E73BE</item>
-        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="colorButtonNormal">#53a0ed</item>
+
+    </style>
+    <style name="MyButtonSignUp" parent="Theme.MaterialComponents.Light">
+        <item name="colorControlHighlight">#53a0ed</item>
+
+        <item name="colorButtonNormal">#53a0ed</item>
+
     </style>
 
 </resources>

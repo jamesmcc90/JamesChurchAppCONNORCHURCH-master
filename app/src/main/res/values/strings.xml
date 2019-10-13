@@ -297,7 +297,7 @@ William Warwick
 
     <string name="invitation_title">Friendly Chat Invite</string>
 
-    <string name="chat_info">Sign in with a Google or Facebook account</string>
+    <string name="chat_info">- OR -</string>
     <string name="facebook_app_id">475771149616259</string>
     <string name="fb_login_protocol_scheme">fb475771149616259</string>
     <string name="chat_logout">Sign Out</string>
