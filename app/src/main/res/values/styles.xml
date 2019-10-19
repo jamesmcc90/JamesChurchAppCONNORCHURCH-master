@@ -13,7 +13,7 @@
     </style>
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark">
-       <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:textColorPrimary">#ffffff</item>
 
     </style>
 
@@ -51,6 +51,7 @@
         <item name="colorButtonNormal">#53a0ed</item>
 
     </style>
+
     <style name="MyButtonSignUp" parent="Theme.MaterialComponents.Light">
         <item name="colorControlHighlight">#53a0ed</item>
 

@@ -10,8 +10,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
@@ -47,6 +50,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -59,13 +63,15 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.android.material.navigation.NavigationView;
+import com.sendbird.android.User;
 
 import java.util.HashMap;
 import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainChatActivity extends AppCompatActivity implements
-        GoogleApiClient.OnConnectionFailedListener {
+        GoogleApiClient.OnConnectionFailedListener, NavigationView.OnNavigationItemSelectedListener  {
 
     AlertDialog.Builder builder;
 
@@ -116,6 +122,7 @@ public class MainChatActivity extends AppCompatActivity implements
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
     private GoogleApiClient mGoogleApiClient;
     private GoogleSignInClient mGoogleSignInClient;
+
     private TextView UserLoggedIn;
     private TextView Username;
     private ImageView profile;
@@ -128,14 +135,23 @@ public class MainChatActivity extends AppCompatActivity implements
 
         Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.firebase_chat_tablet);
-        } else {
-            setContentView(R.layout.firebase_chat);
-        }
+
+        setContentView(R.layout.firebase_chat);
+
 
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
 
         builder = new AlertDialog.Builder(this);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -145,7 +161,11 @@ public class MainChatActivity extends AppCompatActivity implements
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
-       // Glide.with(this).load(mFirebaseUser.getPhotoUrl().toString()).into(profile);
+        profile = findViewById(R.id.imgViewProfile);
+        Glide.with(this).load(mFirebaseUser.getPhotoUrl().toString()).into(profile);
+
+        Username = findViewById(R.id.txtName);
+        Username.setText(mFirebaseUser.getDisplayName());
 
         if (mFirebaseUser == null) {
             // Not signed in, launch the Sign In activity
@@ -374,6 +394,24 @@ public class MainChatActivity extends AppCompatActivity implements
 
 
 
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if(id == R.id.nav_chat_profile){
+            Intent i = new Intent();
+            i.setClass(MainChatActivity.this, MyProfileActivity.class);
+            finish();
+            startActivity(i);
+
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 /*
 
