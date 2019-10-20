@@ -1,0 +1,30 @@
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <ListPreference
+            android:id="@+id/fontSize"
+            android:icon="@drawable/round_font_download_24"
+            app:key="@string/font_title"
+            app:title="@string/font_title"
+            app:useSimpleSummaryProvider="true"
+            android:entries="@array/pref_color_option_labels"
+            android:entryValues="@array/pref_color_option_values"
+
+            />
+
+        <ListPreference
+            android:id="@+id/backgroundAppearance"
+            android:icon="@drawable/round_format_paint_24"
+            app:key="@string/appearance_title"
+            app:title="@string/appearance_title"
+            app:useSimpleSummaryProvider="true"
+            android:entries="@array/pref_backgroundcolor_option_labels"
+            android:entryValues="@array/pref_backgroundcolor_option_values"
+
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -95,6 +95,7 @@ public class MainChatActivity extends AppCompatActivity implements
 
     private static final String TAG = "MainActivity";
     public static final String MESSAGES_CHILD = "messages";
+   // public static final String MESSAGES_CHILD_two = "MessagesChat";
     private static final int REQUEST_INVITE = 1;
     private static final int REQUEST_IMAGE = 2;
     //public static final int DEFAULT_MSG_LENGTH_LIMIT = 10;
@@ -163,6 +164,16 @@ public class MainChatActivity extends AppCompatActivity implements
 
         profile = findViewById(R.id.imgViewProfile);
         Glide.with(this).load(mFirebaseUser.getPhotoUrl().toString()).into(profile);
+
+        profile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent profile = new Intent();
+                profile.setClass(MainChatActivity.this, MyProfileActivity.class);
+                finish();
+                startActivity(profile);
+            }
+        });
 
         Username = findViewById(R.id.txtName);
         Username.setText(mFirebaseUser.getDisplayName());
@@ -404,6 +415,11 @@ public class MainChatActivity extends AppCompatActivity implements
         if(id == R.id.nav_chat_profile){
             Intent i = new Intent();
             i.setClass(MainChatActivity.this, MyProfileActivity.class);
+            finish();
+            startActivity(i);
+        } else if (id == R.id.nav_chat_settings){
+            Intent i = new Intent();
+            i.setClass(MainChatActivity.this, SettingsActivityChat.class);
             finish();
             startActivity(i);
 

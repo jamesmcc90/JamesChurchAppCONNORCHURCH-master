@@ -43,8 +43,13 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activities.MyProfileActivity"
-            />
+            android:name=".activities.SettingsActivityChat"
+            android:label="@string/title_activity_settings_chat"></activity>
+        <activity
+            android:name=".activities.TabsChatsTest"
+            android:label="@string/title_activity_tabs_chats_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.MyProfileActivity" />
         <activity
             android:name=".activities.TabChats"
             android:theme="@style/AppTheme.NoActionBar" />

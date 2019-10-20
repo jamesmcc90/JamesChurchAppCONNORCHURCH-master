@@ -334,6 +334,25 @@ William Warwick
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_tab_chats">TabChats</string>
     <string name="title_activity_my_profile">MyProfileActivity</string>
+    <string name="title_activity_tabs_chats_test">TabsChatsTest</string>
+    <string name="title_activity_settings_chat">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Appearance</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="font_title">Font size</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="appearance_title">Chat background</string>
 
     <!-- TODO: remove this placeholder text -->
 

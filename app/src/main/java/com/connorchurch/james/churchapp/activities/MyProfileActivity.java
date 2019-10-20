@@ -18,10 +18,12 @@ import com.connorchurch.james.churchapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MyProfileActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
-    private ImageView profile;
+    private CircleImageView profile;
     private TextView Username;
     private ImageView backToChat;
 

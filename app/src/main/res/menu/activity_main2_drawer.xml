@@ -34,6 +34,7 @@
                     android:id="@+id/nav_rotas"
                     android:icon="@drawable/round_assignment_black_24dp"
                     android:title="@string/rotas_menu" />
+
             </menu>
         </item>
 
