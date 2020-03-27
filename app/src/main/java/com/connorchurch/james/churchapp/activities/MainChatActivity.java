@@ -66,6 +66,8 @@ import com.google.firebase.storage.UploadTask;
 import com.google.android.material.navigation.NavigationView;
 import com.sendbird.android.User;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -156,7 +158,7 @@ public class MainChatActivity extends AppCompatActivity implements
 
         builder = new AlertDialog.Builder(this);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mUsername = ANONYMOUS;
+
 
         // Initialize Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -244,13 +246,16 @@ public class MainChatActivity extends AppCompatActivity implements
                                             FriendlyMessage friendlyMessage) {
 
                 final TextView mTime = viewHolder.messageTime;
+                final TextView mMessenger = viewHolder.messengerTextView;
 
                 mProgressBar.setVisibility(ProgressBar.INVISIBLE);
                 if (friendlyMessage.getText() != null) {
+                    viewHolder.messengerTextView.setText("james");
                     viewHolder.messageTextView.setText(friendlyMessage.getText());
                     viewHolder.messageTextView.setVisibility(TextView.VISIBLE);
                     viewHolder.messageImageView.setVisibility(ImageView.GONE);
                     mTime.setText(DateFormat.format("dd MMM yyyy  (h:mm a)", friendlyMessage.getMessageTime()));
+                    mMessenger.setText(friendlyMessage.getName());
 
                 } else if (friendlyMessage.getImageUrl() != null) {
                     String imageUrl = friendlyMessage.getImageUrl();
@@ -280,7 +285,9 @@ public class MainChatActivity extends AppCompatActivity implements
                     }
                     viewHolder.messageImageView.setVisibility(ImageView.VISIBLE);
                     mTime.setText(DateFormat.format("dd MMM yyyy  (h:mm a)", friendlyMessage.getMessageTime()));
+                    viewHolder.messengerTextView.setText(friendlyMessage.getName());
                     viewHolder.messageTextView.setVisibility(TextView.GONE);
+                    viewHolder.messengerTextView.setVisibility(TextView.VISIBLE);
                 }
 
 
@@ -378,7 +385,7 @@ public class MainChatActivity extends AppCompatActivity implements
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("image/jpeg");
+                intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_IMAGE);
             }
         });
@@ -676,13 +683,10 @@ public class MainChatActivity extends AppCompatActivity implements
                 });
 
         AlertDialog alert = builder.create();
-        alert.setTitle("Log Out");
+        alert.setTitle("Sign Out");
         alert.setMessage("Are you sure you want to sign out?");
         alert.setIcon(R.drawable.round_warning_24);
         alert.show();
 
     }
-
-
-
 }

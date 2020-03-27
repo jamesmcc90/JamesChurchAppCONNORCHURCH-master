@@ -1,34 +1,57 @@
 package com.connorchurch.james.churchapp.activities;
 
 import androidx.annotation.NonNull;
+
+import com.google.android.gms.common.internal.Hide;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.connorchurch.james.churchapp.R;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
-
+    private BottomAppBar bar;
     int currentItem = 0;
+    private boolean fbModeCenter = true;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
+       // BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        AppBarLayout appBarLayout = findViewById(R.id.appBarLayout);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -42,6 +65,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Button Find = findViewById(R.id.btnFindUs);
         Button Sermons = findViewById(R.id.btnSermons);
         Button WhatsOn = findViewById(R.id.btnWhatsOn);
+        Button Calendar = findViewById(R.id.btnCalendar);
+        FloatingActionButton Info = findViewById(R.id.fltInfo);
+        FloatingActionButton HideInfo = findViewById(R.id.fltInfoHide);
+       // TextView floatInfo = findViewById(R.id.txtFloatInfo);
+        final WebView updates = findViewById(R.id.webInfo);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         About.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -85,9 +115,73 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         });
 
+        Calendar.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View arg0){
+                Intent myIntent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(myIntent);
+                finish();
+            }
+        }
+
+        );
+
+        Info.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("RestrictedApi")
+            public void onClick(View v) {
+
+               // floatInfo.setVisibility(View.VISIBLE);
+                About.setVisibility(View.INVISIBLE);
+                Sermons.setVisibility(View.INVISIBLE);
+                WhatsOn.setVisibility(View.INVISIBLE);
+                Find.setVisibility(View.INVISIBLE);
+                Calendar.setVisibility(View.INVISIBLE);
+                HideInfo.setVisibility(View.VISIBLE);
+                bottomNavigationView.setVisibility(View.INVISIBLE);
+                appBarLayout.setVisibility(View.INVISIBLE);
+                Info.setVisibility(View.INVISIBLE);
+                HideInfo.setVisibility(View.VISIBLE);
+
+                updates.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        view.loadUrl(url);
+                        return false;
+                    }
+                });
+
+                updates.getSettings().setJavaScriptEnabled(true);
+                WebSettings settings = updates.getSettings();
+                settings.setDomStorageEnabled(true);
+                updates.setVisibility(View.VISIBLE);
+                updates.loadUrl("https://ourdailybread.org/read/");
+
+                Info.setVisibility(View.INVISIBLE);
+                HideInfo.setVisibility(View.VISIBLE);
+    }
+
+});
+
+        HideInfo.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+              //  floatInfo.setVisibility(View.INVISIBLE);
+                About.setVisibility(View.VISIBLE);
+                Sermons.setVisibility(View.VISIBLE);
+                WhatsOn.setVisibility(View.VISIBLE);
+                Find.setVisibility(View.VISIBLE);
+                Calendar.setVisibility(View.VISIBLE);
+                Info.setVisibility(View.VISIBLE);
+                HideInfo.setVisibility(View.INVISIBLE);
+                bottomNavigationView.setVisibility(View.VISIBLE);
+                appBarLayout.setVisibility(View.VISIBLE);
+                Info.setVisibility(View.VISIBLE);
+                updates.setVisibility(View.INVISIBLE);
+
+            }
+        });
 
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -95,11 +189,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case R.id.action_chat:
                         Intent signIn = new Intent(MainActivity.this, SignInActivity.class);
                         startActivity(signIn);
-                        finish();
-                        break;
-                    case R.id.action_calendar:
-                        Intent calendar = new Intent(MainActivity.this, CalendarActivity.class);
-                        startActivity(calendar);
                         finish();
                         break;
                     case R.id.action_bible:
@@ -111,7 +200,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
         });
+
+
+
+
     }
+
+    private void init() {
+
+        this.fab = findViewById(R.id.fab);
+    }
+
 
    @SuppressWarnings("StatementWithEmptyBody")
    @Override

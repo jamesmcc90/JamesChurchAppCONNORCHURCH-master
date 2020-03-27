@@ -35,6 +35,7 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorAccent">#1e73be</item>
+        <item name="android:layout_gravity">end</item>
 
     </style>
 
