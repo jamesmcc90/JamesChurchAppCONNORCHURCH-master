@@ -2,7 +2,6 @@ package com.connorchurch.james.churchapp.activities;
 
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.common.internal.Hide;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -18,15 +17,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.connorchurch.james.churchapp.R;
 
@@ -61,11 +58,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button About = findViewById(R.id.btnAboutUs);
-        Button Find = findViewById(R.id.btnFindUs);
-        Button Sermons = findViewById(R.id.btnSermons);
-        Button WhatsOn = findViewById(R.id.btnWhatsOn);
-        Button Calendar = findViewById(R.id.btnCalendar);
+        ImageView About = findViewById(R.id.btnAbout);
+        ImageView Find = findViewById(R.id.btnFindUs);
+        ImageView Sermons = findViewById(R.id.btnSermons);
+        ImageView WhatsOn = findViewById(R.id.btnWhatsOn);
+        ImageView Calendar = findViewById(R.id.btnCalendar);
         FloatingActionButton Info = findViewById(R.id.fltInfo);
         FloatingActionButton HideInfo = findViewById(R.id.fltInfoHide);
        // TextView floatInfo = findViewById(R.id.txtFloatInfo);
@@ -255,6 +252,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
             startActivity(i);
         }
+        else if(id == R.id.nav_youtube){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, YoutubeActivity.class);
+            finish();
+            startActivity(i);
+        }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

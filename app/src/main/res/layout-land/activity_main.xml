@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSermons"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAboutUs" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
 
     <Spinner
         android:id="@+id/spnRotas"
@@ -70,7 +70,7 @@
 
 
     <Button
-        android:id="@+id/btnAboutUs"
+        android:id="@+id/btnAbout"
         android:layout_width="254dp"
         android:layout_height="0dp"
         android:layout_marginStart="12dp"
@@ -100,7 +100,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnSermons"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnAboutUs"
+        app:layout_constraintStart_toEndOf="@+id/btnAbout"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

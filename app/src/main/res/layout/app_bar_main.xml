@@ -45,6 +45,7 @@
 
 
             </com.google.android.material.appbar.AppBarLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -59,78 +60,69 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnAboutUs"
+    <ImageView
+        android:id="@+id/btnAbout"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="78dp"
-        android:background="@drawable/church1"
-        android:text="@string/about_us"
-        android:textColor="@color/btn_edit"
-        android:textSize="18sp"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btnSermons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/church1_new" />
 
-    <Button
+    <ImageView
         android:id="@+id/btnSermons"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/church3"
-        android:text="@string/sermons"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btnFindUs"
         app:layout_constraintEnd_toEndOf="@+id/btnFindUs"
-        app:layout_constraintStart_toStartOf="@+id/btnAboutUs"
-        app:layout_constraintTop_toBottomOf="@+id/btnAboutUs" />
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout"
+        app:srcCompat="@drawable/church3_new" />
 
 
-    <Button
+    <ImageView
         android:id="@+id/btnFindUs"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/church2"
-        android:text="@string/find_us"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btnWhatsOn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnAboutUs"
-        app:layout_constraintTop_toBottomOf="@+id/btnSermons" />
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        app:layout_constraintTop_toBottomOf="@+id/btnSermons"
+        app:srcCompat="@drawable/church2" />
 
 
-    <Button
+    <ImageView
         android:id="@+id/btnCalendar"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/calendar"
-        android:text="Calendar"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        android:scaleType="center"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/fltInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWhatsOn" />
+        app:layout_constraintTop_toBottomOf="@+id/btnWhatsOn"
+        app:srcCompat="@drawable/calendar" />
 
-    <Button
+
+    <ImageView
         android:id="@+id/btnWhatsOn"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/connor_presbyterian"
-        android:text="@string/what_s_on"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:visibility="visible"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/btnCalendar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnAboutUs"
-        app:layout_constraintTop_toBottomOf="@+id/btnFindUs" />
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        app:layout_constraintTop_toBottomOf="@+id/btnFindUs"
+        app:srcCompat="@drawable/connor_presbyterian_new" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fltInfoHide"
@@ -138,9 +130,9 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_window_close_white_24_dp"
         app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fltInfo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalendar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fltInfo"
@@ -154,13 +146,13 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
 
 
-        android:layout_marginEnd="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/coordinatorLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fltInfo"
         app:menu="@menu/bottom_nav_menu">
 

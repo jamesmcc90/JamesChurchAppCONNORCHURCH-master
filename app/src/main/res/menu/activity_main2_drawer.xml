@@ -21,6 +21,10 @@
                     android:icon="@drawable/baseline_video_label_black_48dp"
                     android:title="@string/gallery" />
                 <item
+                    android:id="@+id/nav_youtube"
+                    android:icon="@drawable/baseline_video_label_black_48dp"
+                    android:title="YouTube Channel" />
+                <item
                     android:id="@+id/nav_vr"
                     android:icon="@drawable/round_panorama_24"
                     android:title="@string/church_vr">
@@ -34,6 +38,7 @@
                     android:id="@+id/nav_rotas"
                     android:icon="@drawable/round_assignment_black_24dp"
                     android:title="@string/rotas_menu" />
+
 
             </menu>
         </item>

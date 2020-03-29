@@ -41,9 +41,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activities.DonateActivity"></activity>
         <activity
             android:name=".activities.SettingsActivityChat"
-            android:label="@string/title_activity_settings_chat"/>
+            android:label="@string/title_activity_settings_chat" />
         <activity
             android:name=".activities.TabsChatsTest"
             android:label="@string/title_activity_tabs_chats_test"
@@ -64,10 +65,29 @@
             android:name=".activities.ResourcesActivity"
             android:label="@string/title_activity_resources"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.DetailsActivity"
+            android:label="@string/title_activity_resources"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.YoutubeActivity"
+            android:label="@string/title_activity_resources"
+            android:screenOrientation="portrait" />
         <activity android:name=".activities.ChurchVRActivity" />
         <activity
             android:name=".activities.MainVRActivity"
             android:label="Church VR"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.PaymentActivity"
+            android:label="Payment"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".activities.PaymentDetails"
+            android:label="Payment Details"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Minister"

@@ -22,7 +22,8 @@ android {
     }
 
 
-    lintOptions { checkReleaseBuilds false
+    lintOptions {
+        checkReleaseBuilds false
         disable 'RestrictedApi'
 
     }
@@ -32,7 +33,7 @@ android {
         applicationId "com.connorchurch.james.churchapp"
         minSdkVersion 22
         targetSdkVersion 28
-        versionCode 3
+        versionCode 5
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -50,11 +51,22 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 dependencies {
-    implementation 'com.braintreepayments.api:braintree:2.+'
+
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+
+    implementation 'com.squareup.okhttp:okhttp:2.3.0'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    //for image show
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+
+    implementation 'com.braintreepayments.api:braintree:3.9.0'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
+
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.firebase:firebase-perf:17.0.2'
     implementation 'com.github.chrisbanes:PhotoView:2.0.0'
-
+implementation 'com.google.android.gms:play-services-wallet:9.2.0'
     implementation 'androidx.appcompat:appcompat:1.0.0-rc02'
     implementation 'com.google.android.material:material:1.0.0-rc02'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
