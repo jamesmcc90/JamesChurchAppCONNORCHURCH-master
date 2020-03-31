@@ -35,6 +35,10 @@
                     android:icon="@drawable/round_announcement_24"
                     android:title="@string/announcements" />
                 <item
+                    android:id="@+id/nav_donate"
+                    android:icon="@drawable/baseline_payment_24"
+                    android:title="Donate (EXPERIMENTAL)" />
+                <item
                     android:id="@+id/nav_rotas"
                     android:icon="@drawable/round_assignment_black_24dp"
                     android:title="@string/rotas_menu" />

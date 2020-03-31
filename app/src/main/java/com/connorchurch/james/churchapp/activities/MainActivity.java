@@ -258,9 +258,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
             startActivity(i);
         }
+        else if(id == R.id.nav_donate){
+            Intent i = new Intent();
+            i.setClass(MainActivity.this, DonateActivity.class);
+            finish();
+            startActivity(i);
+        }
 
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
+       DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
