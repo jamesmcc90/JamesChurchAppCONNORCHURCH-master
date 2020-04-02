@@ -291,9 +291,9 @@ class GroupChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
              * that animates. The animation is implemented in the {@link TypingIndicator#animate() class}
              */
             ArrayList<ImageView> indicatorImages = new ArrayList<>();
-            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_1));
-            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_2));
-            indicatorImages.add((ImageView) typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_3));
+            indicatorImages.add(typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_1));
+            indicatorImages.add(typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_2));
+            indicatorImages.add(typingIndicatorContainer.findViewById(R.id.typing_indicator_dot_3));
 
             TypingIndicator indicator = new TypingIndicator(indicatorImages, 600);
             indicator.animate();

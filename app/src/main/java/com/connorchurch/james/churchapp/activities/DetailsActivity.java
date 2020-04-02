@@ -70,19 +70,19 @@ public class DetailsActivity extends YouTubeBaseActivity implements YouTubePlaye
         youtubeDataModel = getIntent().getParcelableExtra(YoutubeDataModel.class.toString());
         Log.e("", youtubeDataModel.getDescription());
 
-        mYoutubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player);
+        mYoutubePlayerView = findViewById(R.id.youtube_player);
         mYoutubePlayerView.initialize(GOOGLE_YOUTUBE_API, this);
 
-        textViewName = (TextView) findViewById(R.id.textViewName);
-        textViewDes = (TextView) findViewById(R.id.textViewDes);
+        textViewName = findViewById(R.id.textViewName);
+        textViewDes = findViewById(R.id.textViewDes);
         // imageViewIcon = (ImageView) findViewById(R.id.imageView);
-        textViewDate = (TextView) findViewById(R.id.textViewDate);
+        textViewDate = findViewById(R.id.textViewDate);
 
         textViewName.setText(youtubeDataModel.getTitle());
         textViewDes.setText(youtubeDataModel.getDescription());
         textViewDate.setText(youtubeDataModel.getPublishedAt());
 
-        mList_videos = (RecyclerView) findViewById(R.id.mList_videos);
+        mList_videos = findViewById(R.id.mList_videos);
         new RequestYoutubeCommentAPI().execute();
 //        try {
 //            if (youtubeDataModel.getThumbnail() != null) {
@@ -257,7 +257,7 @@ public class DetailsActivity extends YouTubeBaseActivity implements YouTubePlaye
             try {
                 u = new URL(params[0]);
                 is = u.openStream();
-                URLConnection huc = (URLConnection) u.openConnection();
+                URLConnection huc = u.openConnection();
                 huc.connect();
                 int size = huc.getContentLength();
 
@@ -277,7 +277,7 @@ public class DetailsActivity extends YouTubeBaseActivity implements YouTubePlaye
                             total += len1;
                             // publishing the progress....
                             // After this onProgressUpdate will be called
-                            progress = (int) ((total * 100) / size);
+                            progress = (total * 100) / size;
                             if(progress >= 0) {
                                 temp_progress = progress;
                                 publishProgress("" + progress);
@@ -405,7 +405,7 @@ public class DetailsActivity extends YouTubeBaseActivity implements YouTubePlaye
 
     public void requestPermissionForReadExtertalStorage() throws Exception {
         try {
-            ActivityCompat.requestPermissions((Activity) this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     READ_STORAGE_PERMISSION_REQUEST_CODE);
         } catch (Exception e) {
             e.printStackTrace();

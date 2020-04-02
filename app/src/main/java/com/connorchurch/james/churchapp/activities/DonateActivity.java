@@ -77,8 +77,8 @@ public class DonateActivity extends AppCompatActivity {
 
         textView.setText(ss);
 
-        edit_amount=(EditText)findViewById(R.id.edt_amount);
-        btn_pay=(Button) findViewById(R.id.btn_donate);
+        edit_amount= findViewById(R.id.edt_amount);
+        btn_pay= findViewById(R.id.btn_donate);
         //group_payment=(LinearLayout)findViewById(R.id.payment_group);
 
         new getToken().execute();
@@ -108,7 +108,7 @@ public class DonateActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(DonateActivity.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, API_CHECKOUT,
                 response -> {
-                    if(response.toString().contains("Successful")){
+                    if(response.contains("Successful")){
                         Toast.makeText(DonateActivity.this, "Payment Success", Toast.LENGTH_SHORT).show();
                     }
                     else {

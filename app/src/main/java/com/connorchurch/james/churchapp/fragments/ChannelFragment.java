@@ -53,7 +53,7 @@ public class ChannelFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_channel, container, false);
-        mList_videos = (RecyclerView) view.findViewById(R.id.mList_videos);
+        mList_videos = view.findViewById(R.id.mList_videos);
         initList(mListData);
         new RequestYoutubeAPI().execute();
         return view;
