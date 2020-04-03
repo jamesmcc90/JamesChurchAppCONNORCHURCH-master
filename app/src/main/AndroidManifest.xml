@@ -36,7 +36,8 @@
     <application
         android:name=".main.BaseApplication"
         android:allowBackup="true"
-        android:icon="@drawable/connor_church"
+        android:icon="@mipmap/ic_minister"
+        android:roundIcon="@mipmap/ic_minister_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
