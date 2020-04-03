@@ -35,7 +35,7 @@ android {
         applicationId "com.connorchurch.james.churchapp"
         minSdkVersion 22
         targetSdkVersion 28
-        versionCode 10
+        versionCode 11
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -83,6 +83,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
 
     //implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.4'
+    //implementation 'com.google.firebase:firebase-analytics:17.3.0'
 
     implementation 'com.google.firebase:firebase-auth:9.4.0'
     implementation 'com.google.android.material:material:1.0.0-rc02'
@@ -205,6 +206,7 @@ dependencies {
 
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation project(path: ':flutter')
 
 
 }
