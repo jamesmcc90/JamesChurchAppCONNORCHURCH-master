@@ -20,13 +20,10 @@ public class Tab1Fragment extends Fragment {
 
         Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            View view  = inflater.inflate(R.layout.tab1_fragment_tablet, container, false);
-            return view;
-        } else {
+
             View view  = inflater.inflate(R.layout.tab1_fragment, container, false);
             return view;
-        }
+
 
 
 

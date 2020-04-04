@@ -23,17 +23,10 @@ public class Tab3Fragment extends Fragment {
         Configuration config = getResources().getConfiguration();
 
 
-
-        if (config.smallestScreenWidthDp >= 600) {
-            View view = inflater.inflate(R.layout.tab3_fragment_tablet, container, false);
-            final TextView pw = view.findViewById(R.id.textView21);
-            pw.setMovementMethod(new ScrollingMovementMethod());
-            return view;
-        } else {
             View view = inflater.inflate(R.layout.tab3_fragment, container, false);
             return view;
         }
 
 
     }
-}
+

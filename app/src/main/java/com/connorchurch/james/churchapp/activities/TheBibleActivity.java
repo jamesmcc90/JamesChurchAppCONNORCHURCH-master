@@ -20,14 +20,8 @@ public class TheBibleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.bible);
 
-        Configuration config = getResources().getConfiguration();
-
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.bible_tablet);
-        } else {
-            setContentView(R.layout.bible);
-        }
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

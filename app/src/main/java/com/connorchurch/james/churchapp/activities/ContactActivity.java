@@ -40,11 +40,9 @@ public class ContactActivity extends AppCompatActivity {
 
         Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.contact_us_tablet);
-        } else {
+
             setContentView(R.layout.contact_us);
-        }
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -21,14 +21,7 @@ public class ChatLoginActivity extends AppCompatActivity {
 
         Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.login_chat_tablet);
-        } else {
-            setContentView(R.layout.login_chat);
-        }
-
-
-
+        setContentView(R.layout.login_chat);
 
         Button login = findViewById(R.id.btnLogin);
         final TextView error = findViewById(R.id.txtError);
