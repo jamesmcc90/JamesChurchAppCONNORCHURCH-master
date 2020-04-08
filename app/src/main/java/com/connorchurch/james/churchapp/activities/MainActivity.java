@@ -2,6 +2,8 @@ package com.connorchurch.james.churchapp.activities;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -12,11 +14,15 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -24,30 +30,47 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.connorchurch.james.churchapp.R;
-
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private FirebaseRemoteConfig fbRemoteConfig;
     private DrawerLayout mDrawerLayout;
     private BottomAppBar bar;
     int currentItem = 0;
     private boolean fbModeCenter = true;
     private FloatingActionButton fab;
+    TextView myWebView;
+    boolean loadingFinished = true;
+    boolean redirect = false;
+    String url = "";
+    TextView textView;
+    long cacheExpiration = 43200;
+    String imgUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         init();
+
+        fbRemoteConfig = FirebaseRemoteConfig.getInstance();
+        fbRemoteConfig.activateFetched();
+        fbRemoteConfig.fetch(0);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
-       // BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        // BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         AppBarLayout appBarLayout = findViewById(R.id.appBarLayout);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,15 +88,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView Calendar = findViewById(R.id.btnCalendar);
         FloatingActionButton Info = findViewById(R.id.fltInfo);
         FloatingActionButton HideInfo = findViewById(R.id.fltInfoHide);
-       // TextView floatInfo = findViewById(R.id.txtFloatInfo);
-        final WebView updates = findViewById(R.id.webInfo);
+
+        textView = findViewById(R.id.textView18);
+        //textView.setText(fbRemoteConfig.getString("welcome_message"));
+        textView.setVisibility(View.INVISIBLE);
+
+        loadHomePage();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         About.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                // Start NewActivity.class
                 Intent myIntent = new Intent(MainActivity.this, AboutUsActivity.class);
                 startActivity(myIntent);
                 finish();
@@ -112,21 +138,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         });
 
-        Calendar.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0){
-                Intent myIntent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(myIntent);
-                finish();
-            }
-        }
+        Calendar.setOnClickListener(new View.OnClickListener() {
+                                        public void onClick(View arg0) {
+                                            Intent myIntent = new Intent(MainActivity.this, CalendarActivity.class);
+                                            startActivity(myIntent);
+                                            finish();
+                                        }
+                                    }
 
         );
 
         Info.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("RestrictedApi")
             public void onClick(View v) {
-
-               // floatInfo.setVisibility(View.VISIBLE);
                 About.setVisibility(View.INVISIBLE);
                 Sermons.setVisibility(View.INVISIBLE);
                 WhatsOn.setVisibility(View.INVISIBLE);
@@ -137,32 +161,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 appBarLayout.setVisibility(View.INVISIBLE);
                 Info.setVisibility(View.INVISIBLE);
                 HideInfo.setVisibility(View.VISIBLE);
+                toolbar.setVisibility(View.INVISIBLE);
+                textView.setVisibility(View.VISIBLE);
+            }
 
-                updates.setWebViewClient(new WebViewClient() {
-                    @Override
-                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                        view.loadUrl(url);
-                        return false;
-                    }
-                });
-
-                updates.getSettings().setJavaScriptEnabled(true);
-                WebSettings settings = updates.getSettings();
-                settings.setDomStorageEnabled(true);
-                updates.setVisibility(View.VISIBLE);
-                updates.loadUrl("https://ourdailybread.org/read/");
-
-                Info.setVisibility(View.INVISIBLE);
-                HideInfo.setVisibility(View.VISIBLE);
-    }
-
-});
+        });
 
         HideInfo.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-              //  floatInfo.setVisibility(View.INVISIBLE);
                 About.setVisibility(View.VISIBLE);
                 Sermons.setVisibility(View.VISIBLE);
                 WhatsOn.setVisibility(View.VISIBLE);
@@ -173,8 +181,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 bottomNavigationView.setVisibility(View.VISIBLE);
                 appBarLayout.setVisibility(View.VISIBLE);
                 Info.setVisibility(View.VISIBLE);
-                updates.setVisibility(View.INVISIBLE);
-
+                toolbar.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -199,17 +207,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
+    }
 
+    private void loadHomePage() {
+        if (isConnected()) {
+            textView.setText(fbRemoteConfig.getString("welcome_message"));
+        } else {
+            Toast toast = Toast.makeText(getApplicationContext(), "No Internet Access", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
+    private void displayWelcomeMessage() {
 
     }
+
 
     private void init() {
 
         this.fab = findViewById(R.id.fab);
     }
 
+    private void navigateToURL(String welcome_message) {
 
-   @SuppressWarnings("StatementWithEmptyBody")
+        textView.setText("jjh");
+
+    }
+
+    private boolean isConnected() {
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(MainActivity.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void updateConfig(View view) {
+        fbRemoteConfig.fetch(0).addOnCompleteListener(this,
+                new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            fbRemoteConfig.activateFetched();
+                            loadHomePage();
+                        } else {
+
+                            Toast toast = Toast.makeText(getApplicationContext(), "Configuration Error !", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    }
+                });
+    }
+
+
+@SuppressWarnings("StatementWithEmptyBody")
    @Override
     public boolean onNavigationItemSelected(MenuItem item){
         int id = item.getItemId();
