@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         init();
 
@@ -66,8 +67,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fbRemoteConfig.activateFetched();
         fbRemoteConfig.fetch(0);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         // BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
@@ -158,10 +157,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Calendar.setVisibility(View.INVISIBLE);
                 HideInfo.setVisibility(View.VISIBLE);
                 bottomNavigationView.setVisibility(View.INVISIBLE);
-                appBarLayout.setVisibility(View.INVISIBLE);
+               // appBarLayout.setVisibility(View.INVISIBLE);
                 Info.setVisibility(View.INVISIBLE);
                 HideInfo.setVisibility(View.VISIBLE);
-                toolbar.setVisibility(View.INVISIBLE);
+               // toolbar.setVisibility(View.INVISIBLE);
                 textView.setVisibility(View.VISIBLE);
             }
 
